@@ -1,18 +1,20 @@
 Kia Yang individual Project
 
-This repository will serve as an example for Madison College's Enterprise Java Class. 
-
 ### Problem Statement
 
-For over 20 years, cross-country (XC) ski enthusiasts in the midwest have relied on [SkinnySki.com](https://www.skinnyski.com) as the go-to website for cross-country ski information. The site has information on XC ski races, training, tips and trails.  The trail data includes descriptions, location/driving directions, trail maps, trail type (skate versus classic) and conditions (rolled, tracked, skiied in). While most trail systems have their own websites with this type of information, SkinnySki's benefit is that all the trail information is located in one place.  Even better, users are encouraged to add their own trail reports which means SkinnySki.com tends to be the most current source of information.  
+The Yang Family have a funeral fund hardship contribution membership and the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
 
-With the growing popularity of winter fat biking (riding bikes with 4.5" or larger tires in the snow), riders have found themselves in need of a site similar to SkinnySki.com to discover and share fat bike trails and conditions. Currently, trail information is found on various social media sites and web sites, or is simply shared in email among those "in the know". I'd like to build a Fat Bike Trail Reports website to serve as the SkinnySki.com for fat biking. 
+In the past keeping track of family members have been with a word document and with over 400 members it is a little bit hard to keep track of the members in the program.  We have to keep track of things like who died and who is still living as well has payments that have been made. Tallying up the contributions have always been done by hands and sending notifications to members are time consuming. On top of that members are located all over the states and keeping track of all members in the different state is hard and have to be done manually.
 
-Screenshots from SkinnySki.com:
+As a result I have to build a FamilyHardshipContribution website to do the following:
 
-![Trail Description](images/MirrorLakeTrailExample.png)
-
-![Trail Report](images/MadisonAreaExample.png)
+1. Adding or updating members can be achieved online and by the members
+2. Keeping track of members status are easier
+3. Have family membership guidelines and rules online so everyone can have access to it in one place.  Updates and adjustment to the guidelines and rules are easier.
+4. One form to send notification to all members via email or social media
+5. Have a way to allow members to do online payments instead of sending check or cash
+6. Automate and balancing contributions automatically by status of who paid and who didn’t pay.
+7. Easy reporting of member locations, status and updates
 
 
 ### Project Technologies/Techniques 
