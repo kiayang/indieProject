@@ -22,7 +22,7 @@ As a result I have to build a FamilyHardshipContribution website to do the follo
 * Security/Authentication
   * Tomcat's JDBC Realm Authentication
   * Admin role: create/read/update/delete (crud) of all data
-  * User role: create trail, create trail report, edit data they have entered previously
+  * User role: create report, edit data they have entered previously
   * All: anyone can view trail information (no login)
 * Database
   * MySQL
@@ -32,8 +32,6 @@ As a result I have to build a FamilyHardshipContribution website to do the follo
   * Hibernate 5
 * Dependency Management
   * Maven
-* Web Services consumed using Java
-  * NOAA for weather conditions at a trail location, including snow depth
 * CSS 
   * Bootstrap or Materialize
 * Data Validation
