@@ -11,8 +11,13 @@ As a result I have to build a FamilyHardshipContribution website to do the follo
 1. Adding or updating members can be achieved online and by the members
 2. Keeping track of members status are easier
 3. Have family membership guidelines and rules online so everyone can have access to it in one place.  Updates and adjustment to the guidelines and rules are easier.
+<<<<<<< HEAD
 4. Automate and balancing contributions automatically by status of who paid and who didn’t pay.
 5. Easy reporting of member locations, status and updates
+=======
+6. Automate and balancing contributions automatically by status of who paid and who didn’t pay.
+7. Easy reporting of member locations, status and updates
+>>>>>>> 5d636369730546a3c53a106e430f9e4777d1d6a6
 
 
 ### Project Technologies/Techniques 
