@@ -20,7 +20,9 @@ outside of class not just indie project. **
 | 9/18/2018 | Write problem statement and time log and finish up activity 4 and exercise 2 | 5 | |
 | 9/19/2018 | Watch video and work on Week 3 - activity 1 | 4 | Issues with building tld file |
 | 9/20/2018 | Read documents and work on Week 3 activity - was not working so deleted and started over and figured out why it was not working the first time | 3 |  |
-| 9/21/2018 | Work on Week 3 - exercise 2 |  |  |
+| 9/21/2018 | Work on Week 3 - exercise 2 | 4 |  |
+| 9/24/2018 | Work on screen design and started database design | 5 | |
+| 9/25/2018 | Work on Project Plan | 2 | |
 
 
 
