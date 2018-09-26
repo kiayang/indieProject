@@ -2,23 +2,15 @@ Kia Yang individual Project
 
 ### Problem Statement
 
-The Yang Family have a funeral fund hardship contribution membership and the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
+Hmong funerals are very costly due to religious belief and cultural rituals that have to be perform when a person dies. The cost averages about 30 to 40 thousand per funeral.  Due to this huge expense, the Yang Family have a funeral hardship contribution membership where the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
 
 In the past keeping track of family members have been with a word document and with over 400 members it is a little bit hard to keep track of the members in the program.  We have to keep track of things like who died and who is still living as well has payments that have been made. Tallying up the contributions have always been done by hands and sending notifications to members are time consuming. On top of that members are located all over the states and keeping track of all members in the different state is hard and have to be done manually.
 
-As a result I have to build a FamilyHardshipContribution website to do the following:
+As a result I like to build a Family Hardship Contribution website to do the following:
 
-1. Adding or updating members can be achieved online and by the members
-2. Keeping track of members status are easier
-3. Have family membership guidelines and rules online so everyone can have access to it in one place.  Updates and adjustment to the guidelines and rules are easier.
-<<<<<<< HEAD
-4. Automate and balancing contributions automatically by status of who paid and who didn’t pay.
-5. Easy reporting of member locations, status and updates
-=======
-6. Automate and balancing contributions automatically by status of who paid and who didn’t pay.
-7. Easy reporting of member locations, status and updates
->>>>>>> 5d636369730546a3c53a106e430f9e4777d1d6a6
-
+1. Have family membership guidelines and rules online so everyone can have access to it in one place.  Updates and adjustment to the guidelines and rules are easier.
+2. Adding or updating members can be achieved online and by the members or administrator
+3. Easy reporting of member locations, status and updates
 
 ### Project Technologies/Techniques 
 
