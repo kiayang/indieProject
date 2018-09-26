@@ -22,7 +22,7 @@ outside of class not just indie project. **
 | 9/20/2018 | Read documents and work on Week 3 activity - was not working so deleted and started over and figured out why it was not working the first time | 3 |  |
 | 9/21/2018 | Work on Week 3 - exercise 2 | 4 |  |
 | 9/24/2018 | Work on screen design and started database design | 5 | |
-| 9/25/2018 | Work on Project Plan | 2 | |
+| 9/25/2018 | Work on Project Plan, watch videos and read/print out materials | 4 | |
 
 
 
