@@ -25,7 +25,10 @@ outside of class not just indie project. **
 | 9/25/2018 | Work on Project Plan, watch videos and read/print out materials | 4 | |
 | 9/26/2018 | Watched week 4 video and work along with Hibernate demo part 1and get all users  [DAO Overview](https://youtu.be/EshxpNqFA2s) ; [Hibernate Overview](https://youtu.be/SuENQ5oOZLg);[Hibernate Demo Part 1 - Set up and getAllUsers](https://youtu.be/1fj5wnyCsnw) | 2 | |
 | 9/27/2018 | Continue to watch week 4 video - Hibernate Part 2 and work along with video | 2.5 | |
-| 9/28/2018 | What can go wrong video |  | |
+| 9/28/2018 | What can go wrong video and Demo Part 3 / work along | 3 | |
+| 10/01/2018 | Work on jsp pages/design and more thoughts for indie project | 6 | |
+| 10/02/2018 | Started to work on exercise 4 with table from indie project but changed my mind because I was trying to get front end jsp/servlet to work and was taking too much time | 4 | |
+| 10/03/2018 | Week 4 exercise - decided to work on the video instead | 4 | |
 
 
 
