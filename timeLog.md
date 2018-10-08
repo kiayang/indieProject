@@ -29,7 +29,11 @@ outside of class not just indie project. **
 | 10/01/2018 | Work on jsp pages/design and more thoughts for indie project | 6 | |
 | 10/02/2018 | Started to work on exercise 4 with table from indie project but changed my mind because I was trying to get front end jsp/servlet to work and was taking too much time | 4 | |
 | 10/03/2018 | Week 4 exercise - decided to work on the video instead | 4 | |
+|  |  |  | |
 | 10/05/2018 | Review Professional Presentation and Work on Indie Project - member table design, create database and table | 2.5 | |
+| 10/07/2018 | Review week 5 documents and videos and work along with activity 5 video | 4.5 | |
+| 10/??/2018 | Work on week 5 exercise | 3 | |
+| 10/??/2018 | Work on indie project |  | |
 
 
 

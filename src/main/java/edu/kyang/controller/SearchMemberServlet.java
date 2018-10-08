@@ -42,7 +42,7 @@ public class SearchMemberServlet extends HttpServlet {
         MemberDAO memberDao = new MemberDAO();
 
         if (req.getParameter("submit").equals("search")){
-            req.setAttribute("members", memberDao.getUsersByLastName(req.getParameter("searchTerm")));
+            req.setAttribute("members", memberDao.getByLastName(req.getParameter("searchTerm")));
 
         }else {
             req.setAttribute("members", memberDao.getAllMembers());

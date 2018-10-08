@@ -19,155 +19,126 @@ import static java.time.temporal.ChronoUnit.YEARS;
 @Table(name = "member")
 
 public class MemberBean {
-    //@Column annotation will specify the instance variable to the corresponding column on table
-    //*Note that if the instance variable and table column name is same, you will not need @Column
+
+    private String memberId;
     @Column(name = "first_name")
     private String firstName;
-
     @Column(name = "last_name")
     private String lastName;
-
-    @Column(name = "user_name")
-    private String userName;
-
-    /*
-     * Every Entity must have a unique identifier which is annotated @Id
-     * *Notice that there is NO @Column here as the column and instance variable
-     *  name are the same for 'id' variable
-     */
-
-    //This is the primary key
-    @Id
-    //If the Primary key is auto generated, you will need these 2 annotations
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-
-    private int id;
-
-    //Hibernate automatically converts teh date of birth to LocalDate
+    @Column(name = "middle_name")
+    private String middleName;
+    private String gender;
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+    private String address;
+    private String state;
+    @Column(name = "zip_code")
+    private String zipCode;
+    private String phone;
+    private String email;
 
-    /**
-     * No argument constructor, Instantiates a new User.
-     */
     public MemberBean() {
     }
 
-    /**
-     * Instantiates a new User.
-     *
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param userName    the user name
-     * @param dateOfBirth the date of birth
-     */
-    public MemberBean(String firstName, String lastName, String userName, LocalDate dateOfBirth) {
+    public MemberBean(String memberId, String firstName, String lastName, String middleName, String gender, LocalDate dateOfBirth, String address, String state, String zipCode, String phone, String email) {
+        this.memberId = memberId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.middleName = middleName;
+        this.gender = gender;
         this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phone = phone;
+        this.email = email;
     }
 
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
     public String getLastName() {
         return lastName;
     }
 
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    /**
-     * Sets user name.
-     *
-     * @param userName the user name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
+    public String getGender() {
+        return gender;
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    /**
-     * Gets date of birth.
-     *
-     * @return the date of birth
-     */
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    /**
-     * Sets date of birth.
-     *
-     * @param dateOfBirth the date of birth
-     */
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "firstName='" + firstName + "\'" +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", id='" + id + '\'' +
-                '}';
+    public String getAddress() {
+        return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
