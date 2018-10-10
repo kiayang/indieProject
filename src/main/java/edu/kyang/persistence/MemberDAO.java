@@ -1,7 +1,7 @@
 package edu.kyang.persistence;
 
 import edu.kyang.entity.MemberBean;
-import edu.matc.entity.User;
+import edu.kyang.entity.UserBean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -86,7 +86,7 @@ public class MemberDAO {
      * @param id the id
      * @return the user
      */
-    public User getById(int id){
+    public MemberBean getById(int id){
         Session session = sessionFactory.openSession();
 
         MemberBean member = session.get(MemberBean.class, id);

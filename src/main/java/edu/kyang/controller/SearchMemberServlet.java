@@ -1,7 +1,6 @@
 package edu.kyang.controller;
 
 import edu.kyang.persistence.MemberDAO;
-import edu.matc.persistence.UserDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +16,7 @@ import java.io.IOException;
  */
 
 @WebServlet(
-        urlPatterns = {"/searchMember"}
+        urlPatterns = {"/searchMemberServlet"}
 )
 
 public class SearchMemberServlet extends HttpServlet {
@@ -27,16 +26,6 @@ public class SearchMemberServlet extends HttpServlet {
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
         String returnMessage;
-
-        if (userName == null || userName.isEmpty()) {
-            returnMessage = "User Name is Missing";
-            req.setAttribute("returnMessage", returnMessage);
-        } else if (password == null || password.isEmpty()) {
-            returnMessage = "Password is Missing";
-            req.setAttribute("returnMessage", returnMessage);
-        }else {
-            System.out.println("test");
-        }
 
         //instantiate MemberDAO object
         MemberDAO memberDao = new MemberDAO();

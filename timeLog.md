@@ -33,7 +33,7 @@ outside of class not just indie project. **
 | 10/05/2018 | Review Professional Presentation and Work on Indie Project - member table design, create database and table | 2.5 | |
 | 10/07/2018 | Review week 5 documents and videos and work along with activity 5 video | 4.5 | |
 | 10/??/2018 | Work on week 5 exercise | 3 | |
-| 10/??/2018 | Work on indie project |  | |
+| 10/10/2018 | Work on indie project | 8 | |
 
 
 
