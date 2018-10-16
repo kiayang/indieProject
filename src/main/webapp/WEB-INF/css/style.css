@@ -1,10 +1,11 @@
 * { padding: 10px; margin: 1px; }
-body { background: #c57ef5 url(/images/background.png);
+body {
+    background-color: gray;
     width: 100px;
     height: 100px;
     font-family: 'Roboto Condensed', sans-serif; font-size: .90em; padding: 0; margin: 0; }
 img {
-    border-style: double;
+    border-style: groove;
 }
 a { color: #777; text-decoration: none;}
 a:hover { color: #555; text-decoration: none;}
@@ -20,7 +21,7 @@ li { color: #036DA7; list-style-type: none; margin-bottom: 6px; }
 #sidebar { width: 610px; float: right; background: #FFF; color: #666; margin-right: 20px; }
 #sidebar .box { margin-bottom: 10px; padding: 10px 3px; color: #666; }
 #sidebar h2 { font-size: 1.2em; font-weight: 100; padding: 3px; }
-#content { margin-left: 20px; margin-right: 250px; text-align: justify; color: #777; }
+#content { margin-left: 20px; margin-right: 250px; text-align: justify; color: #777; background-color: #857bee}
 #content h2 { color: #555; font-size: 2.4em; font-weight: 300;}
 #content p { margin: 10px 0 20px 0; line-height: 25px;}
 #footer { clear: both; color: #eee; background: #222; text-align: left; margin: 20px 0px 0px 0px; padding: 25px 20px; font-size: .9em; }

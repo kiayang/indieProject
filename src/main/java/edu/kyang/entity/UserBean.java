@@ -1,174 +1,186 @@
 package edu.kyang.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
-import static java.time.temporal.ChronoUnit.YEARS;
+import static javax.persistence.FetchType.LAZY;
 
-/**
- * A class to represent a user.
- * <p>
- * Hibernate Annotations are added to this class to map the class to the appropriate
- * table and map the instance variables to the corresponding column name on the table
- *
- * @author pwaite
- */
-//Annotations @Entity and @Table will tie the User entity/class to the user table
-@Entity(name = "User")
+@Entity(name = "UserBean")
 @Table(name = "user")
 
 public class UserBean {
-    //@Column annotation will specify the instance variable to the corresponding column on table
-    //*Note that if the instance variable and table column name is same, you will not need @Column
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "user_name")
-    private String userName;
-
-    /*
-     * Every Entity must have a unique identifier which is annotated @Id
-     * *Notice that there is NO @Column here as the column and instance variable
-     *  name are the same for 'id' variable
-     */
-
-    //This is the primary key
     @Id
-    //If the Primary key is auto generated, you will need these 2 annotations
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    private int userid;
+    private String username;
+    @Column(name = "user_status")
+    private String status;
+    private String password;
+    private String firstname;
+    private String lastname;
+    private String suffix;
+    private Date dateofbirth;
+    private String address;
+    private String state;
+    private String zipcode;
+    private String phone;
 
-    private int id;
+    @OneToMany(mappedBy = "user", fetch = LAZY)
+    private Set<UserEventBean> userEvents = new HashSet<>();
 
-    //Hibernate automatically converts teh date of birth to LocalDate
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
+    //Mapping one to one relationship with same primary key unilateral
+    @OneToOne(mappedBy = "userid")
+    private UserRoleBean userRole;
 
-    /**
-     * No argument constructor, Instantiates a new User.
-     */
     public UserBean() {
     }
 
-    /**
-     * Instantiates a new User.
-     *
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param userName    the user name
-     * @param dateOfBirth the date of birth
-     */
-    public UserBean(String firstName, String lastName, String userName, LocalDate dateOfBirth) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.dateOfBirth = dateOfBirth;
+    public UserBean(int userid, String username, String status, String password, String firstname, String lastname, String suffix, Date dateofbirth, String address, String state, String zipcode, String phone, Set<UserEventBean> userEvents, UserRoleBean userRole) {
+        this.userid = userid;
+        this.username = username;
+        this.status = status;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.suffix = suffix;
+        this.dateofbirth = dateofbirth;
+        this.address = address;
+        this.state = state;
+        this.zipcode = zipcode;
+        this.phone = phone;
+        this.userEvents = userEvents;
+        this.userRole = userRole;
     }
 
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
-    public String getFirstName() {
-        return firstName;
+    public int getUserid() {
+        return userid;
     }
 
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
-    public String getLastName() {
-        return lastName;
+    public String getUsername() {
+        return username;
     }
 
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
+    public String getStatus() {
+        return status;
     }
 
-    /**
-     * Sets user name.
-     *
-     * @param userName the user name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    /**
-     * Gets date of birth.
-     *
-     * @return the date of birth
-     */
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getFirstname() {
+        return firstname;
     }
 
-    /**
-     * Sets date of birth.
-     *
-     * @param dateOfBirth the date of birth
-     */
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getDateofbirth() {
+        return dateofbirth;
+    }
+    public void setDateofbirth(Date dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Set<UserEventBean> getUserEvents() {
+        return userEvents;
+    }
+
+    public void setUserEvents(Set<UserEventBean> userEvents) {
+        this.userEvents = userEvents;
+    }
+
+    public UserRoleBean getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRoleBean userRole) {
+        this.userRole = userRole;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "firstName='" + firstName + "\'" +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", id='" + id + '\'' +
+        return "UserBean{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", status='" + status + '\'' +
+                ", password='" + password + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", suffix='" + suffix + '\'' +
+                ", dateofbirth=" + dateofbirth +
+                ", address='" + address + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", phone='" + phone + '\'' +
+
                 '}';
     }
-
-
 }

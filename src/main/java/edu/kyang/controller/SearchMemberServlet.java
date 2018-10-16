@@ -1,7 +1,7 @@
 package edu.kyang.controller;
-
-import edu.kyang.persistence.MemberDAO;
-
+import edu.kyang.entity.UserBean;
+import edu.kyang.persistence.GenericDAO;
+import javax.persistence.Table;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,6 @@ import java.io.IOException;
 
 /**
  * A simple servlet to welcome the user.
- * @author pwaite
  */
 
 @WebServlet(
@@ -23,20 +22,19 @@ public class SearchMemberServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Retrieve values from form
-        String userName = req.getParameter("userName");
-        String password = req.getParameter("password");
+        String firstName = req.getParameter("firstName");
+        String lastName = req.getParameter("lastName");
         String returnMessage;
 
-        //instantiate MemberDAO object
-        MemberDAO memberDao = new MemberDAO();
-
+        GenericDAO memberDAO = new GenericDAO(UserBean.class);
+        /*
         if (req.getParameter("submit").equals("search")){
-            req.setAttribute("members", memberDao.getByLastName(req.getParameter("searchTerm")));
+            req.setAttribute("users", genericDao.getById(req.getParameter("searchTerm")));
 
         }else {
-            req.setAttribute("members", memberDao.getAllMembers());
+            req.setAttribute("users", genericDao.getAll());
         }
-
+        */
         //forward to memberResults.jsp page
         RequestDispatcher dispatcher = req.getRequestDispatcher("/memberResults.jsp");
         dispatcher.forward(req, resp);

@@ -1,7 +1,5 @@
 package edu.kyang.controller;
 
-import edu.kyang.persistence.MemberDAO;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
