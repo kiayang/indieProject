@@ -44,7 +44,7 @@ public class GenericDAO<T>{
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
         List<T> list = session.createQuery(query).getResultList();
-
+        logger.debug("Get all rows from entity : " + list);
         session.close();
         return list;
 
@@ -86,7 +86,7 @@ public class GenericDAO<T>{
     }
 
     /**
-     * Save or update.
+     * Save or update for an entity
      *
      * @param entity the entity
      */
@@ -136,11 +136,9 @@ public class GenericDAO<T>{
         session.close();
         return list;
     }
-
     private Session getSession(){
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
-
     /**
      * Gets by property like for some entity
      *
@@ -164,5 +162,8 @@ public class GenericDAO<T>{
         session.close();
         return list;
     }
+
+
+
 
 }

@@ -1,28 +1,40 @@
 package edu.kyang.entity;
 
 import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity(name = "UserRoleBean")
 @Table(name = "user_role")
 
 public class UserRoleBean {
     @Id
-    @Column(name = "role_id")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "id")
+    private int roleId;
     private int userid;
     private String role;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "userid")
-    @MapsId
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userid", insertable = false, updatable = false)
     private UserBean user;
 
     public UserRoleBean() {
     }
 
-    public UserRoleBean(int userid, String role, UserBean user) {
+    public UserRoleBean(int roleId, int userid, String role, UserBean user) {
+        this.roleId = roleId;
         this.userid = userid;
         this.role = role;
         this.user = user;
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public int getUserid() {
@@ -52,7 +64,8 @@ public class UserRoleBean {
     @Override
     public String toString() {
         return "UserRoleBean{" +
-                "userid=" + userid +
+                "roleId=" + roleId +
+                ", userid=" + userid +
                 ", role='" + role + '\'' +
                 ", user=" + user +
                 '}';

@@ -35,7 +35,11 @@ outside of class not just indie project. **
 | 10/??/2018 | Work on week 5 exercise | 3 | |
 | 10/10/2018 | Work on indie project | 8 | |
 | 10/11/2018 | Read documentation and exercise for AWS setup | 2.5 | |
-| 12/12/2018 | Peer review | 1 | |
+| 10/12/2018 | Peer review | 1 | |
+| 10/14/2018 | Exercise 6 - AWS deployment | 2 | |
+| 10/16/2018 | Exercise 6 - AWS deployment | 5 | |
+| 10/17/2018 | Exercise 6 and Indie Project | 6.5 | |
+|  |  |  | |
 
 
 

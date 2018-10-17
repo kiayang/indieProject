@@ -1,19 +1,18 @@
 package edu.kyang.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
-
-import static javax.persistence.FetchType.LAZY;
 
 @Entity(name = "UserBean")
 @Table(name = "user")
 
 public class UserBean {
     @Id
-    private int userid;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private int id;
     private String username;
     @Column(name = "user_status")
     private String status;
@@ -27,18 +26,16 @@ public class UserBean {
     private String zipcode;
     private String phone;
 
-    @OneToMany(mappedBy = "user", fetch = LAZY)
-    private Set<UserEventBean> userEvents = new HashSet<>();
-
-    //Mapping one to one relationship with same primary key unilateral
-    @OneToOne(mappedBy = "userid")
+    //one to one bidirectional association - targets entity table contains the foreign key. *Source entity
+    //must use mappedBy attribute to define the bidirectional one to one mapping
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private UserRoleBean userRole;
 
     public UserBean() {
     }
 
-    public UserBean(int userid, String username, String status, String password, String firstname, String lastname, String suffix, Date dateofbirth, String address, String state, String zipcode, String phone, Set<UserEventBean> userEvents, UserRoleBean userRole) {
-        this.userid = userid;
+    public UserBean(int id, String username, String status, String password, String firstname, String lastname, String suffix, Date dateofbirth, String address, String state, String zipcode, String phone, UserRoleBean userRole) {
+        this.id = id;
         this.username = username;
         this.status = status;
         this.password = password;
@@ -50,16 +47,14 @@ public class UserBean {
         this.state = state;
         this.zipcode = zipcode;
         this.phone = phone;
-        this.userEvents = userEvents;
-        this.userRole = userRole;
     }
 
     public int getUserid() {
-        return userid;
+        return id;
     }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public void setUserid(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -109,7 +104,7 @@ public class UserBean {
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
-    @Temporal(TemporalType.DATE)
+
     public Date getDateofbirth() {
         return dateofbirth;
     }
@@ -149,14 +144,6 @@ public class UserBean {
         this.phone = phone;
     }
 
-    public Set<UserEventBean> getUserEvents() {
-        return userEvents;
-    }
-
-    public void setUserEvents(Set<UserEventBean> userEvents) {
-        this.userEvents = userEvents;
-    }
-
     public UserRoleBean getUserRole() {
         return userRole;
     }
@@ -168,7 +155,7 @@ public class UserBean {
     @Override
     public String toString() {
         return "UserBean{" +
-                "userid=" + userid +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", status='" + status + '\'' +
                 ", password='" + password + '\'' +

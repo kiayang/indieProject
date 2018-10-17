@@ -20,8 +20,8 @@
         <!-- Maps User class (javabean/POJO/entity) to the user member table -->
         <mapping class="edu.kyang.entity.UserBean"/>
         <mapping class="edu.kyang.entity.UserRoleBean"/>
-        <mapping class="edu.kyang.entity.UserEventBean"/>
-        <mapping class="edu.kyang.entity.EventBean"/>
+        <mapping class="edu.kyang.entity.Author"/>
+        <mapping class="edu.kyang.entity.Book"/>
 
     </session-factory>
 
