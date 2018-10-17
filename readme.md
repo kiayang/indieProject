@@ -48,7 +48,7 @@ As a result I like to build a Family Hardship Contribution website to do the fol
 
 ### Design
 
-* [Screen Design](DesignDocuments/Screens.md)
+* [Screen Design](https://github.com/kiayang/indieProject/blob/master/Indie%20Screen%20Design.docx)
 * [Application Flow](DesignDocuments/applicationFlow.md)
 * [Database Design](DesignDocuments/databaseDiagram.png)
 
