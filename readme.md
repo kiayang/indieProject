@@ -54,4 +54,3 @@ As a result I like to build a Family Hardship Contribution website to do the fol
 
 ### [Project Plan](ProjectPlan.md)
 
-### [Development Journal](Journal.md)
