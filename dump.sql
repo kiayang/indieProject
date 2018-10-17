@@ -75,7 +75,7 @@ CREATE TABLE `user_event` (
   `paid_date` date DEFAULT NULL,
   KEY `user_event_event_eventid_fk` (`ue_eventid`),
   KEY `user_event_user_userid_fk` (`ue_userid`),
-  CONSTRAINT `user_event_event_eventid_fk` FOREIGN KEY (`ue_eventid`) REFERENCES `event` (`eventid`),
+  CONSTRAINT `user_event_event_eventid_fk` FOREIGN KEY (`ue_eventid`) REFERENCES `event` (id),
   CONSTRAINT `user_event_user_userid_fk` FOREIGN KEY (`ue_userid`) REFERENCES `user` (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
