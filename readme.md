@@ -1,5 +1,3 @@
-Kia Yang individual Project
-
 ### Problem Statement
 
 Our funerals are very costly due to religious belief and cultural rituals that have to be perform when a person dies. The cost averages about 30 to 40 thousand per funeral.  Due to this huge expense, the Yang Family have a funeral hardship contribution membership where the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
