@@ -6,9 +6,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * The type Author dao test.
@@ -39,7 +43,7 @@ public class UserDaoTest {
     @Test
     void getAllSuccess() {
         List<UserBean> users = genericDao.getAll();
-        Assertions.assertEquals(5, users.size());
+        assertEquals(5, users.size());
     }
 
     /**
@@ -50,7 +54,45 @@ public class UserDaoTest {
 
         UserBean retrievedUser = (UserBean) genericDao.getById(1);
         assertNotNull(retrievedUser);
-        Assertions.assertEquals("kia", retrievedUser.getFirstname());
+        assertEquals("kia", retrievedUser.getFirstname());
+    }
+
+    @Test
+    void insertSuccess() {
+
+        UserBean newUser = new UserBean(6,"tmocha@gmail.com","active","password6","Tina","Mocha","L", LocalDate.parse("1968-01-01"),"34233 Sate St","WI","24323","6898889898");
+        int id = genericDao.insert(newUser);
+        assertNotEquals(0,id);
+        UserBean insertedUsr = (UserBean) genericDao.getById(id);
+        assertEquals("tmocha@gmail.com", insertedUsr.getUsername());
+    }
+
+    @Test
+    void SaveOrUpdateSuccessful() {
+        String newLastname = "Davis";
+        UserBean userToUpdate = (UserBean)genericDao.getById(5);
+        userToUpdate.setLastname(newLastname);
+        genericDao.saveOrUpdate(userToUpdate);
+        UserBean retrievedUser = (UserBean) genericDao.getById(5);
+        assertEquals("Davis", retrievedUser.getLastname());
+    }
+
+    @Test
+    void deleteSuccess() {
+        genericDao.delete(genericDao.getById(5));
+        assertNull(genericDao.getById(5));
+    }
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<UserBean> users = genericDao.getByPropertyEqual("firstname", "kia");
+        Assertions.assertEquals(1, users.size());
+        Assertions.assertEquals(1, users.get(0).getId());
+    }
+
+    @Test
+    void getByPropertyLikeSuccesss() {
+        List<UserBean> users = genericDao.getByPropertyLike("lastname", "yang");
+        Assertions.assertEquals(1, users.size());
     }
 
 }

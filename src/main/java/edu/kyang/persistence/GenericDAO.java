@@ -146,15 +146,16 @@ public class GenericDAO<T>{
      * @param value        the value
      * @return the by property like
      */
+
     public List<T> getByPropertyLike(String propertyName, String value) {
         Session session = getSession();
 
-        logger.debug("Searching for Order with " + propertyName + " = " + "%" + value + "%");
+        logger.debug("Searching for Entity with " + propertyName + " = " + "%" + value + "%");
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        Expression<String> propertyPath = root.get("description");
+        Expression<String> propertyPath = root.get(propertyName);
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
         List<T> list = session.createQuery( query ).getResultList();

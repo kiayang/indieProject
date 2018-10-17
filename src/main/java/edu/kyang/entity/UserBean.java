@@ -3,6 +3,7 @@ package edu.kyang.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity(name = "UserBean")
@@ -20,7 +21,7 @@ public class UserBean {
     private String firstname;
     private String lastname;
     private String suffix;
-    private Date dateofbirth;
+    private LocalDate dateofbirth;
     private String address;
     private String state;
     private String zipcode;
@@ -34,7 +35,7 @@ public class UserBean {
     public UserBean() {
     }
 
-    public UserBean(int id, String username, String status, String password, String firstname, String lastname, String suffix, Date dateofbirth, String address, String state, String zipcode, String phone, UserRoleBean userRole) {
+    public UserBean(int id, String username, String status, String password, String firstname, String lastname, String suffix, LocalDate dateofbirth, String address, String state, String zipcode, String phone) {
         this.id = id;
         this.username = username;
         this.status = status;
@@ -47,6 +48,14 @@ public class UserBean {
         this.state = state;
         this.zipcode = zipcode;
         this.phone = phone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUserid() {
@@ -105,10 +114,10 @@ public class UserBean {
         this.suffix = suffix;
     }
 
-    public Date getDateofbirth() {
+    public LocalDate getDateofbirth() {
         return dateofbirth;
     }
-    public void setDateofbirth(Date dateofbirth) {
+    public void setDateofbirth(LocalDate dateofbirth) {
         this.dateofbirth = dateofbirth;
     }
 

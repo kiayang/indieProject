@@ -38,3 +38,46 @@
 [DEBUG] 2018-10-16 23:58:53.613 [main] GenericDAO - Get all rows from entity : [UserBean{id=1, username='kyang@hotmail.com', status='active', password='password1', firstname='kia', lastname='yang', suffix='s', dateofbirth=1973-08-05 00:00:00.0, address='123 main st', state='wi', zipcode='53533', phone='608-888-8788'}, UserBean{id=2, username='rtango@hotmail.com', status='active', password='password2', firstname='ram', lastname='tango', suffix='s', dateofbirth=1970-06-10 00:00:00.0, address='523 main st', state='wi', zipcode='53583', phone='608-999-8700'}, UserBean{id=3, username='mjones@hotmail.com', status='inactive', password='password3', firstname='mary', lastname='jones', suffix='s', dateofbirth=1974-09-18 00:00:00.0, address='766 main st', state='wi', zipcode='53590', phone='608-997-8755'}, UserBean{id=4, username='kterry@hotmail.com', status='inactive', password='password4', firstname='kerry', lastname='terry', suffix='s', dateofbirth=1977-05-08 00:00:00.0, address='339 main st', state='wi', zipcode='53599-5402', phone='608-997-8755'}, UserBean{id=5, username='shelm@hotmail.com', status='active', password='password2', firstname='stacy', lastname='helm', suffix='s', dateofbirth=1977-06-13 00:00:00.0, address='237 main st', state='wi', zipcode='77583', phone='608-999-8722'}]
 [ERROR] 2018-10-16 23:58:53.692 [main] Database - java.sql.SQLException: Can not issue empty query.
 [ERROR] 2018-10-16 23:59:21.117 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:01:36.949 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:07:16.167 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:07:49.941 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 15:07:53.016 [main] GenericDAO - Get all rows from entity : [UserBean{id=1, username='kyang@hotmail.com', status='active', password='password1', firstname='kia', lastname='yang', suffix='s', dateofbirth=1973-08-05, address='123 main st', state='wi', zipcode='53533', phone='608-888-8788'}, UserBean{id=2, username='rtango@hotmail.com', status='active', password='password2', firstname='ram', lastname='tango', suffix='s', dateofbirth=1970-06-10, address='523 main st', state='wi', zipcode='53583', phone='608-999-8700'}, UserBean{id=3, username='mjones@hotmail.com', status='inactive', password='password3', firstname='mary', lastname='jones', suffix='s', dateofbirth=1974-09-18, address='766 main st', state='wi', zipcode='53590', phone='608-997-8755'}, UserBean{id=4, username='kterry@hotmail.com', status='inactive', password='password4', firstname='kerry', lastname='terry', suffix='s', dateofbirth=1977-05-08, address='339 main st', state='wi', zipcode='53599-5402', phone='608-997-8755'}, UserBean{id=5, username='shelm@hotmail.com', status='active', password='password2', firstname='stacy', lastname='helm', suffix='s', dateofbirth=1977-06-13, address='237 main st', state='wi', zipcode='77583', phone='608-999-8722'}]
+[ERROR] 2018-10-17 15:07:53.078 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:07:53.125 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:12:34.968 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:15:31.141 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:23:55.870 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:24:49.634 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:29:40.955 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:34:18.809 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:35:07.623 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 15:39:11.526 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 15:39:14.398 [main] GenericDAO - Searching for Order with lastname = %yang%
+[ERROR] 2018-10-17 15:40:53.338 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 15:40:56.231 [main] GenericDAO - Searching for Order with lastname = %yang%
+[ERROR] 2018-10-17 15:42:27.793 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 15:42:30.315 [main] GenericDAO - Searching for Entity with lastname = %yang%
+[ERROR] 2018-10-17 15:58:49.659 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 15:58:52.491 [main] GenericDAO - Searching for Entity with lastname = %yang%
+[ERROR] 2018-10-17 16:02:28.629 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:02:31.619 [main] GenericDAO - Searching for entity with firstname = kia
+[ERROR] 2018-10-17 16:02:53.271 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:02:56.253 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:02:56.565 [main] GenericDAO - Get all rows from entity : [UserBean{id=1, username='kyang@hotmail.com', status='active', password='password1', firstname='kia', lastname='yang', suffix='s', dateofbirth=1973-08-05, address='123 main st', state='wi', zipcode='53533', phone='608-888-8788'}, UserBean{id=2, username='rtango@hotmail.com', status='active', password='password2', firstname='ram', lastname='tango', suffix='s', dateofbirth=1970-06-10, address='523 main st', state='wi', zipcode='53583', phone='608-999-8700'}, UserBean{id=3, username='mjones@hotmail.com', status='inactive', password='password3', firstname='mary', lastname='jones', suffix='s', dateofbirth=1974-09-18, address='766 main st', state='wi', zipcode='53590', phone='608-997-8755'}, UserBean{id=4, username='kterry@hotmail.com', status='inactive', password='password4', firstname='kerry', lastname='terry', suffix='s', dateofbirth=1977-05-08, address='339 main st', state='wi', zipcode='53599-5402', phone='608-997-8755'}, UserBean{id=5, username='shelm@hotmail.com', status='active', password='password2', firstname='stacy', lastname='helm', suffix='s', dateofbirth=1977-06-13, address='237 main st', state='wi', zipcode='77583', phone='608-999-8722'}]
+[ERROR] 2018-10-17 16:02:56.597 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:02:56.597 [main] GenericDAO - Searching for entity with firstname = kia
+[ERROR] 2018-10-17 16:02:56.659 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:02:56.659 [main] GenericDAO - Searching for Entity with lastname = %yang%
+[ERROR] 2018-10-17 16:02:56.690 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:02:56.737 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:02:56.800 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:07:56.034 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:08:00.560 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:08:00.856 [main] GenericDAO - Get all rows from entity : [UserBean{id=1, username='kyang@hotmail.com', status='active', password='password1', firstname='kia', lastname='yang', suffix='s', dateofbirth=1973-08-05, address='123 main st', state='wi', zipcode='53533', phone='608-888-8788'}, UserBean{id=2, username='rtango@hotmail.com', status='active', password='password2', firstname='ram', lastname='tango', suffix='s', dateofbirth=1970-06-10, address='523 main st', state='wi', zipcode='53583', phone='608-999-8700'}, UserBean{id=3, username='mjones@hotmail.com', status='inactive', password='password3', firstname='mary', lastname='jones', suffix='s', dateofbirth=1974-09-18, address='766 main st', state='wi', zipcode='53590', phone='608-997-8755'}, UserBean{id=4, username='kterry@hotmail.com', status='inactive', password='password4', firstname='kerry', lastname='terry', suffix='s', dateofbirth=1977-05-08, address='339 main st', state='wi', zipcode='53599-5402', phone='608-997-8755'}, UserBean{id=5, username='shelm@hotmail.com', status='active', password='password2', firstname='stacy', lastname='helm', suffix='s', dateofbirth=1977-06-13, address='237 main st', state='wi', zipcode='77583', phone='608-999-8722'}]
+[ERROR] 2018-10-17 16:08:01.045 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:08:01.060 [main] GenericDAO - Searching for entity with firstname = kia
+[ERROR] 2018-10-17 16:08:01.138 [main] Database - java.sql.SQLException: Can not issue empty query.
+[DEBUG] 2018-10-17 16:08:01.138 [main] GenericDAO - Searching for Entity with lastname = %yang%
+[ERROR] 2018-10-17 16:08:01.185 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:08:01.232 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2018-10-17 16:08:01.310 [main] Database - java.sql.SQLException: Can not issue empty query.
