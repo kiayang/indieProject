@@ -1,5 +1,3 @@
-Kia Yang individual Project
-
 ### Problem Statement
 
 Our funerals are very costly due to religious belief and cultural rituals that have to be perform when a person dies. The cost averages about 30 to 40 thousand per funeral.  Due to this huge expense, the Yang Family have a funeral hardship contribution membership where the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
@@ -50,10 +48,9 @@ As a result I like to build a Family Hardship Contribution website to do the fol
 
 ### Design
 
-* [Screen Design](DesignDocuments/Screens.md)
-* [Application Flow](DesignDocuments/applicationFlow.md)
-* [Database Design](DesignDocuments/databaseDiagram.png)
+* [Screen Design](https://github.com/kiayang/indieProject/blob/master/Indie%20Screen%20Design.docx)
+* [Application Flow](https://github.com/kiayang/indieProject/blob/master/indieScreenDesign.pdf)
+* [Database Design](https://github.com/kiayang/indieProject/blob/master/visualdiagram.png)
 
 ### [Project Plan](ProjectPlan.md)
 
-### [Development Journal](Journal.md)
