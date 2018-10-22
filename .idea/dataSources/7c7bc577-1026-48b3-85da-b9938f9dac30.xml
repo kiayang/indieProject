@@ -1038,7 +1038,6 @@
     <column id="256" parent="235" name="phone">
       <Position>12</Position>
       <DataType>varchar(12)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="257" parent="235" name="user_id_uindex">
@@ -1139,31 +1138,46 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="237" name="role">
+    <column id="276" parent="237" name="username">
       <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="237" name="role">
+      <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="277" parent="237" name="user_role_id_uindex">
+    <index id="278" parent="237" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="278" parent="237" name="user_role_user_id_fk">
+    <index id="279" parent="237" name="user_role_username_uindex">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="280" parent="237" name="user_role_user_id_fk">
       <ColNames>userid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="279" parent="237" name="PRIMARY">
+    <key id="281" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="280" parent="237" name="user_role_id_uindex">
+    <key id="282" parent="237" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="281" parent="237" name="user_role_user_id_fk">
+    <key id="283" parent="237" name="user_role_username_uindex">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>user_role_username_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="284" parent="237" name="user_role_user_id_fk">
       <ColNames>userid</ColNames>
       <RefSchemaName>indie</RefSchemaName>
       <RefTableName>user</RefTableName>

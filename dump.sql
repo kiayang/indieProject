@@ -134,9 +134,9 @@ INSERT INTO `user_role` VALUES (5,'member');
 
 INSERT INTO `event` VALUES (1,'perry tang death','2018-09-10',15.00);
 
-INSERT INTO `user_event` VALUES (1,1,'paid','2018-10-05');
-INSERT INTO `user_event` VALUES (2,1,'paid','2018-09-17');
-INSERT INTO `user_event` VALUES (5,1,null,null );
+INSERT INTO `user_event` VALUES (1,1,1,'paid','2018-10-05');
+INSERT INTO `user_event` VALUES (2,2,1,'paid','2018-09-17');
+INSERT INTO `user_event` VALUES (3,5,1,null,null );
 
 delete from book;
 delete from author;

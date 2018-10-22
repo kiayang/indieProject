@@ -4,7 +4,7 @@
 
 <script type="text/javascript" class="init">
     $(document).ready(function(){
-        $('#memberTable').DatabTable();
+        $('#memberTable').DataTable();
     });
 </script>
 

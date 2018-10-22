@@ -9,7 +9,7 @@
 
     <%@ include file="sidebar.jsp"%>
 
-    <%@ include file="content-login.jsp"%>
+    <%@ include file="content-index.jsp"%>
 
     <%@ include file="footer.jsp"%>
 

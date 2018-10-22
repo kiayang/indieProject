@@ -57,6 +57,9 @@ public class UserDaoTest {
         assertEquals("kia", retrievedUser.getFirstname());
     }
 
+    /**
+     * Insert success.
+     */
     @Test
     void insertSuccess() {
 
@@ -67,6 +70,9 @@ public class UserDaoTest {
         assertEquals("tmocha@gmail.com", insertedUsr.getUsername());
     }
 
+    /**
+     * Save or update successful.
+     */
     @Test
     void SaveOrUpdateSuccessful() {
         String newLastname = "Davis";
@@ -77,11 +83,18 @@ public class UserDaoTest {
         assertEquals("Davis", retrievedUser.getLastname());
     }
 
+    /**
+     * Delete success.
+     */
     @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(5));
         assertNull(genericDao.getById(5));
     }
+
+    /**
+     * Gets by property equal success.
+     */
     @Test
     void getByPropertyEqualSuccess() {
         List<UserBean> users = genericDao.getByPropertyEqual("firstname", "kia");
@@ -89,6 +102,9 @@ public class UserDaoTest {
         Assertions.assertEquals(1, users.get(0).getId());
     }
 
+    /**
+     * Gets by property like successs.
+     */
     @Test
     void getByPropertyLikeSuccesss() {
         List<UserBean> users = genericDao.getByPropertyLike("lastname", "yang");

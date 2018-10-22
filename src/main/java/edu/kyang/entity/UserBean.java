@@ -1,5 +1,8 @@
 package edu.kyang.entity;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,7 +11,7 @@ import java.util.Date;
 
 @Entity(name = "UserBean")
 @Table(name = "user")
-
+@Data
 public class UserBean {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -24,7 +27,9 @@ public class UserBean {
     private LocalDate dateofbirth;
     private String address;
     private String state;
+    // '@EqualsAndHashCode'  - part of lombok to exclude from equals and hashcode
     private String zipcode;
+    // 'ToString.Exclude' - add this code to exclude from ToString
     private String phone;
 
     //one to one bidirectional association - targets entity table contains the foreign key. *Source entity
@@ -50,117 +55,6 @@ public class UserBean {
         this.phone = phone;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserid() {
-        return id;
-    }
-
-    public void setUserid(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getSuffix() {
-        return suffix;
-    }
-
-    public void setSuffix(String suffix) {
-        this.suffix = suffix;
-    }
-
-    public LocalDate getDateofbirth() {
-        return dateofbirth;
-    }
-    public void setDateofbirth(LocalDate dateofbirth) {
-        this.dateofbirth = dateofbirth;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public UserRoleBean getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRoleBean userRole) {
-        this.userRole = userRole;
-    }
-
     @Override
     public String toString() {
         return "UserBean{" +
@@ -176,7 +70,6 @@ public class UserBean {
                 ", state='" + state + '\'' +
                 ", zipcode='" + zipcode + '\'' +
                 ", phone='" + phone + '\'' +
-
                 '}';
     }
 }
