@@ -23,7 +23,7 @@ public class UserBean {
     private String password;
     private String firstname;
     private String lastname;
-    private String suffix;
+    private String middlename;
     private LocalDate dateofbirth;
     private String address;
     private String state;
@@ -40,14 +40,14 @@ public class UserBean {
     public UserBean() {
     }
 
-    public UserBean(int id, String username, String status, String password, String firstname, String lastname, String suffix, LocalDate dateofbirth, String address, String state, String zipcode, String phone) {
+    public UserBean(int id, String username, String status, String password, String firstname, String lastname, String middlename, LocalDate dateofbirth, String address, String state, String zipcode, String phone) {
         this.id = id;
         this.username = username;
         this.status = status;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.suffix = suffix;
+        this.middlename = middlename;
         this.dateofbirth = dateofbirth;
         this.address = address;
         this.state = state;
@@ -64,7 +64,7 @@ public class UserBean {
                 ", password='" + password + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", suffix='" + suffix + '\'' +
+                ", middlename='" + middlename + '\'' +
                 ", dateofbirth=" + dateofbirth +
                 ", address='" + address + '\'' +
                 ", state='" + state + '\'' +

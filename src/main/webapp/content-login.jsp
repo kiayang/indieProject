@@ -2,7 +2,7 @@
 <FORM ACTION="j_security_check" METHOD="POST">
 <table cellspaceing="5" border="0">
 <tr>
-<td align="left">User ID: </td>
+<td align="left">User Name: </td>
 <td><input TYPE="TEXT" NAME="j_username" maxlength="40" size="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="User ID must be an email address" required>
 <td/>
 </tr>

@@ -16,7 +16,7 @@
     
     <%@ include file="content-adminMenu.jsp"%>
 
-    <%@ include file="footer.jsp"%>
+    <%@ include file="footer-logout.jsp"%>
 
 </div>
 </body>

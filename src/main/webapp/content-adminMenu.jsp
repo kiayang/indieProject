@@ -7,6 +7,17 @@
 --%>
 
 <table width="100%" border="0" cellpadding="0">
+
+<form action="searchUser" class="form-inline">
+<div class="form-group">
+<label for="searchTerm">Search</label>
+<input type="text" class="form-control" id="searchTerm" name="searchTerm" aria-describedby="searchTermHelp">
+</div>
+<button type="submit" name="submit" value="search" class="btn btn-primary">Search by Last Name</button>
+<button type="submit" name="submit" value="view/All" class="btn btn-primary">View all users</button>
+
+</form>
+
 <tr>
 <td with="80%">
 <table  bgcolor="#E1E8F2" width="100%">
@@ -41,11 +52,8 @@
 </td>
 </tr>
 </table>
-</td>
-<td align="left" bgcolor="#99B6FF" width="20%">
 
-</td>
-</tr>
+<table>
 <tr>
 <td colspan="2">
         When times are hard we as families will come together and help each other out in our time of need. Those who are member

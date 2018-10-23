@@ -39,7 +39,9 @@ outside of class not just indie project. **
 | 10/14/2018 | Exercise 6 - AWS deployment | 2 | |
 | 10/16/2018 | Exercise 6 - AWS deployment | 5 | |
 | 10/17/2018 | Exercise 6 and Indie Project | 6.5 | |
-|  |  |  | |
+| 10/21/2018 | Exercise 7 | 3 | |
+| 10/22/2018 | Exercise 7 and indie project | 5 | |
+| 10/23/2018 | Indie Project and Exercise 7 | 6 | issues with authentication failure. Worked on JSP pages and logout for indie project. |
 
 
 

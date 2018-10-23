@@ -16,19 +16,8 @@
   <!-- Protect everything within the "user search" directory. -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>contribution</web-resource-name>
-      <url-pattern>/search.jsp</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>admin</role-name>
-    </auth-constraint>
-  </security-constraint>
-
-  <!-- Protect everything within the "user search" directory. -->
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>contribution</web-resource-name>
-      <url-pattern>/memberSearch.jsp</url-pattern>
+      <web-resource-name>Member Menu</web-resource-name>
+      <url-pattern>/memberMenu.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>member</role-name>
@@ -41,7 +30,7 @@
   <!-- Protect everything within the "user search" directory. -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>contribution</web-resource-name>
+      <web-resource-name>Admin Menu</web-resource-name>
       <url-pattern>/adminMenu.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
