@@ -12,7 +12,6 @@
       <form-error-page>/loginError.jsp</form-error-page>
     </form-login-config>
   </login-config>
-
   <!-- Protect everything within the "user search" directory. -->
   <security-constraint>
     <web-resource-collection>
@@ -36,8 +35,8 @@
     <auth-constraint>
       <role-name>admin</role-name>
     </auth-constraint>
-  </security-constraint>
 
+  </security-constraint>
   <security-role>
     <role-name>admin</role-name>
   </security-role>

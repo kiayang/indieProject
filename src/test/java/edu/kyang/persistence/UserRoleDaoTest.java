@@ -49,20 +49,18 @@ public class UserRoleDaoTest {
     void getByIdSuccess() {
         UserRoleBean retrievedUserRole = (UserRoleBean) genericDao.getById(1);
         assertNotNull(retrievedUserRole);
-        assertEquals("admin", retrievedUserRole.getRole());
+        assertEquals("admin", retrievedUserRole.getUserRole());
     }
 
-    /*
+/*
     @Test
     void insertUserRoleSuccess() {
-    UserBean user = new UserBean("new", "author");
-    int id = dao.insert(newAuthor);
-    Book book = new Book("new book5", 12, "3243299", 2013, newAuthor);
-    newAuthor.addBook(book);
+    UserBean newUser = new UserBean(('kyang@hotmail.com','active','password1','kia','yang','s','1973-08-05','123 main st','wi','53533','608-888-8788');
+    int id = genericDao.insert(newUser);
+    UserRoleBean userRole = new UserRoleBean(1,2,"kyang@hotmail.com","new", newUser);
     assertNotEquals(0, id);
-    Author insertedAuthor = dao.getById(id);
-    assertEquals("new", insertedAuthor.getFirstName());
+    UserBean insertedUser = genericDao.getById(id);
+    assertEquals("new", insertedUser.getUserRole());
 }
-
-     */
+*/
 }

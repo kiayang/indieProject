@@ -142,3 +142,72 @@ delete from book;
 delete from author;
 INSERT INTO `author` VALUES (1,'Kathy','Sierra'),(2,'Herbert','Schilt'),(3,'Joseph','Ottinger');
 INSERT INTO `book` VALUES (1,'Head First Java, 2nd Edition',1,'978-0596009205',2005),(2,'Beginning Hibernate',3,'978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)',2,'978-0071809252',2014);
+--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--!!!!!!!!!!!!!!!!!!!!!!!!!!!!Latest Code  10/25/2018
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) NOT NULL,
+  `user_status` varchar(10) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `firstname` varchar(25) NOT NULL,
+  `lastname` varchar(35) NOT NULL,
+  `middlename` varchar(10) DEFAULT NULL,
+  `dateofbirth` date NOT NULL,
+  `address` varchar(35) NOT NULL,
+  `state` varchar(2) NOT NULL,
+  `zipcode` varchar(12) NOT NULL,
+  `phone` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id_uindex` (`id`),
+  UNIQUE KEY `user_username_uindex` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'kyang@hotmail.com','active','password1','kia','yang','s','1973-08-05','123 main st','wi','53533','608-888-8788'),(2,'rtango@hotmail.com','active','password2','ram','tango','s','1970-06-10','523 main st','wi','53583','608-999-8700'),(3,'mjones@hotmail.com','inactive','password3','mary','jones','s','1974-09-18','766 main st','wi','53590','608-997-8755'),(4,'kterry@hotmail.com','inactive','password4','kerry','terry','s','1977-05-08','339 main st','wi','53599-5402','608-997-8755'),(5,'shelm@hotmail.com','active','password2','stacy','helm','s','1977-06-13','237 main st','wi','77583','608-999-8722');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_role`
+--
+
+DROP TABLE IF EXISTS `user_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) DEFAULT NULL,
+  `username` varchar(40) DEFAULT NULL,
+  `role` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_role_id_uindex` (`id`),
+  UNIQUE KEY `user_role_username_uindex` (`username`),
+  KEY `user_role_user_id_fk` (`userid`),
+  CONSTRAINT `user_role_user_id_fk` FOREIGN KEY (`userid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_role`
+--
+
+LOCK TABLES `user_role` WRITE;
+/*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
+INSERT INTO `user_role` VALUES (1,1,'kyang@hotmail.com','admin'),(2,2,'rtango@hotmail.com','member'),(3,3,'mjones@hotmail.com','registered'),(4,4,'kterry@hotmail.com','member'),(5,5,'shelm@hotmail.com','member');
+/*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+

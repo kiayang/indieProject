@@ -1141,13 +1141,11 @@
     <column id="276" parent="237" name="username">
       <Position>3</Position>
       <DataType>varchar(40)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="277" parent="237" name="role">
       <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="278" parent="237" name="user_role_id_uindex">

@@ -47,7 +47,6 @@ public class GenericDAO<T>{
         logger.debug("Get all rows from entity : " + list);
         session.close();
         return list;
-
     }
 
     /**

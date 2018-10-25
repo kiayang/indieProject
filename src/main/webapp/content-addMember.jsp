@@ -25,7 +25,7 @@
 <td><input type="text"name="lastname"required pattern="[a-zA-Z0-9-]+"></td>
 </td>
 <td>Birthdate:</td>
-<td><input type="text"name="birthdate"maxlength="11"size="10"required pattern="\d{1,2}/\d{1,2}/\d{4}"Title="Date mm/dd/yyyy is required."></td>
+<td><input type="text"name="birthdate"maxlength="11"size="10"required pattern="\d{1,4}-\d{1,2}-\d{2}"Title="Date YYYY-MM-DD is required."></td>
 </tr>
 </table>
 
@@ -56,7 +56,7 @@
 <table  bgcolor="#E1E8F2"width="100%">
 <tr>
 <td>Email:</td>
-<td align="left"><input type="text"name="email"maxlength="45"size="45"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"title="Invalid email address"></td>
+<td align="left"><input type="text"name="email"maxlength="40"size="40"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"title="Invalid email address"></td>
 <td>Phone:</td>
 <td align="left"><input type="text"name="phone"></td>
 </tr>
@@ -71,14 +71,14 @@
                                                         Password:
 </td>
 <td>
-<input type="text"name="password"maxlength="30"size="30"required pattern=".{6,}"title="Password must be 6 characters or more!">
+<input type="text"name="password"maxlength="20"size="20"required pattern=".{6,}"title="Password must be 6 characters or more!">
 
 </td>
 <td>
                                                         Confirm Password:
 </td>
 <td>
-<input type="text"name="password"maxlength="30"size="30"required pattern=".{6,}"title="Password must be 6 characters or more!">
+<input type="text"name="password"maxlength="20"size="20"required pattern=".{6,}"title="Password must be 6 characters or more!">
 
 </td>
 </tr>

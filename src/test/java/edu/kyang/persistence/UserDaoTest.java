@@ -63,7 +63,7 @@ public class UserDaoTest {
     @Test
     void insertSuccess() {
 
-        UserBean newUser = new UserBean(6,"tmocha@gmail.com","active","password6","Tina","Mocha","L", LocalDate.parse("1968-01-01"),"34233 Sate St","WI","24323","6898889898");
+        UserBean newUser = new UserBean("tmocha@gmail.com","active","password6","Tina","Mocha","L", LocalDate.parse("1968-01-01"),"34233 Sate St","WI","24323","6898889898");
         int id = genericDao.insert(newUser);
         assertNotEquals(0,id);
         UserBean insertedUsr = (UserBean) genericDao.getById(id);
