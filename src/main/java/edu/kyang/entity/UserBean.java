@@ -18,6 +18,7 @@ public class UserBean {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "userid")
     private int id;
     private String username;
     @Column(name = "user_status")
@@ -42,9 +43,8 @@ public class UserBean {
      * UserProfile entity to find the configuration for the JoinColumn/ForeignKey column.
      */
     //@JoinColumn(name = "userid", insertable = false, updatable = false)
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "user")
+    //@OneToOne(fetch = FetchType.LAZY,cascade =  CascadeType.ALL,mappedBy = "user")
+    @OneToOne(mappedBy="userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private UserRoleBean userRole;
 
     public UserBean() {

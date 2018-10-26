@@ -969,7 +969,7 @@
       <ColNames>id</ColNames>
       <UnderlyingIndexName>event_eventid_uindex</UnderlyingIndexName>
     </key>
-    <column id="245" parent="235" name="id">
+    <column id="245" parent="235" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1041,7 +1041,7 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="257" parent="235" name="user_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1052,11 +1052,11 @@
     </index>
     <key id="259" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="260" parent="235" name="user_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>
     <key id="261" parent="235" name="user_username_uindex">
@@ -1118,7 +1118,7 @@
       <ColNames>userid</ColNames>
       <RefSchemaName>indie</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>userid</RefColNames>
     </foreign-key>
     <foreign-key id="273" parent="236" name="user_event_event_id_fk">
       <ColNames>eventid</ColNames>
@@ -1126,7 +1126,7 @@
       <RefTableName>event</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="274" parent="237" name="id">
+    <column id="274" parent="237" name="role_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1149,7 +1149,7 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="278" parent="237" name="user_role_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1164,11 +1164,11 @@
     </index>
     <key id="281" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="282" parent="237" name="user_role_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
     <key id="283" parent="237" name="user_role_username_uindex">
@@ -1179,7 +1179,7 @@
       <ColNames>userid</ColNames>
       <RefSchemaName>indie</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>userid</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>

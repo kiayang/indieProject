@@ -5,12 +5,21 @@
   Time: 7:37 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
 <html>
-<head>
-    <title>New Member Added</title>
-</head>
+<%@ include file="head-tag.jsp"%>
 <body>
-<h1>New Member has been added, you will be contacted soon! Thank you for registering!</h1>
+
+<div id="wrap" style="background-color:#c8d3c3">
+
+    <%@ include file="header.jsp"%>
+
+    <%@ include file="content-addMemberResult.jsp"%>
+
+    <%@ include file="footer.jsp"%>
+
+</div>
 </body>
 </html>
+

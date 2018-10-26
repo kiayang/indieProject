@@ -929,7 +929,7 @@
     </collation>
     <table id="234" parent="5" name="user"/>
     <table id="235" parent="5" name="user_role"/>
-    <column id="236" parent="234" name="id">
+    <column id="236" parent="234" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1001,7 +1001,7 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="248" parent="234" name="user_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1012,18 +1012,18 @@
     </index>
     <key id="250" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="251" parent="234" name="user_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>userid</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>
     <key id="252" parent="234" name="user_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_username_uindex</UnderlyingIndexName>
     </key>
-    <column id="253" parent="235" name="id">
+    <column id="253" parent="235" name="role_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1046,7 +1046,7 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="257" parent="235" name="user_role_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1061,11 +1061,11 @@
     </index>
     <key id="260" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="261" parent="235" name="user_role_id_uindex">
-      <ColNames>id</ColNames>
+      <ColNames>role_id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
     <key id="262" parent="235" name="user_role_username_uindex">
@@ -1076,7 +1076,7 @@
       <ColNames>userid</ColNames>
       <RefSchemaName>indie_test</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>userid</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>

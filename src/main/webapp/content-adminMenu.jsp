@@ -19,7 +19,7 @@
 </form>
 
 <tr>
-<td with="80%">
+<td with="100%">
 <table  bgcolor="#E1E8F2" width="100%">
 <tr>
 <td>

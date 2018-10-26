@@ -10,9 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 /**
  * A simple servlet to welcome the user.
@@ -24,9 +27,14 @@ import java.time.LocalDate;
 
 public class AddMemberServlet extends HttpServlet {
 
+    //private final Logger log = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        HttpSession httpSession = request.getSession();
+
         // Allocate a output writer to write the response message into the network socket
         /*
         PrintWriter out = response.getWriter();
@@ -46,7 +54,6 @@ public class AddMemberServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String status = "new";
         String userRole = "register";
-        String returnMessage;
 /*
         out.println("******************************");
         out.println("email = " + email);
@@ -54,58 +61,23 @@ public class AddMemberServlet extends HttpServlet {
         out.println("******************************");
         out.close();
         */
+
         GenericDAO userDao = new GenericDAO(UserBean.class);
         GenericDAO userRoleDao = new GenericDAO(UserRoleBean.class);
 
         UserBean userBean = new UserBean(email,status,password,firstname,lastname,middlename,birthdate,address,state,zipcode,phone);
-        UserRoleBean userRoleBean = new UserRoleBean(email,userRole,userBean);
+        UserRoleBean userRoleBean = new UserRoleBean(userBean,email,userRole);
 
-        // Set child reference(userRole) in parent entity(user)
-        //userBean.setUserRole(userRoleBean);
+        userDao.insert(userBean);
+        userRoleDao.insert(userRoleBean);
 
-        // Set parent reference(user) in child entity(userRole)
-        //userRoleBean.setUser(userBean);
-
-        // Save Parent Reference (which will save the child as well)
-        //userRoleDao.saveOrUpdate(userBean);
-        //userDao.saveOrUpdate(userBean);
-        userDao.saveOrUpdate(userBean);
-
-        /*
-        // Create a User instance
-                User user = new User("Rajeev", "Singh", "rajeev@callicoder.com",
-                "MY_SUPER_SECRET_PASSWORD");
-
-        Calendar dateOfBirth = Calendar.getInstance();
-        dateOfBirth.set(1992, 7, 21);
-
-        // Create a UserProfile instance
-        UserProfile userProfile = new UserProfile("+91-8197882053", Gender.MALE, dateOfBirth.getTime(),
-                "747", "2nd Cross", "Golf View Road, Kodihalli", "Bangalore",
-                "Karnataka", "India", "560008");
-
-
-        // Set child reference(userProfile) in parent entity(user)
-        user.setUserProfile(userProfile);
-
-        // Set parent reference(user) in child entity(userProfile)
-        userProfile.setUser(user);
-
-        // Save Parent Reference (which will save the child as well)
-        userRepository.save(user);
-
-        //=========================================*/
-
-
-        /*
-        if (req.getParameter("submit").equals("search")){
-            req.setAttribute("users", genericDao.getById(req.getParameter("searchTerm")));
-
-        }else {
-            req.setAttribute("users", genericDao.getAll());
-        }
-        */
         //forward to memberResults.jsp page
+
+        //log.info(email + " member added!");
+        String message = "User " + email + " has been registered as a member and will be contacted soon!";
+        httpSession.setAttribute("returnmessage", message);
+        //httpSession.setAttribute("returnmessage", message);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/addMemberResult.jsp");
         dispatcher.forward(request, response);
     }

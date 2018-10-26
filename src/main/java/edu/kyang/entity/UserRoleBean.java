@@ -14,26 +14,30 @@ public class UserRoleBean {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "role_id")
     private int id;
 
-    private int userid;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="userid")
+    private UserBean userid;
 
     private String username;
 
     @Column(name = "role")
     private String userRole;
 
+    /*
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)
-    private UserBean user;
+    @JoinColumn(name = "id", nullable = false)*/
+    //private UserBean user;
 
     public UserRoleBean() {
     }
 
-    public UserRoleBean(String username, String userRole, UserBean user) {
+    public UserRoleBean(UserBean userid, String username, String userRole) {
+        this.userid = userid;
         this.username = username;
         this.userRole = userRole;
-        this.user = user;
     }
 
     @Override
@@ -43,12 +47,11 @@ public class UserRoleBean {
         UserRoleBean that = (UserRoleBean) o;
         return id == that.id &&
                 userid == that.userid &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(userRole, that.userRole);
+                Objects.equals(username, that.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userid, username, userRole);
+        return Objects.hash(id, userid, username);
     }
 }
