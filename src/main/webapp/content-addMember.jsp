@@ -5,94 +5,46 @@
   Time: 11:03 PM
   To change this template use File | Settings | File Templates.
 --%>
-<br/>
-<h1>Family Member New Registration:</h1>
+<form name="regForm" action="addMemberServlet" onsubmit="return validateForm()" method="post">
 
-<form name="registrationForm"action="addMemberServlet"method="post">
-<table width="100%">
+<fieldset id="memberInfo">
+<legend>Member Information</legend>
 
-<tr>
-<td>
+    <label for="firstname">First Name *</label>
+    <input name="firstname" id="firstname" maxlength="25" size="50" required pattern="[a-zA-Z0-9-]+"/>
 
-<table bgcolor="#E1E8F2"width="60%">
-<tr>
-<td>
-<td>First Name:</td>
-<td><input type="text"name="firstname"required pattern="[a-zA-Z0-9-]+"></td>
-<td>MI:</td>
-<td><input type="text"name="middlename"maxlength="4"size="2"></td>
-<td>Last Name:</td>
-<td><input type="text"name="lastname"required pattern="[a-zA-Z0-9-]+"></td>
-</td>
-<td>Birthdate:</td>
-<td><input type="text"name="birthdate"maxlength="11"size="10"required pattern="\d{1,4}-\d{1,2}-\d{2}"Title="Date YYYY-MM-DD is required."></td>
-</tr>
-</table>
+    <label for="lastname">Last Name *</label>
+    <input name="lastname" id="lastname" maxlength="35" size="50" required pattern="[a-zA-Z0-9-]+"/>
 
-</td>
-</tr>
-<tr>
-<td>
-<table  bgcolor="#E1E8F2"width="60%">
-<tr>
-<td>Address:</td>
-<td><input type="text"name="address"size="60"></td>
-</tr>
-</table>
-<table bgcolor="#E1E8F2"width="60%">
-<tr>
-<td>City:</td>
-<td><input type="text"name="city"width="2"></td>
-<td>State:</td>
-<td><input type="text"name="state"maxlength="2"size="2"></td>
-<td>Zip Code:</td>
-<td><input type="text"name="zipcode"></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<table  bgcolor="#E1E8F2"width="100%">
-<tr>
-<td>Email:</td>
-<td align="left"><input type="text"name="email"maxlength="40"size="40"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"title="Invalid email address"></td>
-<td>Phone:</td>
-<td align="left"><input type="text"name="phone"></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<table  bgcolor="#E1E8F2"width="60%">
-<tr>
-<td>
-                                                        Password:
-</td>
-<td>
-<input type="text"name="password"maxlength="20"size="20"required pattern=".{6,}"title="Password must be 6 characters or more!">
+    <label for="middlename">Middle Name</label>
+    <input name="middlename" id="middlename" maxlength="10" size="50"/>
 
-</td>
-<td>
-                                                        Confirm Password:
-</td>
-<td>
-<input type="text"name="password"maxlength="20"size="20"required pattern=".{6,}"title="Password must be 6 characters or more!">
+    <label for="birthdate">Birthdate *</label>
+    <input name="birthdate" id="birthdate" maxlength="10" size="50" required pattern="\d{1,4}-\d{1,2}-\d{2}" Title="Date yyyy-mm-dd is required."/>
 
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td align="center">
-<input type="submit"value="Submit">
-<input type="reset"value="Clear">
-<input type="button"value="Go Back"onclick="history.back()">
-</td>
-</tr>
+    <label for="address">Address</label>
+    <input name="address" id="address" maxlength="35" size="50"/>
 
-</table>
+    <label for="state">State</label>
+    <input name="state" id="state" maxlength="2" size="50"/>
+
+    <label for="zipcode">Zip Code</label>
+    <input name="zipcode" id="zipcode" maxlength="12" size="50"/>
+
+    <label for="phone">Phone</label>
+    <input name="phone" id="phone" maxlength="12" size="50"/>
+
+    <label for="email">Email *</label>
+    <input name="email" id="email" maxlength="40" size="50" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address"/>
+
+    <label for="password">Password *</label>
+    <input name="password" id="password" maxlength="20" size="50" required pattern=".{6,}" title="Password must be 6 characters or more!"/>
+
+</fieldset>
+
+<p>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</p>
+
 </form>
-

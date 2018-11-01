@@ -6,8 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
+<%@include file="taglib.jsp"%>
+<c:set var="title" value="Search Results" />
+<%@include file="head-tag.jsp"%>
+
 <html>
-<%@ include file="head-tag.jsp"%>
 <body>
 
 <div id="wrap" style="background-color:#c8d3c3">

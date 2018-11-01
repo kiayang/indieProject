@@ -26,10 +26,7 @@
 <td align="left" ><input type="text" name="eventname"  maxlength="30" size="30"></td>
 </tr>
 <tr>
-<td colspan="2" align="center">
-<input type="submit" value="Search">
-<input type="reset" value="Reset">
-<td>
+
 </tr>
 </table>
 </td>

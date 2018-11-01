@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<%@ include file="head-tag.jsp"%>
+<head>
+    <title>Login</title>
+    <%@include file="head-tag.jsp"%>
+</head>
 <body>
 
 <div id="wrap" style="background-color:#c8d3c3">
