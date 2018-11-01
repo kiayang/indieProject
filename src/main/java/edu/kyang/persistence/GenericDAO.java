@@ -163,6 +163,27 @@ public class GenericDAO<T>{
         return list;
     }
 
+    /**
+     * This generic method That gets a single object by property name and a value
+     * @param propertyName entity property name
+     * @param value value to query by
+     * @return entity
+     */
+    public T getByPropertyEqualUnique(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for user with " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery( type );
+        Root<T> root = query.from( type );
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        T entity = session.createQuery( query ).getSingleResult();
+
+        session.close();
+        return entity;
+    }
+
 
 
 

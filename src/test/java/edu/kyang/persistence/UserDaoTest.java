@@ -111,4 +111,11 @@ public class UserDaoTest {
         Assertions.assertEquals(1, users.size());
     }
 
+    @Test
+    void getByPropertyEqualUnique() {
+        UserBean user = (UserBean) genericDao.getByPropertyEqualUnique("username", "kyang@hotmail.com");
+        assertEquals("kia", user.getFirstname() );
+    }
+
+
 }

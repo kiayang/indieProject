@@ -3,7 +3,6 @@ import edu.kyang.entity.UserBean;
 import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,11 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 /**
  * A simple servlet to welcome the user.
@@ -26,7 +21,7 @@ import java.util.logging.Logger;
         urlPatterns = {"/addMemberServlet"}
 )
 
-public class AddMemberServlet extends HttpServlet {
+public class AddMemberServletOld extends HttpServlet {
 
     //private final Logger log = LogManager.getLogger(this.getClass());
 
@@ -55,7 +50,6 @@ public class AddMemberServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String status = "new";
         String userRole = "register";
-        String message;
 /*
         out.println("******************************");
         out.println("email = " + email);
@@ -64,36 +58,23 @@ public class AddMemberServlet extends HttpServlet {
         out.close();
         */
 
-        GenericDAO userDAO = new GenericDAO(UserBean.class);
-        GenericDAO userRoleDAO = new GenericDAO(UserRoleBean.class);
+        GenericDAO userDao = new GenericDAO(UserBean.class);
+        GenericDAO userRoleDao = new GenericDAO(UserRoleBean.class);
 
-        List<UserBean> userNames = userDAO.getByPropertyEqual("username", email);
+        UserBean userBean = new UserBean(email,status,password,firstname,lastname,middlename,birthdate,address,state,zipcode,phone);
+        UserRoleBean userRoleBean = new UserRoleBean(userBean,email,userRole);
 
-        int usersBoolean = userNames.size();
+        userDao.insert(userBean);
+        userRoleDao.insert(userRoleBean);
 
-        if (usersBoolean == 0) {
+        //forward to memberResults.jsp page
 
-            UserBean userBean = new UserBean(email, status, password, firstname, lastname, middlename, birthdate, address, state, zipcode, phone);
-            UserRoleBean userRoleBean = new UserRoleBean(userBean,email,userRole);
+        //log.info(email + " member added!");
+        String message = "User " + email + " has been registered as a member and will be contacted soon!";
+        httpSession.setAttribute("returnmessage", message);
+        //httpSession.setAttribute("returnmessage", message);
 
-            userDAO.insert(userBean);
-            userRoleDAO.insert(userRoleBean);
-
-            //forward to memberResults.jsp page
-
-            //log.info(email + " member added!");
-            message = "User " + email + " has been registered as a member and will be contacted soon!";
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/addMemberResult.jsp");
-            dispatcher.forward(request, response);
-        }else {
-            message = "User name " + email + " has already been registered! Enter a different user name!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/addMemberResult.jsp");
-            dispatcher.forward(request, response);
-        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/addMemberResult.jsp");
+        dispatcher.forward(request, response);
     }
 }
-
