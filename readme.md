@@ -1,6 +1,6 @@
 ### Problem Statement
 
-Test Our funerals are very costly due to religious belief and cultural rituals that have to be perform when a person dies. The cost averages about 30 to 40 thousand per funeral.  Due to this huge expense, the Yang Family have a funeral hardship contribution membership where the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
+Our funerals are very costly due to religious belief and cultural rituals that have to be perform when a person dies. The cost averages about 30 to 40 thousand per funeral.  Due to this huge expense, the Yang Family have a funeral hardship contribution membership where the families who join in the contribution are required to contribute $15 person to help with funeral expenses. 
 
 In the past keeping track of family members have been with a word document and with over 400 members it is a little bit hard to keep track of the members in the program.  We have to keep track of things like who died and who is still living as well has payments that have been made. Tallying up the contributions have always been done by hands and sending notifications to members are time consuming. On top of that members are located all over the states and keeping track of all members in the different states is hard and have to be done manually.
 
