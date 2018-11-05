@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div id="wrap" style="background-color:#c8d3c3">
+<div class="container" id="wrap" style="background-color:#c8d3c3">
 
     <%@ include file="header.jsp"%>
 

@@ -7,7 +7,7 @@
 --%>
 <h3>Click on the following buttons to view member profile or member events:</h3>
 
-<form name="searchMemberForm"action="searchMemberServlet"method="post">
+<form name="searchMemberForm"action="searchUserProfileServlet"method="post">
 
 <tr>
 <td align="center">

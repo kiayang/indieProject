@@ -5,7 +5,7 @@
   Time: 11:49 PM
   To change this template use File | Settings | File Templates.
 --%>
-<form name="regForm" action="searchMemberServlet" onsubmit="return validateForm()" method="post">
+<form name="regForm" action="searchuserProfileServlet" onsubmit="return validateForm()" method="post">
 <table width="100%">
 
 

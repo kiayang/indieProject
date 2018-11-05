@@ -9,13 +9,6 @@
 <div id="returnmessage" class="container-fluid" style="margin:0px;color:green;"><h2>${returnMessage}</h2></div>
 <div id="returnmessage" class="container-fluid" style="margin:0px;color:red;"><h2>${errorMessage}</h2></div>
 
-<br/>
-
-<p>
-    <a href="index.jsp">
-        <button class="btn">Home Page</button>
-    </a>
-</p>
 
 
 

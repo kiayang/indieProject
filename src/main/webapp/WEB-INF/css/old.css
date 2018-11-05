@@ -1,9 +1,16 @@
-* {
-    box-sizing: border-box;
+
+body {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    font-family: 'Roboto Condensed', sans-serif; font-size: .90em; padding: 0; margin: 0; }
+img {
+    border-style: groove;
 }
 a { color: #777; text-decoration: none;}
 a:hover { color: #555; text-decoration: none;}
 li { color: #036DA7; list-style-type: none; margin-bottom: 6px; }
+#wrap { margin: 1% auto; width: 1300px; background: #fff; }
 #header { height: 80px; background: #222; margin: 0 0 10px 0;}
 #header a { color: #fff; text-decoration: none;}
 #header h1 {color: #fff; font-size: 2em; padding: 20px 0 0 20px; font-weight: 100;}
@@ -19,77 +26,9 @@ li { color: #036DA7; list-style-type: none; margin-bottom: 6px; }
 #content p { margin: 10px 0 20px 0; line-height: 25px;}
 #footer { clear: both; color: #eee; background: #222; text-align: left; margin: 20px 0px 0px 0px; padding: 25px 20px; font-size: .9em; }
 #footer a { color : #ddd; text-decoration: none; }
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
-
-
-
-input[type="submit"], input[type="reset"]{
-    display: inline;
-    float: nonee;
-    height: 40px;
-    width: 100px;
-
-    background-color: DodgerBlue; /* Blue background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 12px 20px; /* Some padding */
-    font-size: 12px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-}
-
-input[type=submit]:hover, input[type=reset]:hover {
-    background-color: #45a049;
-}
-
-form p{
-    text-align: center;
-}
-
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-.col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
-
-.col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-    }
-}
-
+.post-span {color:#ccc; font-size:12px;}
+.post-img{margin-top:10px;}
+/* Style buttons */
 .btn {
     background-color: DodgerBlue; /* Blue background */
     border: none; /* Remove borders */
@@ -102,3 +41,53 @@ form p{
 .btn:hover {
     background-color: RoyalBlue;
 }
+fieldset{
+    background-color: #cbeed4;
+    border: 1px solid rgb(3, 61, 92);
+    float: left;
+    margin: 10px 0px 10px 2.5%;
+    width: 80%;
+}
+
+legend{
+    background-color: #c8d3c3;
+    color: white;
+    padding: 3px 0px;
+    text-indent: 5px;
+    width: 50%;
+}
+
+label{
+    clear: left;
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    margin: 5px 4% 7px 5px;
+    width: 20%;
+}
+
+input{
+    display: block;
+    float: left;
+    font-size: 0.9em;
+    margin: 5px 0px;
+}
+
+form p{
+    text-align: center;
+}
+
+input[type="submit"], input[type="reset"]{
+    display: inline;
+    float: none;
+    height: 40px;
+    width: 100px;
+
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 0px 0px; /* Some padding */
+    font-size: 12px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+

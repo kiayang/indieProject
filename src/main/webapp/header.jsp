@@ -9,5 +9,5 @@
 <div id="headerlinks">
 <h2>By Kia Yang</h2>
 </div>
-<h1>Family Hardship Contribution Website</h1>
+<h1><a href="index.jsp">Family Hardship Contribution Website</a></h1>
 </div>

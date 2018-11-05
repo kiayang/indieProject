@@ -18,10 +18,10 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/searchMemberServlet"}
+        urlPatterns = {"/searchUserProfileServlet"}
 )
 
-public class SearchMemberServlet extends HttpServlet {
+public class SearchUserProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -53,6 +53,9 @@ public class SearchMemberServlet extends HttpServlet {
         if (req.getParameter("submit").equals("viewProfile")){
             req.setAttribute("user", user);
             //out.println("View Profile!");
+            //forward to memberResults.jsp page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUserProfile.jsp");
+            dispatcher.forward(req, resp);
         }else {
             //req.setAttribute("events", events);
             //req.setAttribute("eventNumber", events.size())
@@ -60,9 +63,5 @@ public class SearchMemberServlet extends HttpServlet {
         }
 
         //out.close();
-
-        //forward to memberResults.jsp page
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/memberResults.jsp");
-        dispatcher.forward(req, resp);
     }
 }
