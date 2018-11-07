@@ -1,5 +1,6 @@
 package edu.kyang.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -44,6 +45,7 @@ public class UserBean {
      */
     //@JoinColumn(name = "userid", insertable = false, updatable = false)
     //@OneToOne(fetch = FetchType.LAZY,cascade =  CascadeType.ALL,mappedBy = "user")
+    @JsonIgnore
     @OneToOne(mappedBy="userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private UserRoleBean userRole;
 
