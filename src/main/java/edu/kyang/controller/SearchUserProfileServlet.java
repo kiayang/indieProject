@@ -60,6 +60,8 @@ public class SearchUserProfileServlet extends HttpServlet {
             //req.setAttribute("events", events);
             //req.setAttribute("eventNumber", events.size())
             //out.println("View Events!");
+            //RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUserEvents.jsp");
+            //dispatcher.forward(req, resp);
         }
 
         //out.close();

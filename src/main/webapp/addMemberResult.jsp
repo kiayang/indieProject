@@ -1,25 +1,51 @@
 <%--
   Created by IntelliJ IDEA.
   User: kia
-  Date: 10/23/2018
+  Date: 10/20/2018
   Time: 7:37 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <!DOCTYPE html>
 <html>
-<%@ include file="head-tag.jsp"%>
+<head>
+    <title>Index</title>
+    <%@include file="head.jsp"%>
+</head>
 <body>
 
-<div id="wrap" style="background-color:#c8d3c3">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp">Family Hardship Contribution Website</a>
+        </div>
+    </div>
+</nav>
 
-    <%@ include file="header.jsp"%>
+<div class="container-fluid text-center">
 
-    <%@ include file="content-addMemberResult.jsp"%>
+    <div class="row content">
 
-    <%@ include file="footer.jsp"%>
+        <div class="col-sm-6 text-left">
+            <br/><br/>
+            <p class="bg-success"><bold>${returnMessage}</bold></p>
+            <p class="bg-danger"><bold>${errorMessage}</bold></p>
 
+        </div>
+
+        <div class="col-sm-6">
+
+            <img class="img-responsive" src="images/together.jpg" alt="quote" style="width:100%">
+
+        </div>
+
+    </div>
 </div>
+
+<footer class="container-fluid text-center">
+    <p>Footer Text</p>
+</footer>
+
 </body>
 </html>
+
 

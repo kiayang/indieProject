@@ -5,12 +5,52 @@
   Time: 12:13 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page session="true"%>
 
-User '<%=request.getRemoteUser()%>' has been logged out.
 
-<% session.invalidate(); %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <%@include file="head.jsp"%>
+</head>
+<body>
 
-<br/><br/>
-<a href="index.jsp">Click here to go to home page</a>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp">Family Hardship Contribution Website</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+
+    <div class="row content">
+
+        <div class="col-sm-6 text-left">
+
+            <%@ page session="true"%>
+            <br/><br/>
+            <p class="bg-warning"><bold>User '<%=request.getRemoteUser()%>' has been logged out.</bold></p>
+
+            <% session.invalidate(); %>
+
+        </div>
+
+        <div class="col-sm-6">
+
+            <img class="img-responsive" src="images/together.jpg" alt="quote" style="width:100%">
+
+        </div>
+
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+
 
