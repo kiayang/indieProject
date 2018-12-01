@@ -1,67 +1,55 @@
-<%@include file="taglib.jsp"%>
-<c:set var="title" value="Search Results" />
-<%@include file="head1.jsp"%>
-
-<script type="text/javascript" class="init">
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-    } );
-</script>
-
+<!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Bootstable Plugin Example</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css">
+<style>
+.container { margin:150px auto;}
+</style>
+</head>
 
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.jsp">Family Hardship Contribution Website</a>
-        </div>
-
-        <ul class="nav navbar-nav navbar-right">
-
-            <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-        </ul>
-    </div>
-</nav>
-
-
-<div class="container-fluid">
-
-    <h2>Member Profile:</h2>
-
-    <table id="userTable" class="display" cellspacing="0" width="100%">
-        <thead>
-        <th>User Name</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>MI</th>
-        <th>Birthdate</th>
-        <th>Address</th>
-        <th>State</th>
-        <th>Zip code</th>
-        <th>Phone</th>
-        <th>Password</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td>${user.getUsername()}</td>
-            <td>${user.getFirstname()}</td>
-            <td>${user.getLastname()}</td>
-            <td>${user.getMiddlename()}</td>
-            <td>${user.getDateofbirth()}</td>
-            <td>${user.getAddress()}</td>
-            <td>${user.getState()}</td>
-            <td>${user.getZipcode()}</td>
-            <td>${user.getPhone()}</td>
-            <td>${user.getPassword()}</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <%@ include file="footer-logout.jsp"%>
+<div class="container">
+<h1>jQuery Bootstable Plugin Example</h1>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>Doe</td>
+<td>john@example.com</td>
+</tr>
+<tr>
+<td>Mary</td>
+<td>Moe</td>
+<td>mary@example.com</td>
+</tr>
+<tr>
+<td>July</td>
+<td>Dooley</td>
+<td>july@example.com</td>
+</tr>
+</tbody>
+</table>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="bootstable.js"></script>
+<script>
+ $('table').SetEditable();
+</script>
 
 </body>
 </html>
-

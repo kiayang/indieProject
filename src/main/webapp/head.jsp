@@ -40,7 +40,7 @@
         }
 
         .button {
-        background-color: #cbeed4;
+        background-color: #a6d1ee;
         border: none;
         border-radius: 12px;
         color: #0a0a0a;
@@ -67,6 +67,10 @@
         border: none;
         background-color: #c8d3c3;
         color: #1d1d1d;
+        }
+
+        .pt-3-half {
+        padding-top: 1.4rem;
         }
 </style>
 

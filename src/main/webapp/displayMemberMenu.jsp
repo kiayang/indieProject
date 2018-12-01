@@ -26,9 +26,9 @@
         <div class="col-sm-6 text-left">
             <h2>Welcome to the Member Page!</h2>
             <br/>
-            <h5>Click on button below to view member profile or member events:</h5>
+            <h4>Click button below to view member profile or member events.</h4>
             <br/>
-            <form name="searchMemberForm"action="searchUserProfileServlet"method="post">
+            <form name="searchMemberForm"action="searchUserMemberServlet"method="post">
 
                 <tr>
                     <td align="center">

@@ -43,7 +43,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Member Menu</web-resource-name>
-      <url-pattern>/memberMenu.jsp</url-pattern>
+      <url-pattern>/displayMemberMenu.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>member</role-name>
@@ -57,7 +57,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Admin Menu</web-resource-name>
-      <url-pattern>/adminMenu.jsp</url-pattern>
+      <url-pattern>/displayAdminMenu.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>

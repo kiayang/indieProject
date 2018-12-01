@@ -33,7 +33,7 @@
                 <label for="firstname">Enter First Name *</label>
             </div>
             <div class="col-75" style="">
-                <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Your name.." maxlength="25" size="40" required pattern="[a-zA-Z0-9-]+"/>
+                <input type="text" id="firstname" name="firstname" placeholder="Your name.." maxlength="25" size="40" required pattern="[a-zA-Z0-9-]+"/>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                 <label for="lastname">Enter Last Name *</label>
             </div>
             <div class="col-75">
-                <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Your last name.." maxlength="35" size="40" required pattern="[a-zA-Z0-9-]+"/>
+                <input type="text" id="lastname" name="lastname" placeholder="Your last name.." maxlength="35" size="40" required pattern="[a-zA-Z0-9-]+"/>
             </div>
         </div>
 
