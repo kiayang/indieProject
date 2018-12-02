@@ -59,7 +59,7 @@
 
                 <div class="col-sm-2">
                     <a href="addMember.jsp" class="btn btn-success">
-                        <span>Add New Employee</span></a>
+                        <span>Add New Member</span></a>
                 </div>
             </div>
         </div>
@@ -104,29 +104,75 @@
         <div id="editEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form name="updateMemberForm"action="updateMemberServlet"method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Member</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
+
                         <div class="modal-body">
+
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" value="${user.getUsername()}" required>
+                                <input type="hidden" class="form-control" id="userid" name="userid" value="${user.getId()}">
                             </div>
+
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
+                                <label>User name</label>
+                                <input type="email" class="form-control" id="username" name="username" value="${user.getUsername()}" readonly>
                             </div>
+
+                            <div class="form-group">
+                                <label>User Status</label>
+                                <input type="text" class="form-control" id="status" name="status" value="${user.getStatus()}" maxlength="10" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>First name</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" value="${user.getFirstname()}" maxlength="25" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" value="${user.getLastname()}" maxlength="35" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Middle name</label>
+                                <input type="text" class="form-control" id="middlename" name="middlename" value="${user.getMiddlename()}" maxlength="10">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="text" class="form-control" id="dateofbirth" name="dateofbirth" value="${user.getDateofbirth()}" maxlength="10" required pattern="\d{1,4}-\d{1,2}-\d{2}" required>
+                            </div>
+
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea class="form-control" required></textarea>
+                                <input type="text" class="form-control" id="address" name="address" value="${user.getAddress()}" maxlength="35">
                             </div>
+
+                            <div class="form-group">
+                                <label>State</label>
+                                <input type="text" class="form-control" id="state" name="state" value="${user.getState()}" maxlength="2">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Zip code</label>
+                                <input type="text" class="form-control" id="zipcode" name="zipcode" value="${user.getZipcode()}" maxlength="12">
+                            </div>
+
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" id="phone" name="phone" value="${user.getPhone()}" maxlength="12" required>
                             </div>
+
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" class="form-control" id="password" name="password" value="${user.getPassword()}" maxlength="20" required>
+                            </div>
+
                         </div>
+
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                             <input type="submit" class="btn btn-info" value="Save">
@@ -140,7 +186,7 @@
         <div id="deleteEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form name="deleteMemberForm"action="deleteMemberServlet"method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Delete Member</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -150,6 +196,9 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                         <div class="modal-footer">
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="username" name="username" value="${user.getUsername()}">
+                            </div>
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                             <input type="submit" class="btn btn-danger" value="Delete">
                         </div>

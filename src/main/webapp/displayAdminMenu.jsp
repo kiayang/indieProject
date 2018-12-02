@@ -29,24 +29,24 @@
             <table  bgcolor="#E1E8F2" width="100%">
                 <tr>
                     <td>
-                        <a href="searchMember.jsp" class="button">Search Member</a>
+                        <a href="adminSearchMember.jsp" class="button">Search Member</a>
                     </td>
 
                 <tr>
                     <td>
-                        <a href="searchMemberEvent.jsp" class="button">Search Member Event</a>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <a href="searchEvent.jsp" class="button">Search Event</a>
+                        <a href="adminSearchMemberEvent.jsp" class="button">Search Member Event</a>
                     </td>
 
                 </tr>
                 <tr>
                     <td>
-                        <a href="addEvent.jsp" class="button">Add Event</a>
+                        <a href="adminSearchEvent.jsp" class="button">Search Event</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="adminAddEvent.jsp" class="button">Add Event</a>
                     </td>
                     <td>
                     </td>

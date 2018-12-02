@@ -52,13 +52,13 @@ public class SearchUserAdminServlet extends HttpServlet {
             req.setAttribute("user", user);
             //out.println("View Profile!");
             //forward to memberResults.jsp page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUserProfile.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayManageMemberResults.jsp");
             dispatcher.forward(req, resp);
         }else {
             //req.setAttribute("events", events);
             //req.setAttribute("eventNumber", events.size())
             //out.println("View Events!");
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/viewUserEvents.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayMemberEventsResults.jsp");
             dispatcher.forward(req, resp);
         }
 
