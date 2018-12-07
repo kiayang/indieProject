@@ -7,6 +7,8 @@ INSERT INTO `user_role` VALUES (1,1,'kyang@hotmail.com','admin'),(2,2,'rtango@ho
 INSERT INTO `event` VALUES (1,'perry tang death','2018-09-10',15.00);
 INSERT INTO `user_event` VALUES (1,1,1,'paid','2018-10-05'),(2,2,1,'paid','2018-09-17'),(3,5,1,NULL,NULL);
 
+INSERT INTO `user` VALUES (1,'kyang@hotmail.com','active','password1','kia','yang','s','1973-08-05','123 main st','wi','53533','608-888-8788')
+INSERT INTO `user_role` VALUES (1,1,'kyang@hotmail.com','admin')
 
 delete from book;
 delete from author;

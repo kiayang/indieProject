@@ -28,7 +28,7 @@
             <br/>
             <h4>This page is used for searching members in the system. No entry will search for all members.</h4>
             <br/>
-            <form name="regForm" action="searchUserMemberServlet" onsubmit="return validateForm()" method="post">
+            <form name="regForm" action="adminSearchMemberServlet">
 
                 <div class="form-group">
 

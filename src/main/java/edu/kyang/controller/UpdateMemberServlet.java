@@ -2,6 +2,8 @@ package edu.kyang.controller;
 import edu.kyang.entity.UserBean;
 import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * A simple servlet to welcome the user.
+ * This servlet will update the member information.
  */
 
 @WebServlet(
@@ -25,54 +27,111 @@ import java.util.List;
 
 public class UpdateMemberServlet extends HttpServlet {
 
-    //private final Logger log = LogManager.getLogger(this.getClass());
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        logger.info("starting the update member servlet");
+        logger.info("*** Inside doPost Method ***");
+
         HttpSession httpSession = request.getSession();
 
-        // Allocate a output writer to write the response message into the network socket
-        PrintWriter out = response.getWriter();
-
-        //protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-        //Retrieve values from form
         String userid = request.getParameter("userid");
         String email = request.getParameter("username");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String middlename = request.getParameter("middlename");
-
-
         String password = request.getParameter("password");
-        LocalDate dateofbirth = LocalDate.parse(request.getParameter("dateofbirth"));
+        String dateofbirth = request.getParameter("dateofbirth");
         String address = request.getParameter("address");
-        String city = request.getParameter("city");
         String state = request.getParameter("state");
         String zipcode = request.getParameter("zipcode");
         String phone = request.getParameter("phone");
-        String status = "status";
+        String status = request.getParameter("status");
         String message;
 
+        logger.info("*** BEFORE Update ***");
+        logger.info("first name: " + firstname);
+        logger.info("last name: " + lastname);
+        logger.info("last name: " + dateofbirth);
 
-        out.println("******************************");
-        out.println("userid = " + userid);
-        out.println("username = " + email);
-        out.println("firstname = " + firstname);
-        out.println("lastname = " + lastname);
-        out.println("middlename = " + middlename);
+        GenericDAO userDAO = new GenericDAO(UserBean.class);
 
-        out.println("password = " + password);
-        out.println("dateofbirth = " + dateofbirth);
-        out.println("address = " + address);
-        out.println("state = " + state);
+        List<UserBean> users = userDAO.getByPropertyEqual("username", email);
 
-        out.println("zipcode = " + zipcode);
-        out.println("phone = " + phone);
-        out.println("status = " + status);
-        out.println("******************************");
-        out.close();
+        if (users.size() > 0){
+
+            int uID = users.get(0).getId();
+
+            logger.info("user id = " + uID);
+
+            UserBean userToUpdate = (UserBean)userDAO.getById(uID);
+
+            if ( firstname!=null && !firstname.isEmpty()  )	{
+                userToUpdate.setFirstname(firstname);
+            }
+
+            if ( lastname!=null && !lastname.isEmpty()  )	{
+                userToUpdate.setLastname(lastname);
+            }
+
+            if ( middlename!=null && !middlename.isEmpty()  )	{
+                userToUpdate.setMiddlename(middlename);
+            }
+
+            if ( password!=null && !password.isEmpty()  )	{
+                userToUpdate.setPassword(password);
+            }
+
+            if (!"9999-12-31".equals(dateofbirth)){
+
+                LocalDate dob = LocalDate.parse(dateofbirth);
+                userToUpdate.setDateofbirth(dob);
+            }
+
+
+            if ( address!=null && !address.isEmpty()  )	{
+                userToUpdate.setAddress(address);
+            }
+
+            if ( state!=null && !state.isEmpty()  )	{
+                userToUpdate.setState(state);
+            }
+
+            if ( zipcode!=null && !zipcode.isEmpty()  )	{
+                userToUpdate.setZipcode(zipcode);
+            }
+
+            if ( phone!=null && !phone.isEmpty()  )	{
+                userToUpdate.setPhone(phone);
+            }
+
+            if ( status!=null && !status.isEmpty()  )	{
+                userToUpdate.setStatus(status);
+            }
+
+            userDAO.saveOrUpdate(userToUpdate);
+            UserBean retrievedUser = (UserBean) userDAO.getById(uID);
+            String retrieveUserFname = retrievedUser.getFirstname();
+            logger.info("updated first name = " + retrieveUserFname);
+
+            String retrieveUserLname = retrievedUser.getLastname();
+            logger.info("updated last name = " + retrieveUserLname);
+            message = "User " + email + " has been updated successfully!!";
+            httpSession.setAttribute("returnMessage", message);
+            httpSession.setAttribute("errorMessage", " ");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+            dispatcher.forward(request, response);
+        }else{
+            logger.info("User not found");
+            message = "User name " + email + " is not found, try again!!";
+            httpSession.setAttribute("returnMessage", " ");
+            httpSession.setAttribute("errorMessage", message);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+            dispatcher.forward(request, response);
+        }
 
     }
 }

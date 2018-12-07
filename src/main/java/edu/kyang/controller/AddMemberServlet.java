@@ -19,7 +19,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
- * A simple servlet to welcome the user.
+ * This servlet will add add new members
  */
 
 @WebServlet(
@@ -85,13 +85,13 @@ public class AddMemberServlet extends HttpServlet {
             message = "User " + email + " has been registered as a member and will be contacted soon!";
             httpSession.setAttribute("returnMessage", message);
             httpSession.setAttribute("errorMessage", " ");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAddMemberReturnMessage.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }else {
             message = "User name " + email + " has already been registered! Enter a different user name!";
             httpSession.setAttribute("returnMessage", " ");
             httpSession.setAttribute("errorMessage", message);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAddMemberReturnMessage.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }
     }

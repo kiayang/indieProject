@@ -54,7 +54,7 @@ public class SearchMemberServlet extends HttpServlet {
             req.setAttribute("user", user);
             //out.println("View Profile!");
             //forward to memberResults.jsp page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayManageMemberResults.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayMemberResults.jsp");
             dispatcher.forward(req, resp);
         }else {
             //req.setAttribute("events", events);

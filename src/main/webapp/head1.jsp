@@ -30,8 +30,8 @@
             crossorigin="anonymous">
     </script>
 
-    <!-- jQuery slim -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.js"
+    <script src="https://code.jquery.com/jqu
+    <!-- jQuery slim -->ery-3.1.1.slim.js"
             integrity="sha256-5i/mQ300M779N2OVDrl16lbohwXNUdzL/R2aVUXyXWA="
             crossorigin="anonymous">
     </script>

@@ -75,6 +75,26 @@ public class UserRoleDaoTest {
     }
 
     /**
+     * Save or update successful.
+     */
+    @Test
+    void SaveOrUpdateSuccessful() {
+        String updateRole = "member";
+
+        //UserRoleBean userRole = (UserRoleBean) genericUserRoleDao.getByPropertyEqualUnique("username", "kyang4@hotmail.com");
+        List<UserRoleBean> userRoles = genericUserRoleDao.getByPropertyEqual("username", "kyang@hotmail.com");
+        //Assertions.assertEquals(1, userRoles.size());
+        //Assertions.assertEquals(1, userRoles.get(0).getId());
+
+        int roleid = userRoles.get(0).getId();
+        UserRoleBean userToUpdate = (UserRoleBean)genericUserRoleDao.getById(roleid);
+        userToUpdate.setUserRole(updateRole);
+        genericUserRoleDao.saveOrUpdate(userToUpdate);
+        UserRoleBean retrievedUserRole = (UserRoleBean) genericUserRoleDao.getById(roleid);
+        assertEquals("member", retrievedUserRole.getUserRole());
+    }
+
+    /**
      * Delete success.
      */
     @Test

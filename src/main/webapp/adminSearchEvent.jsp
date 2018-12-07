@@ -24,7 +24,7 @@
     <div class="row content">
 
         <div class="col-sm-6 text-left">
-            <h2>Welcome to the Search Member Page!</h2>
+            <h2>Welcome to the Search Event Page!</h2>
             <br/>
             <h4>This page is use for searching events in the system. More than one criteria can be entered to limit search.
                 No entry will search for all events.</h4>
