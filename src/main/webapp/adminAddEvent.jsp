@@ -43,7 +43,6 @@
                     <input class="form-control" name="eventFee" id="eventFee" type="text" pattern="^\d*(\.\d{2}$)?" size="4"
                             title="CDA Currency Format - no dollar sign and no comma(s) - cents (.##) are optional"
                             placeholder="Enter amount, no dollar sign and no comma(s) - cents (.##) are optional "/>
-
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

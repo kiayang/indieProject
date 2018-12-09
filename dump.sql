@@ -44,13 +44,13 @@ DROP TABLE IF EXISTS `event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `event` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(80) DEFAULT NULL,
   `event_date` date NOT NULL,
   `event_fee` double NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `event_eventid_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`event_id`),
+  UNIQUE KEY `event_event_id_uindex` (`event_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

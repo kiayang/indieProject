@@ -33,7 +33,7 @@ public class UpdateMemberServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        logger.info("starting the update member servlet");
+        logger.info("starting the Update Member Servlet");
         logger.info("*** Inside doPost Method ***");
 
         HttpSession httpSession = request.getSession();

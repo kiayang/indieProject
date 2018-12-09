@@ -2,6 +2,8 @@ package edu.kyang.controller;
 import edu.kyang.entity.UserBean;
 import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.jws.soap.SOAPBinding;
 import javax.servlet.RequestDispatcher;
@@ -15,8 +17,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 /**
  * This servlet will add add new members
@@ -28,12 +28,13 @@ import java.util.logging.Logger;
 
 public class AddMemberServlet extends HttpServlet {
 
-    //private final Logger log = LogManager.getLogger(this.getClass());
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        logger.info("starting the Add Member Servlet");
         HttpSession httpSession = request.getSession();
 
         // Allocate a output writer to write the response message into the network socket
@@ -79,9 +80,6 @@ public class AddMemberServlet extends HttpServlet {
             userDAO.insert(userBean);
             userRoleDAO.insert(userRoleBean);
 
-            //forward to memberResults.jsp page
-
-            //log.info(email + " member added!");
             message = "User " + email + " has been registered as a member and will be contacted soon!";
             httpSession.setAttribute("returnMessage", message);
             httpSession.setAttribute("errorMessage", " ");

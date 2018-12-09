@@ -20,6 +20,7 @@
         <!-- Maps User class (javabean/POJO/entity) to the user member table -->
         <mapping class="edu.kyang.entity.UserBean"/>
         <mapping class="edu.kyang.entity.UserRoleBean"/>
+        <mapping class="edu.kyang.entity.EventBean"/>
 
 
     </session-factory>
