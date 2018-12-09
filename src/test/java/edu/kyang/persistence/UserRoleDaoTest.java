@@ -47,7 +47,7 @@ public class UserRoleDaoTest {
     @Test
     void getAllSuccess() {
         List<UserRoleBean> users = genericUserRoleDao.getAll();
-        assertEquals(5, users.size());
+        assertEquals(13, users.size());
     }
 
     /**
@@ -119,7 +119,7 @@ public class UserRoleDaoTest {
     @Test
     void getByPropertyLikeSuccesss() {
         List<UserRoleBean> userRoles = genericUserRoleDao.getByPropertyLike("userRole", "member");
-        Assertions.assertEquals(3, userRoles.size());
+        Assertions.assertEquals(4, userRoles.size());
     }
 
     /**

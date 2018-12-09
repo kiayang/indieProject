@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * The type Event bean.
+ */
 @Entity(name = "EventBean")
 @Table(name = "event")
 @Data
@@ -17,6 +20,7 @@ public class EventBean {
     @GenericGenerator(name = "native", strategy = "native")
     @Column(name = "event_id")
     private int event_id;
+    private String event_userid;
     private String description;
     private LocalDate event_date;
     private BigDecimal event_fee;
@@ -33,10 +37,22 @@ public class EventBean {
     //@OneToOne(mappedBy="userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     //private UserRoleBean userRole;
 
+    /**
+     * Instantiates a new Event bean.
+     */
     public EventBean() {
     }
 
-    public EventBean(String description, LocalDate event_date, BigDecimal event_fee) {
+    /**
+     * Instantiates a new Event bean.
+     *
+     * @param event_userid the event userid
+     * @param description  the description
+     * @param event_date   the event date
+     * @param event_fee    the event fee
+     */
+    public EventBean(String event_userid, String description, LocalDate event_date, BigDecimal event_fee) {
+        this.event_userid = event_userid;
         this.description = description;
         this.event_date = event_date;
         this.event_fee = event_fee;
@@ -48,6 +64,7 @@ public class EventBean {
         if (o == null || getClass() != o.getClass()) return false;
         EventBean eventBean = (EventBean) o;
         return event_id == eventBean.event_id &&
+                Objects.equals(event_userid, eventBean.event_userid) &&
                 Objects.equals(description, eventBean.description) &&
                 Objects.equals(event_date, eventBean.event_date) &&
                 Objects.equals(event_fee, eventBean.event_fee);
@@ -55,13 +72,14 @@ public class EventBean {
 
     @Override
     public int hashCode() {
-        return Objects.hash(event_id, description, event_date, event_fee);
+        return Objects.hash(event_id, event_userid, description, event_date, event_fee);
     }
 
     @Override
     public String toString() {
         return "EventBean{" +
                 "event_id=" + event_id +
+                ", event_userid='" + event_userid + '\'' +
                 ", description='" + description + '\'' +
                 ", event_date=" + event_date +
                 ", event_fee=" + event_fee +

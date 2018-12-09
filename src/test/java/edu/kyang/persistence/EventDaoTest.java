@@ -66,11 +66,12 @@ public class EventDaoTest {
     @Test
     void insertSuccess() {
 
-        EventBean newEvent = new EventBean("test event", LocalDate.parse("2018-02-15"), new BigDecimal(15.50));
+        EventBean newEvent = new EventBean("tpot4@gmail.com","event 4",LocalDate.parse("2018-09-10"),new BigDecimal(15.99));
+
         int id = genericDao.insert(newEvent);
         assertNotEquals(0,id);
         EventBean insertedEvent = (EventBean) genericDao.getById(id);
-        assertEquals("test event", insertedEvent.getDescription());
+        assertEquals("tpot4@gmail.com", insertedEvent.getEvent_userid());
     }
 
     /**
@@ -78,12 +79,15 @@ public class EventDaoTest {
      */
     @Test
     void SaveOrUpdateSuccessful() {
-        String newDesc = "Test Event 2";
+        String newDesc = "Update Event to different event";
+        LocalDate newDate = LocalDate.parse("2018-03-13");
         EventBean eventToUpdate = (EventBean)genericDao.getById(1);
         eventToUpdate.setDescription(newDesc);
+        eventToUpdate.setEvent_date(newDate);
         genericDao.saveOrUpdate(eventToUpdate);
         EventBean retrievedEvent = (EventBean) genericDao.getById(1);
         assertEquals(newDesc, retrievedEvent.getDescription());
+        assertEquals(newDate, retrievedEvent.getEvent_date());
     }
 
     /**
@@ -100,9 +104,9 @@ public class EventDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<EventBean> events = genericDao.getByPropertyEqual("description", "perry tang");
+        List<EventBean> events = genericDao.getByPropertyEqual("event_userid", "tpot2@gmail.com");
         Assertions.assertEquals(1, events.size());
-        Assertions.assertEquals(1, events.get(0).getEvent_id());
+        Assertions.assertEquals(2, events.get(0).getEvent_id());
     }
 
     /**
@@ -110,18 +114,21 @@ public class EventDaoTest {
      */
     @Test
     void getByPropertyLikeSuccesss() {
-        List<EventBean> events = genericDao.getByPropertyLike("description", "perry");
+        List<EventBean> events = genericDao.getByPropertyLike("description", "knigh");
         Assertions.assertEquals(1, events.size());
 
-        List<EventBean> events2 = genericDao.getByPropertyLike("description", "aid");
+        List<EventBean> events2 = genericDao.getByPropertyLike("event_userid", "tpot3@gmail.com");
         Assertions.assertEquals(1, events2.size());
-        Assertions.assertEquals(2, events2.get(0).getEvent_id());
+        Assertions.assertEquals(3, events2.get(0).getEvent_id());
+
+        List<EventBean> events3 = genericDao.getByPropertyLike("event_userid", "tpot33@gmail.com");
+        Assertions.assertEquals(0, events3.size());
     }
 
     @Test
     void getByPropertyEqualUnique() {
-        EventBean event = (EventBean) genericDao.getByPropertyEqualUnique("description", "kool aid");
-        LocalDate date2 = LocalDate.parse("2018-01-10");
+        EventBean event = (EventBean) genericDao.getByPropertyEqualUnique("event_userid", "tpot1@gmail.com");
+        LocalDate date2 = LocalDate.parse("2018-09-10");
         BigDecimal fee = new BigDecimal(15);
         assertEquals(date2, event.getEvent_date());
         assertEquals(fee, event.getEvent_fee());

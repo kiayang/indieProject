@@ -943,181 +943,196 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="236" name="description">
+    <column id="240" parent="236" name="event_userid">
       <Position>2</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="236" name="description">
+      <Position>3</Position>
       <DataType>varchar(80)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="236" name="event_date">
-      <Position>3</Position>
+    <column id="242" parent="236" name="event_date">
+      <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="236" name="event_fee">
-      <Position>4</Position>
+    <column id="243" parent="236" name="event_fee">
+      <Position>5</Position>
       <DataType>decimal(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="243" parent="236" name="event_event_id_uindex">
+    <index id="244" parent="236" name="event_event_id_uindex">
       <ColNames>event_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="244" parent="236" name="PRIMARY">
+    <index id="245" parent="236" name="event_event_userid_uindex">
+      <ColNames>event_userid</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="246" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>event_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="245" parent="236" name="event_event_id_uindex">
+    <key id="247" parent="236" name="event_event_id_uindex">
       <ColNames>event_id</ColNames>
       <UnderlyingIndexName>event_event_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="246" parent="237" name="userid">
+    <key id="248" parent="236" name="event_event_userid_uindex">
+      <ColNames>event_userid</ColNames>
+      <UnderlyingIndexName>event_event_userid_uindex</UnderlyingIndexName>
+    </key>
+    <column id="249" parent="237" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="237" name="username">
+    <column id="250" parent="237" name="username">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="237" name="user_status">
+    <column id="251" parent="237" name="user_status">
       <Position>3</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="237" name="password">
+    <column id="252" parent="237" name="password">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="237" name="firstname">
+    <column id="253" parent="237" name="firstname">
       <Position>5</Position>
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="237" name="lastname">
+    <column id="254" parent="237" name="lastname">
       <Position>6</Position>
       <DataType>varchar(35)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="237" name="middlename">
+    <column id="255" parent="237" name="middlename">
       <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="237" name="dateofbirth">
+    <column id="256" parent="237" name="dateofbirth">
       <Position>8</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="237" name="address">
+    <column id="257" parent="237" name="address">
       <Position>9</Position>
       <DataType>varchar(35)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="237" name="state">
+    <column id="258" parent="237" name="state">
       <Position>10</Position>
       <DataType>varchar(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="237" name="zipcode">
+    <column id="259" parent="237" name="zipcode">
       <Position>11</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="237" name="phone">
+    <column id="260" parent="237" name="phone">
       <Position>12</Position>
       <DataType>varchar(12)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="258" parent="237" name="user_id_uindex">
+    <index id="261" parent="237" name="user_id_uindex">
       <ColNames>userid</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="259" parent="237" name="user_username_uindex">
+    <index id="262" parent="237" name="user_username_uindex">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="260" parent="237" name="PRIMARY">
+    <key id="263" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="261" parent="237" name="user_id_uindex">
+    <key id="264" parent="237" name="user_id_uindex">
       <ColNames>userid</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="262" parent="237" name="user_username_uindex">
+    <key id="265" parent="237" name="user_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_username_uindex</UnderlyingIndexName>
     </key>
-    <column id="263" parent="238" name="role_id">
+    <column id="266" parent="238" name="role_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="238" name="userid">
+    <column id="267" parent="238" name="userid">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="238" name="username">
+    <column id="268" parent="238" name="username">
       <Position>3</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="238" name="role">
+    <column id="269" parent="238" name="role">
       <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="267" parent="238" name="user_role_id_uindex">
+    <index id="270" parent="238" name="user_role_id_uindex">
       <ColNames>role_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="268" parent="238" name="user_role_username_uindex">
+    <index id="271" parent="238" name="user_role_username_uindex">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="269" parent="238" name="user_role_user_id_fk">
+    <index id="272" parent="238" name="user_role_user_id_fk">
       <ColNames>userid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="270" parent="238" name="PRIMARY">
+    <key id="273" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="271" parent="238" name="user_role_id_uindex">
+    <key id="274" parent="238" name="user_role_id_uindex">
       <ColNames>role_id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="272" parent="238" name="user_role_username_uindex">
+    <key id="275" parent="238" name="user_role_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>user_role_username_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="273" parent="238" name="user_role_user_id_fk">
+    <foreign-key id="276" parent="238" name="user_role_user_id_fk">
       <ColNames>userid</ColNames>
       <RefSchemaName>indie</RefSchemaName>
       <RefTableName>user</RefTableName>

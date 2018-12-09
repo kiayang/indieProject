@@ -43,7 +43,7 @@ public class UserDaoTest {
     @Test
     void getAllSuccess() {
         List<UserBean> users = genericDao.getAll();
-        assertEquals(5, users.size());
+        assertEquals(13, users.size());
     }
 
     /**

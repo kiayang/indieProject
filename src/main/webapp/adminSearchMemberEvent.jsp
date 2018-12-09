@@ -36,15 +36,12 @@
                     <label for="username">Enter Username:</label>
                     <input type="email" class="form-control" id="username" name="username" maxlength="40" size="40" placeholder="email address"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address">
 
-                    <br/>
                     <label for="eventId">Enter Event Id:</label>
                     <input class="form-control" type="text" id="eventId" name="eventId" maxlength="11" size="40" pattern="[0-9]" title="Numbers only">
 
-                    <br/>
                     <label for="eventDate">Enter Event Date:</label>
                     <input class="form-control" type="text" id="eventDate" name="eventDate" maxlength="10" size="40" pattern="\d{1,4}-\d{1,2}-\d{2}" Title="Date yyyy-mm-dd is required." placeholder="YYYY-MM-DD">
 
-                    <br/>
                     <label for="eventName">Enter Event Name/Description:</label>
                     <input class="form-control" type="text" id="eventName" name="eventName" maxlength="40" size="40" placeholder="Enter event description name or keyword">
 

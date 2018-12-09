@@ -1,6 +1,6 @@
 package edu.kyang.controller;
+import edu.kyang.entity.EventBean;
 import edu.kyang.entity.UserBean;
-import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -37,49 +36,75 @@ public class AddEventServlet extends HttpServlet {
         logger.info("starting the Add Event Servlet");
         HttpSession httpSession = request.getSession();
 
-        PrintWriter out = response.getWriter();
-
-        String eventName = request.getParameter("eventName");
-        String eventDate = request.getParameter("eventDate");
+        String userName = request.getParameter("username");
+        LocalDate eventDate = LocalDate.parse(request.getParameter("eventDate"));
         BigDecimal eventFee = new BigDecimal(request.getParameter("eventFee"));
+        String eventDescription = request.getParameter("eventDescription");
         String message;
 
-        out.println("******************************");
-        out.println("Event Name = " + eventName);
-        out.println("Event Date = " + eventDate);
-        out.println("Event Fee = " + eventFee);
-        out.println("******************************");
-        out.close();
-
-    /*
         GenericDAO userDAO = new GenericDAO(UserBean.class);
-        GenericDAO userRoleDAO = new GenericDAO(UserRoleBean.class);
+        List<UserBean> users = userDAO.getByPropertyEqual("username", userName);
 
-        List<UserBean> userNames = userDAO.getByPropertyEqual("username", email);
+        int usersBoolean = users.size();
 
-        int usersBoolean = userNames.size();
+        if (usersBoolean > 0) {
+            logger.info("Users Boolean = " + usersBoolean);
 
-        if (usersBoolean == 0) {
+            GenericDAO eventDAO = new GenericDAO(EventBean.class);
+            List<EventBean> events = eventDAO.getByPropertyEqual("event_userid", userName);
+            int eventsBoolean = events.size();
 
-            UserBean userBean = new UserBean(email, status, password, firstname, lastname, middlename, birthdate, address, state, zipcode, phone);
-            UserRoleBean userRoleBean = new UserRoleBean(userBean,email,userRole);
+            if(eventsBoolean == 0){
+                logger.info("Events Boolean = " + eventsBoolean);
 
-            userDAO.insert(userBean);
-            userRoleDAO.insert(userRoleBean);
+                EventBean eventBean = new EventBean(userName,eventDescription,eventDate,eventFee);
 
-            message = "User " + email + " has been registered as a member and will be contacted soon!";
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
-            dispatcher.forward(request, response);
-        }else {
-            message = "User name " + email + " has already been registered! Enter a different user name!";
+                eventDAO.insert(eventBean);
+
+                int uID = users.get(0).getId();
+
+                UserBean retrievedUserBefore = (UserBean) userDAO.getById(uID);
+                String beforeStatus = retrievedUserBefore.getStatus();
+
+                logger.info("User Status Before update = " + beforeStatus);
+
+                if ("active".equals(beforeStatus)){
+
+                    UserBean userToUpdate = (UserBean)userDAO.getById(uID);
+                    String newStatus = "inactive";
+                    userToUpdate.setStatus(newStatus);
+                    userDAO.saveOrUpdate(userToUpdate);
+                    UserBean retrievedUserAfter = (UserBean) userDAO.getById(uID);
+                    String updatedStatus = retrievedUserAfter.getStatus();
+
+                    message = "New event for " + userName + " has been added and member status has been updated to " + updatedStatus;
+                    httpSession.setAttribute("returnMessage", message);
+                    httpSession.setAttribute("errorMessage", " ");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                    dispatcher.forward(request, response);
+                }else{
+                    message = "Member " + userName + " is not active, an event cannot be added at this time!";
+                    httpSession.setAttribute("returnMessage", " ");
+                    httpSession.setAttribute("errorMessage", message);
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                    dispatcher.forward(request, response);
+                }
+
+
+            }else{
+                message = "There is already an event created for " + userName;
+                httpSession.setAttribute("returnMessage", " ");
+                httpSession.setAttribute("errorMessage", message);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                dispatcher.forward(request, response);
+            }
+        }else{
+            message = userName  + " is not a member, please try again!";
             httpSession.setAttribute("returnMessage", " ");
             httpSession.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }
-      */
     }
 }
 
