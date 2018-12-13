@@ -39,7 +39,7 @@ public class AdminSearchMemberServlet extends HttpServlet {
 
         GenericDAO genericUserDAO = new GenericDAO(UserBean.class);
 
-        if (!email.isEmpty()) {
+        if (email!=null && !email.isEmpty()) {
             logger.info("username is NOT empty" + email);
 
             List<UserBean> users = genericUserDAO.getByPropertyLike("username", email);

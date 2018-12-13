@@ -52,10 +52,10 @@ public class AddEventServlet extends HttpServlet {
 
             GenericDAO eventDAO = new GenericDAO(EventBean.class);
             List<EventBean> events = eventDAO.getByPropertyEqual("event_userid", userName);
-            int eventsBoolean = events.size();
+            int eventSize = events.size();
 
-            if(eventsBoolean == 0){
-                logger.info("Events Boolean = " + eventsBoolean);
+            if(eventSize == 0){
+                logger.info("Events Boolean = " + eventSize);
 
                 EventBean eventBean = new EventBean(userName,eventDescription,eventDate,eventFee);
 
@@ -105,6 +105,8 @@ public class AddEventServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }
+
+        //public void insert MemberEvent {}
     }
 }
 

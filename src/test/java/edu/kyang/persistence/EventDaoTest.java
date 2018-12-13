@@ -43,8 +43,8 @@ public class EventDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<EventBean> users = genericDao.getAll();
-        assertEquals(3, users.size());
+        List<EventBean> events = genericDao.getAll();
+        assertEquals(3, events.size());
     }
 
     /**
@@ -125,6 +125,9 @@ public class EventDaoTest {
         Assertions.assertEquals(0, events3.size());
     }
 
+    /**
+     * Gets by property equal unique.
+     */
     @Test
     void getByPropertyEqualUnique() {
         EventBean event = (EventBean) genericDao.getByPropertyEqualUnique("event_userid", "tpot1@gmail.com");
@@ -134,6 +137,22 @@ public class EventDaoTest {
         assertEquals(fee, event.getEvent_fee());
     }
 
+    /**
+     * Gets by property like two.
+     * This will test a select where there are TWO predicates in the where clause of the SQL
+     * Eg.  Select rows from Event table where the event_userid like "%pot3@gmail.com%" and description like "%knig%"
+     */
+    @Test
+    void getByPropertyLikeTwo() {
+        String userid = "tpot3@gmail.com";
+        List<EventBean> events = genericDao.getByPropertyLikeTwo("event_userid","pot3@gmail.com","description", "knigh");
+        Assertions.assertEquals(1, events.size());
+        assertEquals(userid, events.get(0).getEvent_userid());
+
+        List<EventBean> events2 = genericDao.getByPropertyLikeTwo("event_userid","pot33@gmail.com","description", "knigh");
+        Assertions.assertEquals(0, events2.size());
+
+    }
 
 
 }

@@ -7,6 +7,7 @@
 <body>
 
 <nav class="navbar navbar-inverse">
+
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="index.jsp">Family Hardship Contribution Website</a>
@@ -17,6 +18,7 @@
             <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>
+
 </nav>
 
 <div class="container-fluid text-center">
@@ -26,6 +28,7 @@
         <div class="col-sm-6 text-left">
             <h2>Welcome to the Admin Page!</h2>
             <br/>
+
             <table  bgcolor="#E1E8F2" width="100%">
                 <tr>
                     <td>

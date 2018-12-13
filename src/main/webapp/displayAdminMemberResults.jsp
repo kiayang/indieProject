@@ -95,8 +95,8 @@
                     <td>${user.getPhone()}</td>
                     <td>${user.getPassword()}</td>
                     <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a href="#editMemberModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                        <a href="#deleteMemberModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     </td>
                 </tr>
 
@@ -106,7 +106,7 @@
     </table>
 
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editMemberModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form name="updateMemberForm"action="updateMemberServlet"method="post">
@@ -190,7 +190,7 @@
         </div>
 
         <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+        <div id="deleteMemberModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form name="deleteMemberForm"action="deleteMemberServlet"method="post">
