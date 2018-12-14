@@ -37,19 +37,8 @@ public class DeleteMemberServlet extends HttpServlet {
 
         HttpSession httpSession = request.getSession();
 
-        // Allocate a output writer to write the response message into the network socket
-        //PrintWriter out = response.getWriter();
-
-        //protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-        //Retrieve values from form
         String email = request.getParameter("username");
         String message;
-        /*
-        out.println("******************************");
-        out.println("username = " + email);
-        out.println("******************************");
-        out.close();
-        */
 
         logger.info("starting the delete member servlet");
 
@@ -72,8 +61,8 @@ public class DeleteMemberServlet extends HttpServlet {
 
             logger.info("After Member Deleted Successfully!!");
             message = "User " + email + " has been deleted from system!";
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
+            request.setAttribute("returnMessage", message);
+            request.setAttribute("errorMessage", " ");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
 
@@ -81,8 +70,8 @@ public class DeleteMemberServlet extends HttpServlet {
 
             logger.info("Member NOT Deleted Successfully!!");
             message = "User name " + email + " is NOT deleted!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
+            request.setAttribute("returnMessage", " ");
+            request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
 

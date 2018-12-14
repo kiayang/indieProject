@@ -187,8 +187,8 @@ public class GenericDAO<T>{
     public List<T> getByPropertyLikeTwo(String propertyName1, String value1, String propertyName2, String value2) {
         Session session = getSession();
 
-        logger.debug("Searching for entity with " + propertyName1 + " = " + value1);
-        logger.debug("Searching for entity with " + propertyName2 + " = " + value2);
+        logger.debug("Searching for entity with Like " + propertyName1 + " = " + value1);
+        logger.debug("Searching for entity with Like " + propertyName2 + " = " + value2);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
@@ -211,6 +211,31 @@ public class GenericDAO<T>{
         return list;
     }
 
+    public List<T> getByPropertyEqualTwo(String propertyName1, String value1, String propertyName2, String value2) {
+        Session session = getSession();
+
+        logger.debug("Searching for entity with Equal " + propertyName1 + " = " + value1);
+        logger.debug("Searching for entity with Equal " + propertyName2 + " = " + value2);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        Expression<String> propertyPath1 = root.get(propertyName1);
+        Expression<String> propertyPath2 = root.get(propertyName2);
+
+        query.select(root).where(
+                builder.and (
+                        builder.equal(root.get(propertyName1), value1),
+                        builder.equal(root.get(propertyName2), value2))
+                        );
+
+        List<T> list = session.createQuery( query ).getResultList();
+
+        logger.debug("Get list by property like " + list);
+
+        session.close();
+        return list;
+    }
 
      /**
      * This generic method That gets a single object by property name and a value

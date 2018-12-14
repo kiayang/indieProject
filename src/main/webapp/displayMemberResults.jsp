@@ -9,24 +9,6 @@
         // Activate tooltip
         $('[data-toggle="tooltip"]').tooltip();
 
-        // Select/Deselect checkboxes
-        var checkbox = $('table tbody input[type="checkbox"]');
-        $("#selectAll").click(function(){
-            if(this.checked){
-                checkbox.each(function(){
-                    this.checked = true;
-                });
-            } else{
-                checkbox.each(function(){
-                    this.checked = false;
-                });
-            }
-        });
-        checkbox.click(function(){
-            if(!this.checked){
-                $("#selectAll").prop("checked", false);
-            }
-        });
     });
 </script>
 
@@ -47,7 +29,6 @@
     </div>
 </nav>
 
-
 <div class="container-fluid">
 
     <div class="table-wrapper">
@@ -67,22 +48,23 @@
 
     <table id="userTable" class="display " cellspacing="0" width="100%">
         <thead>
-        <th>User Name</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>MI</th>
-        <th>Birthdate</th>
-        <th>Address</th>
-        <th>State</th>
-        <th>Zip code</th>
-        <th>Phone</th>
-        <th>Password</th>
-        <th>Actions</th>
+            <th>User Name</th>
+            <th>Status</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>MI</th>
+            <th>Birthdate</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Zip code</th>
+            <th>Phone</th>
+            <th>Actions</th>
         </thead>
         <tbody>
 
         <tr>
             <td>${user.getUsername()}</td>
+            <td>${user.getStatus()}</td>
             <td>${user.getFirstname()}</td>
             <td>${user.getLastname()}</td>
             <td>${user.getMiddlename()}</td>
@@ -91,7 +73,6 @@
             <td>${user.getState()}</td>
             <td>${user.getZipcode()}</td>
             <td>${user.getPhone()}</td>
-            <td>${user.getPassword()}</td>
             <td>
                 <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
             </td>
@@ -182,6 +163,15 @@
         </div>
 
 </div>
+
+    <div class="container-fluid">
+
+        <div class="alert alert-success">
+            <strong><bold>${returnMessage}</bold></strong>
+            <strong><bold>${errorMessage}</bold></strong>
+        </div>
+
+    </div>
 </div>
 </body>
 </html>

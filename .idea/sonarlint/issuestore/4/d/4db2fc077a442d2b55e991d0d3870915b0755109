@@ -1,10 +1,11 @@
 
-Bsquid:S1989N"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989N"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989W"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989W"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-gsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(‰¦—äúÿÿÿÿ
-bsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(òİàŸ
-gsquid:CommentedOutCodeLine0"<This block of commented-out lines of code should be removed.(è»Ÿúÿÿÿÿ
-bsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(¸ŞÄ
 Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
+Bsquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+bsquid:S1854&"?Remove this useless assignment to local variable "httpSession".(ï¶®øÿÿÿÿ8½÷ìÖú,
+Bsquid:S1989L"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+bsquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(¸ŞÄ
+Ssquid:S1481&"0Remove this unused "httpSession" local variable.(ï¶®øÿÿÿÿ8½÷ìÖú,
+Bsquid:S1989L"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8±ÕÓÖú,
+Bsquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+fsquid:UselessImportCheck"6Remove this unused import 'javax.ws.rs.core.Response'.(ˆäĞæüÿÿÿÿ8±ÕÓÖú,

@@ -53,8 +53,8 @@ public class SearchEventServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             } else {
                 message = "No events found for username " + searchTerm + " try another search!";
-                httpSession.setAttribute("returnMessage", message);
-                httpSession.setAttribute("errorMessage", " ");
+                request.setAttribute("returnMessage", message);
+                request.setAttribute("errorMessage", " ");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }
@@ -82,13 +82,13 @@ public class SearchEventServlet extends HttpServlet {
                 logger.info("NO Event found for  " + searchTerm);
 
                 message = "No events found with user name " + searchTerm + " try another search!";
-                httpSession.setAttribute("returnMessage", " ");
-                httpSession.setAttribute("errorMessage", message);
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }
 
-        } else if (request.getParameter("submit").equals("eventDescription")) {
+        } else {
 
             GenericDAO eventDao = new GenericDAO(EventBean.class);
 
@@ -109,8 +109,8 @@ public class SearchEventServlet extends HttpServlet {
                 logger.info("Submit value: " + submit + "  Search Term: " + searchTerm);
 
                 message = "No events found with description " + searchTerm + " try another search!";
-                httpSession.setAttribute("returnMessage", " ");
-                httpSession.setAttribute("errorMessage", message);
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }

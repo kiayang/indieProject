@@ -1,13 +1,10 @@
 
-Bsquid:S1989c"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-qsquid:S1192S"ZDefine a constant instead of duplicating this literal "/displayReturnMessage.jsp" 4 times.(Ì‘¡«
-Bsquid:S1989T"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989Z"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989T"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-isquid:S1192R"MDefine a constant instead of duplicating this literal "errorMessage" 4 times.(•ÙÖ‡şÿÿÿÿ
-jsquid:S1192Q"NDefine a constant instead of duplicating this literal "returnMessage" 4 times.(¤ôÚŸıÿÿÿÿ
-Bsquid:S1989j"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989Z"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989c"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989j"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-nsquid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(ÄõÓôúÿÿÿÿ8Û¢ô²ú,
+Isquid:S1989^"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8‡¥ÔÙú,
+Isquid:S1989V"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8™öÄ×ú,
+]squid:S18541":Remove this useless assignment to local variable "userId".(·¸¼îøÿÿÿÿ8÷öÉÙú,
+Nsquid:S14811"+Remove this unused "userId" local variable.(·¸¼îøÿÿÿÿ8÷öÉÙú,
+Isquid:S1989P"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ÈĞÓÙú,
+Isquid:S1989V"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8™öÄ×ú,
+Isquid:S1989P"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ÈĞÓÙú,
+Isquid:S1989^"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8‡¥ÔÙú,
+nsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.(ÄõÓôúÿÿÿÿ8‡¥ÔÙú,

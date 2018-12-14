@@ -28,7 +28,7 @@
             <br/>
             <h4>Click button below to view member profile or member events.</h4>
             <br/>
-            <form name="searchMemberForm"action="searchMemberServlet"method="post">
+            <form name="searchMemberForm"action="searchMemberMenuServlet"method="post">
 
                 <tr>
                     <td align="center">

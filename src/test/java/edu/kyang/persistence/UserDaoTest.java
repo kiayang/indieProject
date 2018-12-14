@@ -1,5 +1,6 @@
 package edu.kyang.persistence;
 
+import edu.kyang.entity.EventBean;
 import edu.kyang.entity.UserBean;
 import edu.kyang.test.util.Database;
 import org.junit.jupiter.api.Assertions;
@@ -109,6 +110,16 @@ public class UserDaoTest {
     void getByPropertyLikeSuccesss() {
         List<UserBean> users = genericDao.getByPropertyLike("lastname", "yang");
         Assertions.assertEquals(1, users.size());
+    }
+
+    @Test
+    void getByPropertyEqualTwo() {
+        String userid = "tpot1@gmail.com";
+        List<UserBean> user = genericDao.getByPropertyEqualTwo("username","tpot1@gmail.com","status", "active");
+        Assertions.assertEquals(1, user.size());
+        assertEquals(8, user.get(0).getId());
+        assertEquals(userid, user.get(0).getUsername());
+        assertEquals("active", user.get(0).getStatus());
     }
 
     @Test

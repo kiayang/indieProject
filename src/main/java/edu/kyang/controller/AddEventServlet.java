@@ -40,66 +40,54 @@ public class AddEventServlet extends HttpServlet {
         LocalDate eventDate = LocalDate.parse(request.getParameter("eventDate"));
         BigDecimal eventFee = new BigDecimal(request.getParameter("eventFee"));
         String eventDescription = request.getParameter("eventDescription");
+        String userStatus = "active";
         String message;
 
         GenericDAO userDAO = new GenericDAO(UserBean.class);
-        List<UserBean> users = userDAO.getByPropertyEqual("username", userName);
+        List<UserBean> user = userDAO.getByPropertyEqualTwo("username",userName,"status", userStatus);
+        int userSize = user.size();
+        int userId = user.get(0).getId();
 
-        int usersBoolean = users.size();
-
-        if (usersBoolean > 0) {
-            logger.info("Users Boolean = " + usersBoolean);
+        if (userSize > 0) {
+            logger.info("User Size = " + userSize);
 
             GenericDAO eventDAO = new GenericDAO(EventBean.class);
             List<EventBean> events = eventDAO.getByPropertyEqual("event_userid", userName);
             int eventSize = events.size();
 
+            //Check for existing event before creating it
             if(eventSize == 0){
-                logger.info("Events Boolean = " + eventSize);
+
+                logger.info("Event size = " + eventSize);
 
                 EventBean eventBean = new EventBean(userName,eventDescription,eventDate,eventFee);
 
                 eventDAO.insert(eventBean);
 
-                int uID = users.get(0).getId();
+                String eventUserName = user.get(0).getUsername();
+                int eventId = user.get(0).getId();
 
-                UserBean retrievedUserBefore = (UserBean) userDAO.getById(uID);
-                String beforeStatus = retrievedUserBefore.getStatus();
+                //Once an event is created the user will no longer be active since this indicate they passed
+                UserBean userToUpdate = (UserBean)userDAO.getById(eventId);
+                String newStatus = "inactive";
+                userToUpdate.setStatus(newStatus);
+                userDAO.saveOrUpdate(userToUpdate);
 
-                logger.info("User Status Before update = " + beforeStatus);
+                List<EventBean> event = eventDAO.getByPropertyEqual("event_userid", eventUserName);
 
-                if ("active".equals(beforeStatus)){
-
-                    UserBean userToUpdate = (UserBean)userDAO.getById(uID);
-                    String newStatus = "inactive";
-                    userToUpdate.setStatus(newStatus);
-                    userDAO.saveOrUpdate(userToUpdate);
-                    UserBean retrievedUserAfter = (UserBean) userDAO.getById(uID);
-                    String updatedStatus = retrievedUserAfter.getStatus();
-
-                    message = "New event for " + userName + " has been added and member status has been updated to " + updatedStatus;
-                    httpSession.setAttribute("returnMessage", message);
-                    httpSession.setAttribute("errorMessage", " ");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
-                    dispatcher.forward(request, response);
-                }else{
-                    message = "Member " + userName + " is not active, an event cannot be added at this time!";
-                    httpSession.setAttribute("returnMessage", " ");
-                    httpSession.setAttribute("errorMessage", message);
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
-                    dispatcher.forward(request, response);
-                }
-
-
+                request.setAttribute("events", event);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
+                dispatcher.forward(request, response);
             }else{
-                message = "There is already an event created for " + userName;
-                httpSession.setAttribute("returnMessage", " ");
-                httpSession.setAttribute("errorMessage", message);
+                message = " There already is an event for member " + userName + "!";
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }
+
         }else{
-            message = userName  + " is not a member, please try again!";
+            message = userName  + " is not an active member at this time, please try again!";
             httpSession.setAttribute("returnMessage", " ");
             httpSession.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");

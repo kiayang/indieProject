@@ -68,23 +68,24 @@
 
     <table id="userTable" class="display " cellspacing="0" width="100%">
         <thead>
-        <th>User Name</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>MI</th>
-        <th>Birthdate</th>
-        <th>Address</th>
-        <th>State</th>
-        <th>Zip code</th>
-        <th>Phone</th>
-        <th>Password</th>
-        <th>Actions</th>
+            <th>User Name</th>
+            <th>status</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>MI</th>
+            <th>Birthdate</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Zip code</th>
+            <th>Phone</th>
+            <th>Actions</th>
         </thead>
         <tbody>
 
             <c:forEach var="user" items="${users}" varStatus="loop">
                 <tr>
                     <td>${user.getUsername()}</td>
+                    <td>${user.getStatus()}</td>
                     <td>${user.getFirstname()}</td>
                     <td>${user.getLastname()}</td>
                     <td>${user.getMiddlename()}</td>
@@ -93,7 +94,6 @@
                     <td>${user.getState()}</td>
                     <td>${user.getZipcode()}</td>
                     <td>${user.getPhone()}</td>
-                    <td>${user.getPassword()}</td>
                     <td>
                         <a href="#editMemberModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                         <a href="#deleteMemberModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>

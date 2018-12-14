@@ -1,7 +1,10 @@
 package edu.kyang.controller;
+import edu.kyang.entity.EventBean;
 import edu.kyang.entity.UserBean;
 import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -18,52 +23,43 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/searchMemberServlet"}
+        urlPatterns = {"/searchMemberMenuServlet"}
 )
 
 public class SearchMemberServlet extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // Allocate a output writer to write the response message into the network socket
-        PrintWriter out = resp.getWriter();
+        logger.debug("starting the Add Event Servlet");
 
-        //Retrieve values from form
         String username = req.getRemoteUser();
-        String firstName = req.getParameter("firstname");
-        String returnMessage;
-
-        /*
-        out.println("Welcome '" + req.getRemoteUser() + "'");
-        out.println("******************************");
-        out.println("username = " + username);
-        //out.println("password = " + password);
-        out.println("******************************");
-        */
-
-        //GenericDAO genericEventDAO = new GenericDAO(EventBean.class);
-        //List<EventBean> events = (EventBean)genericEventDAO.getByPropertyEqualObject("event", event);
-        GenericDAO genericUserDAO = new GenericDAO(UserBean.class);
-        UserBean user = (UserBean)genericUserDAO.getByPropertyEqualUnique("username", username);
-        int userId = user.getId();
-        user = (UserBean)genericUserDAO.getById(userId);
 
         if (req.getParameter("submit").equals("viewProfile")){
+            GenericDAO genericUserDAO = new GenericDAO(UserBean.class);
+            UserBean user = (UserBean)genericUserDAO.getByPropertyEqualUnique("username", username);
+            int userId = user.getId();
+            user = (UserBean)genericUserDAO.getById(userId);
             req.setAttribute("user", user);
-            //out.println("View Profile!");
-            //forward to memberResults.jsp page
             RequestDispatcher dispatcher = req.getRequestDispatcher("/displayMemberResults.jsp");
             dispatcher.forward(req, resp);
         }else {
-            //req.setAttribute("events", events);
-            //req.setAttribute("eventNumber", events.size())
-            //out.println("View Events!");
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayMemberEventsResults.jsp");
+
+
+            logger.info("Display all events related to the username");
+            /*
+            GenericDAO userEventDao = new GenericDAO(UserEventBean.class);
+            List<UserEventBean> userEvents = userEventDao.getByPropertyEqual("event_userid", username);
+            int size = userEvents.size();
+            int userEventId = userEvents.get(0).getUE_id());
+
+            req.setAttribute("userevents", userEvents);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/displayUserEventsResults.jsp");
             dispatcher.forward(req, resp);
+            */
         }
 
-        //out.close();
     }
 }

@@ -113,22 +113,23 @@ public class UpdateMemberServlet extends HttpServlet {
             }
 
             userDAO.saveOrUpdate(userToUpdate);
-            UserBean retrievedUser = (UserBean) userDAO.getById(uID);
-            String retrieveUserFname = retrievedUser.getFirstname();
-            logger.info("updated first name = " + retrieveUserFname);
 
-            String retrieveUserLname = retrievedUser.getLastname();
-            logger.info("updated last name = " + retrieveUserLname);
-            message = "User " + email + " has been updated successfully!!";
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+            UserBean updatedUser = (UserBean) userDAO.getById(uID);
+
+            request.setAttribute("user", updatedUser);
+
+            message = "User " + email + " has been updated!";
+            request.setAttribute("returnMessage", message);
+            request.setAttribute("errorMessage", " ");
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberResults.jsp");
             dispatcher.forward(request, response);
+
         }else{
             logger.info("User not found");
             message = "User name " + email + " is not found, try again!!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
+            request.setAttribute("returnMessage", " ");
+            request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }
