@@ -106,7 +106,7 @@ public class EventDaoTest {
     void getByPropertyEqualSuccess() {
         List<EventBean> events = genericDao.getByPropertyEqual("event_userid", "tpot2@gmail.com");
         Assertions.assertEquals(1, events.size());
-        Assertions.assertEquals(2, events.get(0).getEvent_id());
+        Assertions.assertEquals(2, events.get(0).getEventId());
     }
 
     /**
@@ -119,7 +119,7 @@ public class EventDaoTest {
 
         List<EventBean> events2 = genericDao.getByPropertyLike("event_userid", "tpot3@gmail.com");
         Assertions.assertEquals(1, events2.size());
-        Assertions.assertEquals(3, events2.get(0).getEvent_id());
+        Assertions.assertEquals(3, events2.get(0).getEventId());
 
         List<EventBean> events3 = genericDao.getByPropertyLike("event_userid", "tpot33@gmail.com");
         Assertions.assertEquals(0, events3.size());

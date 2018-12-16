@@ -1,9 +1,9 @@
 
-isquid:S001176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³
-tsquid:S00116"WRename this field "event_userid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷®şÖşÿÿÿÿ
-isquid:S001176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³
-rsquid:S00116"URename this field "event_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ò»’ÿÿÿÿÿ
-ksquid:S00116"SRename this field "event_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ø
-isquid:S001176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³
-bsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(Îïô¶
-qsquid:S00116"TRename this field "event_fee" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¾ıêÿÿÿÿÿ
+tsquid:S00116"WRename this field "event_userid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷®şÖşÿÿÿÿ
+Ysquid:UselessImportCheck
+".Remove this unused import 'java.util.Objects'.(¼¸õ›8ğìû£û,
+psquid:S00117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³8€Ï¤û,
+qsquid:S00116"TRename this field "event_fee" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¾ıêÿÿÿÿÿ
+rsquid:S00116"URename this field "event_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ò»’ÿÿÿÿÿ
+psquid:S00117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³8€Ï¤û,
+psquid:S00117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ëÃ³8€Ï¤û,

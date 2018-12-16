@@ -61,7 +61,7 @@
             <c:forEach var="event" items="${events}" varStatus="loop">
                 <tr>
 
-                    <td>${event.getEvent_id()}</td>
+                    <td>${event.getEventId()}</td>
                     <td>${event.getEvent_userid()}</td>
                     <td>${event.getDescription()}</td>
                     <td>${event.getEvent_date()}</td>

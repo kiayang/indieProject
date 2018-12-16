@@ -9,7 +9,9 @@ import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity(name = "UserBean")
 @Table(name = "user")
@@ -42,10 +44,11 @@ public class UserBean {
      * entity is not responsible for this relationship and It should look for a field named user in the
      * UserProfile entity to find the configuration for the JoinColumn/ForeignKey column.
      */
-    //@JoinColumn(name = "userid", insertable = false, updatable = false)
-    //@OneToOne(fetch = FetchType.LAZY,cascade =  CascadeType.ALL,mappedBy = "user")
-    @OneToOne(mappedBy="userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToOne(mappedBy="userBean", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private UserRoleBean userRole;
+
+    @OneToMany(mappedBy = "userBean", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserEventBean> userEventList = new HashSet<>();
 
     public UserBean() {
     }

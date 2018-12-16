@@ -48,3 +48,9 @@ k
 ,src/main/java/edu/kyang/entity/UserBean.java,9\b\9b95f984bebabfeb2b7d84fa7ee67eb067c0421c
 d
 4src/test/java/edu/kyang/persistence/UserDaoTest.java,9\d\9df60ab9f7172d25b68220908a50aa9abf0872c0
+a
+1src/main/java/edu/kyang/entity/UserEventBean.java,0\c\0c51b5870740de16fe5895d8500efc5b95461d6c
+`
+0src/main/java/edu/kyang/entity/UserRoleBean.java,1\7\17502cbe7acc4c9fc99fe133e49f8870d28a7f74
+h
+8src/test/java/edu/kyang/persistence/UserRoleDaoTest.java,e\e\eeda9745df1f9c58692fca0a318e6ea90be7a1a1

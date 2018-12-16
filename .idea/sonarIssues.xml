@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.sql">
           <value>
             <set />
@@ -14,6 +19,16 @@
           </value>
         </entry>
         <entry key="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/ba52203d-c8be-424b-a646-a0f0d11d2090/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logging/hibernate.log">
           <value>
             <set />
           </value>
@@ -53,7 +68,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/entity/EventBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/entity/UserBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/entity/UserEventBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/entity/UserRoleBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/persistence/GenericDAO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <value>
             <set />
           </value>
@@ -94,6 +134,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/edu/kyang/persistence/UserDaoTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml">
           <value>
             <set />
           </value>

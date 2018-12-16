@@ -19,23 +19,18 @@ public class UserRoleBean {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="userid")
-    private UserBean userid;
+    private UserBean userBean;
 
     private String username;
 
     @Column(name = "role")
     private String userRole;
 
-    /*
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)*/
-    //private UserBean user;
-
     public UserRoleBean() {
     }
 
-    public UserRoleBean(UserBean userid, String username, String userRole) {
-        this.userid = userid;
+    public UserRoleBean(UserBean userBean, String username, String userRole) {
+        this.userBean = userBean;
         this.username = username;
         this.userRole = userRole;
     }
@@ -46,12 +41,12 @@ public class UserRoleBean {
         if (o == null || getClass() != o.getClass()) return false;
         UserRoleBean that = (UserRoleBean) o;
         return id == that.id &&
-                userid == that.userid &&
-                Objects.equals(username, that.username);
+                Objects.equals(username, that.username) &&
+                Objects.equals(userRole, that.userRole);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userid, username);
+        return Objects.hash(id, username, userRole);
     }
 }

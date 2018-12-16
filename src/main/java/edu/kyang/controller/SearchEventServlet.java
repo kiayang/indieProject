@@ -39,12 +39,15 @@ public class SearchEventServlet extends HttpServlet {
 
         if (searchTerm.isEmpty()) {
 
+            logger.info("*** No Search Term Entered: " + searchTerm);
+
             GenericDAO eventDao = new GenericDAO(EventBean.class);
 
             List<EventBean> events = eventDao.getAll();
 
             int eventSize = events.size();
             logger.info("Event Size: " + eventSize);
+            logger.info("EventBean List: " + events);
 
             if (eventSize > 0) {
                 logger.info("Event Size > zero: " + eventSize);
@@ -60,7 +63,7 @@ public class SearchEventServlet extends HttpServlet {
             }
 
         } else if (request.getParameter("submit").equals("username")) {
-
+            logger.info("**** Search Term IS Entered for Username: " + searchTerm);
             logger.info("Search by username!");
             logger.info("Submit value: " + submit + "  Search Term: " + searchTerm);
 
@@ -72,7 +75,7 @@ public class SearchEventServlet extends HttpServlet {
 
             if (eventSize > 0) {
 
-                logger.info("Event found for User Id " + searchTerm + "size > 0");
+                logger.info("Event found for User Id " + searchTerm + " size > 0" + " Size is " + eventSize);
 
                 request.setAttribute("events", events);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
@@ -89,7 +92,7 @@ public class SearchEventServlet extends HttpServlet {
             }
 
         } else {
-
+            logger.info("**** Search Term IS Entered for Description: " + searchTerm);
             GenericDAO eventDao = new GenericDAO(EventBean.class);
 
             List<EventBean> events = eventDao.getByPropertyLike("description", searchTerm);

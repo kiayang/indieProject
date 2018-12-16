@@ -21,6 +21,7 @@
         <mapping class="edu.kyang.entity.UserBean"/>
         <mapping class="edu.kyang.entity.UserRoleBean"/>
         <mapping class="edu.kyang.entity.EventBean"/>
+        <mapping class="edu.kyang.entity.UserEventBean"/>
 
 
     </session-factory>

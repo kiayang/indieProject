@@ -57,7 +57,7 @@ public class DeleteEventServlet extends HttpServlet {
 
         logger.info("event = " + event);
 
-        int eventId = event.getEvent_id();
+        int eventId = event.getEventId();
 
         logger.info("Event Id = " + eventId);
 
