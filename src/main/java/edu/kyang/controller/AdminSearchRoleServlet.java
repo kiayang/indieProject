@@ -30,6 +30,7 @@ public class AdminSearchRoleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         HttpSession httpSession = request.getSession();
         logger.info("starting the admin search member Role servlet");
 

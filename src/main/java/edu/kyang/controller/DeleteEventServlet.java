@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * This servlet will delete the event
@@ -40,16 +41,14 @@ public class DeleteEventServlet extends HttpServlet {
 
         logger.info("email = " + email);
 
-        EventBean event = (EventBean) eventDao.getByPropertyEqualUnique("event_userid", email);
+        List<EventBean> events = eventDao.getByPropertyEqual("event_userid", email);
+        int eventSize = events.size();
 
-        logger.info("event = " + event);
 
-        int eventId = event.getEventId();
+        logger.info("Event Size = " + eventSize);
 
-        logger.info("Event Id = " + eventId);
-
-        if (eventId > 0) {
-
+        if (eventSize > 0) {
+            int eventId = events.get(0).getEventId();
             logger.info("Before Event Deleted Successfully!!");
             logger.info("user.getId() = " + eventId);
 
@@ -65,7 +64,7 @@ public class DeleteEventServlet extends HttpServlet {
         }else {
 
             logger.info("Event NOT Deleted Successfully!!");
-            message = "Event for User name " + email + " is NOT deleted!";
+            message = "Event for User name " + email + " does not exists and does NOT need to be deleted!";
             request.setAttribute("returnMessage", " ");
             request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
