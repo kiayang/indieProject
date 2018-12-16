@@ -34,6 +34,8 @@ public class SearchEventServlet extends HttpServlet {
         String submit = request.getParameter("submit");
         String searchTerm = request.getParameter("searchTerm");
         String message;
+        String displayEventJsp = "/displayAdminEventsResults.jsp";
+        String displayMessageJsp = "/displayReturnMessage.jsp";
 
         logger.info("Submit value: " + submit + "  Search Term: " + searchTerm);
 
@@ -52,13 +54,13 @@ public class SearchEventServlet extends HttpServlet {
             if (eventSize > 0) {
                 logger.info("Event Size > zero: " + eventSize);
                 request.setAttribute("events", events);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
             } else {
                 message = "No events found for username " + searchTerm + " try another search!";
                 request.setAttribute("returnMessage", message);
                 request.setAttribute("errorMessage", " ");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayMessageJsp);
                 dispatcher.forward(request, response);
             }
 
@@ -69,7 +71,7 @@ public class SearchEventServlet extends HttpServlet {
 
             GenericDAO eventDao = new GenericDAO(EventBean.class);
 
-            List<EventBean> events = eventDao.getByPropertyEqual("event_userid", searchTerm);
+            List<EventBean> events = eventDao.getByPropertyLike("event_userid", searchTerm);
 
             int eventSize = events.size();
 
@@ -78,7 +80,7 @@ public class SearchEventServlet extends HttpServlet {
                 logger.info("Event found for User Id " + searchTerm + " size > 0" + " Size is " + eventSize);
 
                 request.setAttribute("events", events);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
 
             }else{
@@ -87,7 +89,7 @@ public class SearchEventServlet extends HttpServlet {
                 message = "No events found with user name " + searchTerm + " try another search!";
                 request.setAttribute("returnMessage", " ");
                 request.setAttribute("errorMessage", message);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayMessageJsp);
                 dispatcher.forward(request, response);
             }
 
@@ -104,7 +106,7 @@ public class SearchEventServlet extends HttpServlet {
                 logger.info("Event found for User Description Like " + searchTerm + "size > 0");
 
                 request.setAttribute("events", events);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
 
             }else{
@@ -114,7 +116,7 @@ public class SearchEventServlet extends HttpServlet {
                 message = "No events found with description " + searchTerm + " try another search!";
                 request.setAttribute("returnMessage", " ");
                 request.setAttribute("errorMessage", message);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher(displayMessageJsp);
                 dispatcher.forward(request, response);
             }
 

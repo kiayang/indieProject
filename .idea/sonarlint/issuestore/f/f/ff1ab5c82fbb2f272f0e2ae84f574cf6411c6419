@@ -1,23 +1,21 @@
 
-bsquid:S1854 "?Remove this useless assignment to local variable "httpSession".(ï¶®øÿÿÿÿ8•Ï×ú,
-Isquid:S1989v"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989v"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989R"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-rsquid:S1192&"ODefine a constant instead of duplicating this literal "Submit value: " 3 times.(×­¯ˆıÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989R"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-Isquid:S19898"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989l"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-ssquid:S1192&"PDefine a constant instead of duplicating this literal "  Search Term: " 3 times.(×­¯ˆıÿÿÿÿ8»ªÉ×ú,
-jsquid:S11926"GDefine a constant instead of duplicating this literal "events" 3 times.(Ù¸Àüüÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989["&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989l"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-xsquid:S1192="ZDefine a constant instead of duplicating this literal "/displayReturnMessage.jsp" 3 times.(Ì‘¡«8»ªÉ×ú,
-Isquid:S19898"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-ksquid:S1192<"MDefine a constant instead of duplicating this literal "errorMessage" 3 times.(«¸¾ª8»ªÉ×ú,
-Isquid:S1989["&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-xsquid:S1192:"UDefine a constant instead of duplicating this literal " try another search!" 3 times.(ª†úıÿÿÿÿ8»ªÉ×ú,
-‚squid:S11927"_Define a constant instead of duplicating this literal "/displayAdminEventsResults.jsp" 3 times.(‚Ì›ùÿÿÿÿ8»ªÉ×ú,
-Isquid:S1989>"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
-ksquid:S1192;"NDefine a constant instead of duplicating this literal "returnMessage" 3 times.(ù×­8»ªÉ×ú,
-Isquid:S1989>"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989n"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+jsquid:S11928"GDefine a constant instead of duplicating this literal "events" 3 times.(Ù¸Àüüÿÿÿÿ8»ªÉ×ú,
+xsquid:S1192<"UDefine a constant instead of duplicating this literal " try another search!" 3 times.(ª†úıÿÿÿÿ8»ªÉ×ú,
+ksquid:S1192="NDefine a constant instead of duplicating this literal "returnMessage" 3 times.(ù×­8»ªÉ×ú,
+Isquid:S1989@"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989:"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989x"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989@"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
 Ssquid:S1481 "0Remove this unused "httpSession" local variable.(ï¶®øÿÿÿÿ8•Ï×ú,
+rsquid:S1192("ODefine a constant instead of duplicating this literal "Submit value: " 3 times.(×­¯ˆıÿÿÿÿ8»ªÉ×ú,
+ssquid:S1192("PDefine a constant instead of duplicating this literal "  Search Term: " 3 times.(×­¯ˆıÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989]"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989T"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989n"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989T"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989:"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+Isquid:S1989x"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,
+bsquid:S1854 "?Remove this useless assignment to local variable "httpSession".(ï¶®øÿÿÿÿ8•Ï×ú,
+ksquid:S1192>"MDefine a constant instead of duplicating this literal "errorMessage" 3 times.(«¸¾ª8»ªÉ×ú,
+Isquid:S1989]"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8»ªÉ×ú,

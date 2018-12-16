@@ -46,7 +46,6 @@ public class AddEventServlet extends HttpServlet {
         GenericDAO userDAO = new GenericDAO(UserBean.class);
         List<UserBean> user = userDAO.getByPropertyEqualTwo("username",userName,"status", userStatus);
         int userSize = user.size();
-        int userId = user.get(0).getId();
 
         if (userSize > 0) {
             logger.info("User Size = " + userSize);
