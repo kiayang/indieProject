@@ -14,7 +14,7 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-
+            <li><a href="displayMemberMenu.jsp"><span class="glyphicon glyphicon-home"></span> Member Menu</a></li>
             <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>

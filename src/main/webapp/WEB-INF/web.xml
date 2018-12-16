@@ -41,16 +41,19 @@
 
   <!-- Protect everything within the "user search" directory. -->
   <security-constraint>
+
     <web-resource-collection>
       <web-resource-name>Member Menu</web-resource-name>
       <url-pattern>/displayMemberMenu.jsp</url-pattern>
     </web-resource-collection>
+
     <auth-constraint>
       <role-name>member</role-name>
     </auth-constraint>
     <auth-constraint>
       <role-name>admin</role-name>
     </auth-constraint>
+
   </security-constraint>
 
   <!-- Protect everything within the "user search" directory. -->
@@ -59,15 +62,20 @@
       <web-resource-name>Admin Menu</web-resource-name>
       <url-pattern>/displayAdminMenu.jsp</url-pattern>
     </web-resource-collection>
+
     <auth-constraint>
       <role-name>admin</role-name>
     </auth-constraint>
 
   </security-constraint>
+
+
+
   <security-role>
     <role-name>admin</role-name>
   </security-role>
   <security-role>
     <role-name>member</role-name>
   </security-role>
+
 </web-app>

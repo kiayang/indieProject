@@ -6,14 +6,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.jsp">Family Hardship Contribution Website</a>
-        </div>
-
-    </div>
-</nav>
+<%@include file="nav2.jsp"%>
 
 <div class="container">
     <div class="row" text="center">
