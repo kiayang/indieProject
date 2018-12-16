@@ -1,0 +1,11 @@
+
+Isquid:S1989H"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
+Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Isquid:S1989H"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
+Zsquid:S11555">Use isEmpty() to check whether the collection is empty or not.(ùì«úÿÿÿÿ
+_squid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(¸„ÇŠùÿÿÿÿ
+gsquid:S1192)"IDefine a constant instead of duplicating this literal "username" 3 times.(çœ®å8üµÄªû,
+Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Tsquid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ
+ksquid:S2441E"MMake "List" and its parameters serializable or don't store it in the session.(œ¯ËÆ8Ó÷©¬û,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ

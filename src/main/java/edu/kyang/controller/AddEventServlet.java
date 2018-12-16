@@ -74,7 +74,7 @@ public class AddEventServlet extends HttpServlet {
 
                 List<EventBean> event = eventDAO.getByPropertyEqual("event_userid", eventUserName);
 
-                request.setAttribute("events", event);
+                httpSession.setAttribute("events", event);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminEventsResults.jsp");
                 dispatcher.forward(request, response);
             }else{
@@ -87,8 +87,8 @@ public class AddEventServlet extends HttpServlet {
 
         }else{
             message = userName  + " is not an active member at this time, please try again!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
+            request.setAttribute("returnMessage", " ");
+            request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }

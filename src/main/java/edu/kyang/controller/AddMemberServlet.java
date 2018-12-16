@@ -35,14 +35,7 @@ public class AddMemberServlet extends HttpServlet {
             throws ServletException, IOException {
 
         logger.info("starting the Add Member Servlet");
-        HttpSession httpSession = request.getSession();
 
-        // Allocate a output writer to write the response message into the network socket
-        /*
-        PrintWriter out = response.getWriter();
-        */
-        //protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-        //Retrieve values from form
         String email = request.getParameter("email");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
@@ -57,13 +50,6 @@ public class AddMemberServlet extends HttpServlet {
         String status = "new";
         String userRole = "register";
         String message;
-/*
-        out.println("******************************");
-        out.println("email = " + email);
-        out.println("password = " + password);
-        out.println("******************************");
-        out.close();
-        */
 
         GenericDAO userDAO = new GenericDAO(UserBean.class);
         GenericDAO userRoleDAO = new GenericDAO(UserRoleBean.class);
@@ -81,14 +67,14 @@ public class AddMemberServlet extends HttpServlet {
             userRoleDAO.insert(userRoleBean);
 
             message = "User " + email + " has been registered as a member and will be contacted soon!";
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
+            request.setAttribute("returnMessage", message);
+            request.setAttribute("errorMessage", " ");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }else {
             message = "User name " + email + " has already been registered! Enter a different user name!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
+            request.setAttribute("returnMessage", " ");
+            request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }

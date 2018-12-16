@@ -1,11 +1,11 @@
 
-Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
-Bsquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-bsquid:S1854&"?Remove this useless assignment to local variable "httpSession".(ï¶®øÿÿÿÿ8½÷ìÖú,
-Bsquid:S1989L"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-bsquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(¸ŞÄ
-Ssquid:S1481&"0Remove this unused "httpSession" local variable.(ï¶®øÿÿÿÿ8½÷ìÖú,
-Bsquid:S1989L"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989@"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
 [squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8±ÕÓÖú,
-Bsquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989@"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+fsquid:UselessImportCheck";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8õ»Â¬û,
 fsquid:UselessImportCheck"6Remove this unused import 'javax.ws.rs.core.Response'.(ˆäĞæüÿÿÿÿ8±ÕÓÖú,
+Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
+jsquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ8¼öÂ¬û,
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¼öÂ¬û,

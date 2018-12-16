@@ -1,0 +1,11 @@
+
+Wsquid:S2441A":Make "List" serializable or don't store it in the session.(õ–‘8áş«û,
+Isquid:S19896"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+fsquid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(¸„ÇŠùÿÿÿÿ8­í—©û,
+Isquid:S1989<"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+Isquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+Isquid:S1989C"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+Isquid:S19896"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+Isquid:S1989<"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8ˆ­©û,
+bsquid:UselessImportCheck"7Remove this unused import 'edu.kyang.entity.EventBean'.(­×æ¸8ˆ­©û,
+ksquid:S24414"MMake "List" and its parameters serializable or don't store it in the session.(» •ß8’Æ½¬û,

@@ -35,15 +35,12 @@ public class DeleteMemberServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession httpSession = request.getSession();
-
         String email = request.getParameter("username");
         String message;
 
         logger.info("starting the delete member servlet");
 
         GenericDAO userDao = new GenericDAO(UserBean.class);
-        //List<UserRoleBean> userRoles = userRoleDAO.getByPropertyEqual("username", email);
         UserBean user = (UserBean) userDao.getByPropertyEqualUnique("username", email);
 
         logger.info("user = " + user);

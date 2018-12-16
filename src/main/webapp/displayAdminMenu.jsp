@@ -35,6 +35,13 @@
                         <a href="adminSearchMember.jsp" class="button">Search Member</a>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <a href="adminSearchRole.jsp" class="button">Search Member Role</a>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <a href="adminSearchMemberEvent.jsp" class="button">Search Member Event</a>
@@ -50,6 +57,7 @@
                         <a href="adminAddEvent.jsp" class="button">Add Event</a>
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         <a href="adminUpdateMemberRole.jsp" class="button">Update Member Role</a>

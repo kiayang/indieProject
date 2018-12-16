@@ -53,7 +53,7 @@ public class SearchEventServlet extends HttpServlet {
 
             if (eventSize > 0) {
                 logger.info("Event Size > zero: " + eventSize);
-                request.setAttribute("events", events);
+                httpSession.setAttribute("events", events);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
             } else {
@@ -79,7 +79,7 @@ public class SearchEventServlet extends HttpServlet {
 
                 logger.info("Event found for User Id " + searchTerm + " size > 0" + " Size is " + eventSize);
 
-                request.setAttribute("events", events);
+                httpSession.setAttribute("events", events);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
 
@@ -105,7 +105,7 @@ public class SearchEventServlet extends HttpServlet {
 
                 logger.info("Event found for User Description Like " + searchTerm + "size > 0");
 
-                request.setAttribute("events", events);
+                httpSession.setAttribute("events", events);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
 

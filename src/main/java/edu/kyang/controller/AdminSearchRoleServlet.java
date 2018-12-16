@@ -1,5 +1,7 @@
 package edu.kyang.controller;
+import edu.kyang.entity.EventBean;
 import edu.kyang.entity.UserBean;
+import edu.kyang.entity.UserRoleBean;
 import edu.kyang.persistence.GenericDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,45 +14,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * This servlet allows administrator to search or display all members
+ * This servlet will retrieve members and related roles and forward results to jsp page for display.
  */
 
 @WebServlet(
-        urlPatterns = {"/adminSearchMemberServlet"}
+        urlPatterns = {"/adminSearchRoleServlet"}
 )
 
-public class AdminSearchMemberServlet extends HttpServlet {
-
+public class AdminSearchRoleServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession httpSession = request.getSession();
-        logger.info("starting the admin search member servlet");
+        logger.info("starting the admin search member Role servlet");
 
         String email = request.getParameter("username");
         String message;
         logger.info("username = " + email);
 
-        GenericDAO genericUserDAO = new GenericDAO(UserBean.class);
+        GenericDAO genericRoleDAO = new GenericDAO(UserRoleBean.class);
 
         if (email!=null && !email.isEmpty()) {
             logger.info("username is NOT empty" + email);
 
-            List<UserBean> users = genericUserDAO.getByPropertyLike("username", email);
+            List<UserRoleBean> userRoles = genericRoleDAO.getByPropertyLike("username", email);
 
-            logger.info("user bean = " + users);
+            logger.info("user role bean = " + userRoles);
 
-            int userCount = users.size();
+            int userCount = userRoles.size();
 
             if (userCount > 0){
-                httpSession.setAttribute("users", users);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminMemberResults.jsp");
+                httpSession.setAttribute("roles", userRoles);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminRoleResults.jsp");
                 dispatcher.forward(request, response);
             }else {
                 message = "User name " + email + " does not exist, try another search";
@@ -62,10 +62,11 @@ public class AdminSearchMemberServlet extends HttpServlet {
 
         }else {
             logger.info("username is empty " + email);
-            httpSession.setAttribute("users", genericUserDAO.getAll());
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminMemberResults.jsp");
+            httpSession.setAttribute("roles", genericRoleDAO.getAll());
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminRoleResults.jsp");
             dispatcher.forward(request, response);
         }
 
     }
+
 }

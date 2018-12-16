@@ -54,3 +54,15 @@ a
 0src/main/java/edu/kyang/entity/UserRoleBean.java,1\7\17502cbe7acc4c9fc99fe133e49f8870d28a7f74
 h
 8src/test/java/edu/kyang/persistence/UserRoleDaoTest.java,e\e\eeda9745df1f9c58692fca0a318e6ea90be7a1a1
+S
+#src/main/webapp/adminSearchRole.jsp,7\4\744cf59af2cac5333e47774ce47e754b927255e8
+Y
+)src/main/webapp/adminUpdateMemberRole.jsp,4\5\45f06bb77bf1e3dda10d2c84ee7c5e924e74402e
+[
++src/main/webapp/displayAdminRoleResults.jsp,9\3\93d0892d2d16aa6b4b81acdc42267f4a3776ee5f
+h
+8src/main/java/edu/kyang/controller/AddMemberServlet.java,5\d\5d42f3b7aa5555d70d352d6953df36cf2bcfd09e
+n
+>src/main/java/edu/kyang/controller/AdminSearchRoleServlet.java,d\8\d8d1adfaed39b8b10dd840edc4f6ce57bed41caf
+i
+9src/main/java/edu/kyang/controller/UpdateRoleServlet.java,7\2\72199705f68bedc6f0771b70707aa9092a187f9f

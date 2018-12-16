@@ -22,10 +22,10 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/updateMemberRoleServlet"}
+        urlPatterns = {"/updateRoleServlet"}
 )
 
-public class UpdateMemberRoleServlet extends HttpServlet {
+public class UpdateRoleServlet extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -39,11 +39,11 @@ public class UpdateMemberRoleServlet extends HttpServlet {
         HttpSession httpSession = request.getSession();
 
         String email = request.getParameter("username");
-        String role = request.getParameter("role");
+        String updateRole = request.getParameter("role");
         String message;
 
 
-        logger.info("Role before: " + role);
+        logger.info("Role before: " + updateRole);
         logger.info("*** BEFORE updateToUpdate ***");
 
         GenericDAO userRoleDao = new GenericDAO(UserRoleBean.class);
@@ -51,29 +51,30 @@ public class UpdateMemberRoleServlet extends HttpServlet {
         logger.info("*** After get user Role by username ***");
 
         if (userRoles.size() > 0){
+            logger.info("username: " + userRoles);
+
             int roleid = userRoles.get(0).getId();
-            logger.info("roleid: " + roleid);
-
             UserRoleBean userToUpdate = (UserRoleBean)userRoleDao.getById(roleid);
-
-            userToUpdate.setUserRole(role);
-
+            userToUpdate.setUserRole(updateRole);
             userRoleDao.saveOrUpdate(userToUpdate);
-            UserRoleBean retrievedUser = (UserRoleBean) userRoleDao.getById(roleid);
-            String retrieveRole = retrievedUser.getUserRole();
 
-            logger.info("retrieve Role = " + retrieveRole);
 
-            message = "User Role for " + email + " has been updated to " + retrieveRole;
-            httpSession.setAttribute("returnMessage", message);
-            httpSession.setAttribute("errorMessage", " ");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
+            List<UserRoleBean> retrieveRoleList = userRoleDao.getByPropertyEqual("username",email);
+
+            logger.info("retrieve Role List = " + retrieveRoleList);
+
+            message = "User Role for " + email + " has been updated to " + updateRole;
+            request.setAttribute("returnMessage", message);
+            request.setAttribute("errorMessage", " ");
+            httpSession.setAttribute("roles", retrieveRoleList);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminRoleResults.jsp");
             dispatcher.forward(request, response);
 
         }else{
             message = "User name " + email + " is not found, try again!!";
-            httpSession.setAttribute("returnMessage", " ");
-            httpSession.setAttribute("errorMessage", message);
+            request.setAttribute("returnMessage", " ");
+            request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
             dispatcher.forward(request, response);
         }
