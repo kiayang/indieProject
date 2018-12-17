@@ -34,7 +34,6 @@
             </div>
         </div>
 
-
     <table id="userTable" class="display " cellspacing="0" width="100%">
         <thead>
             <th>User Name</th>
@@ -70,7 +69,6 @@
                 </tr>
 
             </c:forEach>
-
         </tbody>
     </table>
 

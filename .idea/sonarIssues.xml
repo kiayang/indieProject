@@ -28,7 +28,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/5a3a4842-88f2-4361-84f7-47a8fbb7c597/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/ba52203d-c8be-424b-a646-a0f0d11d2090/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dump.sql">
           <value>
             <set />
           </value>
@@ -39,6 +49,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/logging/indie.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/ProcessEvent.java">
           <value>
             <set />
           </value>
@@ -249,6 +264,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/edu/kyang/persistence/UserDaoTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/edu/kyang/persistence/UserEventDaoTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/resources/cleandb.sql">
           <value>
             <set />
           </value>

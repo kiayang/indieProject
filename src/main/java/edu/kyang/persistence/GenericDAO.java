@@ -153,10 +153,27 @@ public class GenericDAO<T>{
         session.close();
         return list;
     }
+
+
+    public List<T> getByPropertyEqualInt(String propertyName, int value) {
+
+        Session session = getSession();
+
+        logger.debug("Searching for entity equal int " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> list = session.createQuery( query ).getResultList();
+
+        session.close();
+        return list;
+    }
+
     private Session getSession(){
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
-
 
     /**
      * Gets by property like for some entity

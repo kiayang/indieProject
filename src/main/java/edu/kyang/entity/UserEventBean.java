@@ -49,6 +49,14 @@ public class UserEventBean {
         this.uePaidDate = uePaidDate;
     }
 
+    //Needed for Junit testing
+    public UserEventBean(int id, UserBean userBean, EventBean eventBean, String uePaidStatus, LocalDate uePaidDate) {
+        this.ueId = id;
+        this.userBean = userBean;
+        this.eventBean = eventBean;
+        this.uePaidStatus = uePaidStatus;
+        this.uePaidDate = uePaidDate;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

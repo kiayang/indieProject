@@ -1094,17 +1094,18 @@
     <column id="268" parent="238" name="ue_userid">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="269" parent="238" name="ue_eventid">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="270" parent="238" name="paid_status">
       <Position>4</Position>
       <DataType>varchar(6)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="271" parent="238" name="paid_date">
@@ -1139,8 +1140,6 @@
       <RefSchemaName>indie</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>userid</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="278" parent="238" name="user_event_event_event_id_fk">
       <ColNames>ue_eventid</ColNames>
