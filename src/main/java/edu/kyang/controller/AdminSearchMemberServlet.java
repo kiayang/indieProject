@@ -61,7 +61,7 @@ public class AdminSearchMemberServlet extends HttpServlet {
             }
 
         }else {
-            logger.info("username is empty " + email);
+            logger.info("username is empty, search/display all members " + email);
             httpSession.setAttribute("users", genericUserDAO.getAll());
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminMemberResults.jsp");
             dispatcher.forward(request, response);

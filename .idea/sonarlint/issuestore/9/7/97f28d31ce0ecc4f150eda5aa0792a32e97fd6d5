@@ -1,9 +1,9 @@
 
-Vsquid:S1481ğ"2Remove this unused "propertyPath1" local variable.(÷ºı–ıÿÿÿÿ8ÚäŸÕû,
-squid:S1192Æ"[Define a constant instead of duplicating this literal "Get list by property like " 3 times.(üÑıüÿÿÿÿ8ÚäŸÕû,
 `squid:S1854ñ"ARemove this useless assignment to local variable "propertyPath2".(„¦¦‘8ÚäŸÕû,
-`squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ÚäŸÕû,
-Vsquid:S18540"8Remove this useless assignment to local variable "root".(áÚƒ»8ÚäŸÕû,
 esquid:S1854ğ"ARemove this useless assignment to local variable "propertyPath1".(÷ºı–ıÿÿÿÿ8ÚäŸÕû,
 Gsquid:S14810")Remove this unused "root" local variable.(áÚƒ»8ÚäŸÕû,
 Qsquid:S1481ñ"2Remove this unused "propertyPath2" local variable.(„¦¦‘8ÚäŸÕû,
+`squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ÚäŸÕû,
+squid:S1192Æ"[Define a constant instead of duplicating this literal "Get list by property like " 3 times.(üÑıüÿÿÿÿ8ÚäŸÕû,
+Vsquid:S1481ğ"2Remove this unused "propertyPath1" local variable.(÷ºı–ıÿÿÿÿ8ÚäŸÕû,
+Vsquid:S18540"8Remove this useless assignment to local variable "root".(áÚƒ»8ÚäŸÕû,

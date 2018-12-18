@@ -57,13 +57,7 @@
                         <a href="adminAddEvent.jsp" class="button">Add Event</a>
                     </td>
                 </tr>
-
-                <tr>
-                    <td>
-                        <a href="adminUpdateMemberRole.jsp" class="button">Update Member Role</a>
-                    </td>
-                </tr>
-
+                
             </table>
 
         </div>

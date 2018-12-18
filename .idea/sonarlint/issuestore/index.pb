@@ -102,3 +102,5 @@ Y
 dump.sql,0\2\02eef0ed60c297d501f32b53c4d11f9feb05c169
 i
 9src/test/java/edu/kyang/persistence/UserEventDaoTest.java,a\8\a88a31e374687b3ee3e01ee14bb9fbeac208fb9d
+A
+logging/indie.log,9\a\9a87c6b5e333be82823b30df2778ca54179a11e5

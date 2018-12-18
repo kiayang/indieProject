@@ -162,8 +162,45 @@ public class UserEventDaoTest {
 
     @Test
     void getByPropertyEqualIntSuccess() {
-        List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("ueId", 1);
-        Assertions.assertEquals(1, userEvents.size());
-        Assertions.assertEquals(1, userEvents.get(0).getUeId());
+
+        //retrieve user info related to user bean
+        List<UserBean> users = userDao.getByPropertyEqual("username", "kyang@hotmail.com");
+        Assertions.assertEquals(1, users.size());
+        int userid = users.get(0).getId();
+
+        List<UserEventBean> userEvents2 = userEventDao.getByPropertyEqualInt("ueId",userid);
+
+        logger.info("User Event Bean : " + userEvents2);
+
+        int userEventId = userEvents2.get(0).getUeId();
+        String firstname = userEvents2.get(0).getUserBean().getFirstname();
+        String lastname = userEvents2.get(0).getUserBean().getLastname();
+        String username = userEvents2.get(0).getUserBean().getUsername();
+        int eventid = userEvents2.get(0).getEventBean().getEventId();
+        BigDecimal fee = userEvents2.get(0).getEventBean().getEvent_fee();
+        LocalDate eventDate = userEvents2.get(0).getEventBean().getEvent_date();
+        String status = userEvents2.get(0).getUePaidStatus();
+        LocalDate paidDate = userEvents2.get(0).getUePaidDate();
+
+        BigDecimal fee1 = BigDecimal.valueOf(15);
+
+        logger.info("Firstname : " + firstname);
+        logger.info("Lastname : " + lastname);
+        logger.info("Username : " + username);
+        logger.info("eventid : " + eventid);
+        logger.info("fee : " + fee);
+        logger.info("event date : " + eventDate);
+        logger.info("paid status: " + status);
+        logger.info("paid date : " + paidDate);
+
+        assertEquals("kia", firstname);
+        assertEquals("yang", lastname);
+        assertEquals("kyang@hotmail.com", username);
+        assertEquals(1, eventid);
+        assertEquals(fee1, fee);
+        assertEquals(LocalDate.parse("2018-09-10"), eventDate);
+        assertEquals("paid", status);
+        assertEquals(LocalDate.parse("2018-10-05"),paidDate);
     }
+
 }
