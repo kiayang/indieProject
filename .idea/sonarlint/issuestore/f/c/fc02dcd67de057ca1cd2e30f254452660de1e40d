@@ -1,13 +1,13 @@
 
-Nsquid:S1481)"+Remove this unused "userid" local variable.(Û£‹ùÿÿÿÿ8âú…Õú,
-Isquid:S1989~"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8şëòÕú,
-Jsquid:S1989†"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8âú…Õú,
-usquid:S3776!"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ş³‚”ûÿÿÿÿ8âú…Õú,
 Isquid:S1989~"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8şëòÕú,
 bsquid:S1854'"?Remove this useless assignment to local variable "httpSession".(ï¶®øÿÿÿÿ8€„çÖú,
-[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8âú…Õú,
-Ssquid:S1481'"0Remove this unused "httpSession" local variable.(ï¶®øÿÿÿÿ8€„çÖú,
-jsquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ8âú…Õú,
 Jsquid:S1989†"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8âú…Õú,
+Nsquid:S1481)"+Remove this unused "userid" local variable.(Û£‹ùÿÿÿÿ8âú…Õú,
+Ssquid:S1481'"0Remove this unused "httpSession" local variable.(ï¶®øÿÿÿÿ8€„çÖú,
+usquid:S3776!"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ş³‚”ûÿÿÿÿ8âú…Õú,
 ]squid:S1854)":Remove this useless assignment to local variable "userid".(Û£‹ùÿÿÿÿ8âú…Õú,
 \squid:S1155@">Use isEmpty() to check whether the collection is empty or not.(¦ÍªË8âú…Õú,
+Isquid:S1989~"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8şëòÕú,
+Jsquid:S1989†"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8âú…Õú,
+[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8âú…Õú,
+jsquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ8âú…Õú,

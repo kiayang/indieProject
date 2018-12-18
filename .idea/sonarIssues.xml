@@ -93,6 +93,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/controller/SearchMemberEventServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/controller/SearchMemberServlet.java">
           <value>
             <set />

@@ -1,14 +1,14 @@
 
-asquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ
-Zsquid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8Œ¶Éüû,
-Ysquid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8 ô¹Øú,
-`squid:UselessImportCheck"7Remove this unused import 'edu.kyang.entity.EventBean'.(­×æ¸8ø»ûû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
-^squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8Œ¶Éüû,
-nsquid:S2441"MMake "List" and its parameters serializable or don't store it in the session.(±û½£üÿÿÿÿ8œî¬ıû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ıû,
-Gsquid:S1989"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ıû,
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ë¦ğ‹ıÿÿÿÿ8Ô‡­ıû,
+csquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ
+nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(Ë¦ğ‹ıÿÿÿÿ8Ô‡­ıû,
+psquid:S2441E"MMake "List" and its parameters serializable or don't store it in the session.(±û½£üÿÿÿÿ8œî¬ıû,
+Isquid:S19894"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
+Isquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
+Isquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ıû,
+Isquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ıû,
+Isquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
+[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8 ô¹Øú,
+bsquid:UselessImportCheck"7Remove this unused import 'edu.kyang.entity.EventBean'.(­×æ¸8ø»ûû,
+Isquid:S19894"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
+`squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8Œ¶Éüû,
+\squid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8Œ¶Éüû,
