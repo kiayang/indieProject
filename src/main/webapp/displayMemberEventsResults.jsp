@@ -74,7 +74,7 @@
         <div id="editEventModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form name="updateMemberForm"action="updateMemberServlet"method="post">
+                    <form name="updateMemberForm"action="updateUserEventServlet"method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Member</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -84,7 +84,7 @@
 
                             <div class="form-group">
                                 <label>Enter User Event Id *</label>
-                                <input type="number" class="form-control" id="ue_Id" name="ue_Id" maxlength="11" required>
+                                <input type="number" class="form-control" id="ue_id" name="ue_id" maxlength="11" required>
                             </div>
 
                             <div class="form-group">
@@ -115,6 +115,16 @@
 
 
     </div>
+
+    <div class="container-fluid">
+
+        <div class="alert alert-success">
+            <strong><bold>${returnMessage}</bold></strong>
+            <strong><bold>${errorMessage}</bold></strong>
+        </div>
+
+    </div>
+
 </div>
 </body>
 </html>

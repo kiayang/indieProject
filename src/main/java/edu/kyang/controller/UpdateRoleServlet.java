@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * A simple servlet to welcome the user.
+ * This servlet will update event info on the event table
  */
 
 @WebServlet(
