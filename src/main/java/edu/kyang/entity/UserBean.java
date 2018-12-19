@@ -13,6 +13,9 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * The type User bean.
+ */
 @Entity(name = "UserBean")
 @Table(name = "user")
 @Data
@@ -50,9 +53,27 @@ public class UserBean {
     @OneToMany(mappedBy = "userBean", orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserEventBean> userEventList = new HashSet<>();
 
+    /**
+     * Instantiates a new User bean.
+     */
     public UserBean() {
     }
 
+    /**
+     * Instantiates a new User bean.
+     *
+     * @param username    the username
+     * @param status      the status
+     * @param password    the password
+     * @param firstname   the firstname
+     * @param lastname    the lastname
+     * @param middlename  the middlename
+     * @param dateofbirth the dateofbirth
+     * @param address     the address
+     * @param state       the state
+     * @param zipcode     the zipcode
+     * @param phone       the phone
+     */
     public UserBean(String username, String status, String password, String firstname, String lastname, String middlename, LocalDate dateofbirth, String address, String state, String zipcode, String phone) {
         this.username = username;
         this.status = status;

@@ -112,6 +112,9 @@ public class UserDaoTest {
         Assertions.assertEquals(1, users.size());
     }
 
+    /**
+     * Gets by property equal two.
+     */
     @Test
     void getByPropertyEqualTwo() {
         String userid = "tpot1@gmail.com";
@@ -122,6 +125,9 @@ public class UserDaoTest {
         assertEquals("active", user.get(0).getStatus());
     }
 
+    /**
+     * Gets by property equal unique.
+     */
     @Test
     void getByPropertyEqualUnique() {
         UserBean user = (UserBean) genericDao.getByPropertyEqualUnique("username", "kyang@hotmail.com");

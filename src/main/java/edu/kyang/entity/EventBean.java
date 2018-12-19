@@ -44,6 +44,14 @@ public class EventBean {
     public EventBean() {
     }
 
+    /**
+     * Instantiates a new Event bean.
+     *
+     * @param event_userid the event userid
+     * @param description  the description
+     * @param event_date   the event date
+     * @param event_fee    the event fee
+     */
     public EventBean(String event_userid, String description, LocalDate event_date, BigDecimal event_fee) {
         this.event_userid = event_userid;
         this.description = description;

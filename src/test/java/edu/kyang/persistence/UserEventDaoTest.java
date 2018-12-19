@@ -65,6 +65,9 @@ public class UserEventDaoTest {
         assertEquals(1, userEvents.size());
     }
 
+    /**
+     * Gets by id success.
+     */
     @Test
     void getByIdSuccess() {
         UserBean userBean = (UserBean) userDao.getById(2);
@@ -82,6 +85,9 @@ public class UserEventDaoTest {
 
     }
 
+    /**
+     * Insert success.
+     */
     @Test
     void insertSuccess() {
         logger.info("Testing UserEventDao - Insert Method");
@@ -115,6 +121,9 @@ public class UserEventDaoTest {
 
     }
 
+    /**
+     * Save or update successful.
+     */
     @Test
     void SaveOrUpdateSuccessful() {
         logger.info("Testing UserEventDao - Save/Update Method");
@@ -160,6 +169,9 @@ public class UserEventDaoTest {
     }
     */
 
+    /**
+     * Gets by property equal int success.
+     */
     @Test
     void getByPropertyEqualIntSuccess() {
 

@@ -27,7 +27,6 @@ public class GenericDAO<T>{
      *
      * @param type the type
      */
-
     public GenericDAO(Class<T> type) {
         this.type = type;
     }
@@ -155,6 +154,13 @@ public class GenericDAO<T>{
     }
 
 
+    /**
+     * Gets by property equal int.
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property equal int
+     */
     public List<T> getByPropertyEqualInt(String propertyName, int value) {
 
         Session session = getSession();
@@ -201,6 +207,15 @@ public class GenericDAO<T>{
     }
 
 
+    /**
+     * Gets by property like two.
+     *
+     * @param propertyName1 the property name 1
+     * @param value1        the value 1
+     * @param propertyName2 the property name 2
+     * @param value2        the value 2
+     * @return the by property like two
+     */
     public List<T> getByPropertyLikeTwo(String propertyName1, String value1, String propertyName2, String value2) {
         Session session = getSession();
 
@@ -228,6 +243,15 @@ public class GenericDAO<T>{
         return list;
     }
 
+    /**
+     * Gets by property equal two.
+     *
+     * @param propertyName1 the property name 1
+     * @param value1        the value 1
+     * @param propertyName2 the property name 2
+     * @param value2        the value 2
+     * @return the by property equal two
+     */
     public List<T> getByPropertyEqualTwo(String propertyName1, String value1, String propertyName2, String value2) {
         Session session = getSession();
 
@@ -254,11 +278,12 @@ public class GenericDAO<T>{
         return list;
     }
 
-     /**
+    /**
      * This generic method That gets a single object by property name and a value
+     *
      * @param propertyName entity property name
-     * @param value value to query by
-     * @return entity
+     * @param value        value to query by
+     * @return entity by property equal unique
      */
     public T getByPropertyEqualUnique(String propertyName, String value) {
         Session session = getSession();

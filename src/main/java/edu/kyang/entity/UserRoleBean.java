@@ -7,6 +7,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Objects;
 
+/**
+ * The type User role bean.
+ */
 @Entity(name = "UserRoleBean")
 @Table(name = "user_role")
 @Data
@@ -26,9 +29,19 @@ public class UserRoleBean {
     @Column(name = "role")
     private String userRole;
 
+    /**
+     * Instantiates a new User role bean.
+     */
     public UserRoleBean() {
     }
 
+    /**
+     * Instantiates a new User role bean.
+     *
+     * @param userBean the user bean
+     * @param username the username
+     * @param userRole the user role
+     */
     public UserRoleBean(UserBean userBean, String username, String userRole) {
         this.userBean = userBean;
         this.username = username;

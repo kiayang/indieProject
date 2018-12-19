@@ -7,6 +7,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * The type User event bean.
+ */
 @Entity(name = "UserEventBean")
 @Table(name = "user_event")
 @Data
@@ -33,15 +36,32 @@ public class UserEventBean {
     @JoinColumn(name="ue_eventid")
     private EventBean eventBean;
 
+    /**
+     * The Ue paid status.
+     */
     @Column(name="paid_status")
     String uePaidStatus;
 
+    /**
+     * The Ue paid date.
+     */
     @Column(name="paid_date")
     LocalDate uePaidDate;
 
+    /**
+     * Instantiates a new User event bean.
+     */
     public UserEventBean() {
     }
 
+    /**
+     * Instantiates a new User event bean.
+     *
+     * @param userBean     the user bean
+     * @param eventBean    the event bean
+     * @param uePaidStatus the ue paid status
+     * @param uePaidDate   the ue paid date
+     */
     public UserEventBean(UserBean userBean, EventBean eventBean, String uePaidStatus, LocalDate uePaidDate) {
         this.userBean = userBean;
         this.eventBean = eventBean;
@@ -49,7 +69,16 @@ public class UserEventBean {
         this.uePaidDate = uePaidDate;
     }
 
-    //Needed for Junit testing
+    /**
+     * Instantiates a new User event bean.
+     *
+     * @param id           the id
+     * @param userBean     the user bean
+     * @param eventBean    the event bean
+     * @param uePaidStatus the ue paid status
+     * @param uePaidDate   the ue paid date
+     */
+//Needed for Junit testing
     public UserEventBean(int id, UserBean userBean, EventBean eventBean, String uePaidStatus, LocalDate uePaidDate) {
         this.ueId = id;
         this.userBean = userBean;
