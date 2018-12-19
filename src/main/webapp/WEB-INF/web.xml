@@ -14,29 +14,14 @@
   </login-config>
 
   <error-page>
-    <!-- Missing login -->
-    <error-code>401</error-code>
-    <location>/index.jsp</location>
-  </error-page>
-  <error-page>
     <!-- Forbidden directory listing -->
     <error-code>403</error-code>
-    <location>/forbidden.jsp</location>
+    <location>/error403.jsp</location>
   </error-page>
   <error-page>
     <!-- Missing resource -->
     <error-code>404</error-code>
-    <location>/index.jsp</location>
-  </error-page>
-  <error-page>
-    <!-- Uncaught exception -->
-    <error-code>500</error-code>
-    <location>/index.jsp</location>
-  </error-page>
-  <error-page>
-    <!-- Unsupported servlet method -->
-    <error-code>503</error-code>
-    <location>/index.jsp</location>
+    <location>/error404.jsp</location>
   </error-page>
 
   <!-- Protect everything within the "user search" directory. -->
@@ -59,8 +44,15 @@
   <!-- Protect everything within the "user search" directory. -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Admin Menu</web-resource-name>
+      <web-resource-name>Admininstrator</web-resource-name>
       <url-pattern>/displayAdminMenu.jsp</url-pattern>
+      <url-pattern>/adminAddEvent.jsp</url-pattern>
+      <url-pattern>/adminSearchEvent.jsp</url-pattern>
+      <url-pattern>/adminSearchMember.jsp</url-pattern>
+      <url-pattern>/adminSearchRole.jsp</url-pattern>
+      <url-pattern>/displayAdminEventsResults.jsp</url-pattern>
+      <url-pattern>/displayAdminMemberResults.jsp</url-pattern>
+      <url-pattern>/displayAdminRoleResults.jsp</url-pattern>
     </web-resource-collection>
 
     <auth-constraint>
@@ -68,8 +60,6 @@
     </auth-constraint>
 
   </security-constraint>
-
-
 
   <security-role>
     <role-name>admin</role-name>

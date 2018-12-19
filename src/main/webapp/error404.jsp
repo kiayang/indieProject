@@ -22,7 +22,8 @@
 
         <div class="col-sm-6 text-left">
             <br/><br/>
-            <p class="bg-danger"><bold>Error user logged out! User not allowed to login due to security!</bold></p>
+                <p class="bg-danger"><bold>Error 404: We could not find the page you were looking!! </bold></p>
+            ${pageContext.errorData.requestURI}
         </div>
 
         <% session.invalidate(); %>

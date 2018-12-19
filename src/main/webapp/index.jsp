@@ -13,7 +13,12 @@
 
         <div class="col-sm-6 text-left">
             <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p> The goal of this application is to help keep track of family hardship contributions that members contribute
+                to help out with costly funeral expenses.  This application allows members to login and update their own profile
+                and most importantly helps the administrator to easily add and maintain the events and keep track of the status
+                of each of the 400 plus members.
+
+            </p>
             <hr>
 
         </div>

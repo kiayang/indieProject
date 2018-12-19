@@ -42,6 +42,20 @@ outside of class not just indie project. **
 | 10/21/2018 | Exercise 7 | 3 | |
 | 10/22/2018 | Exercise 7 and indie project | 5 | |
 | 10/23/2018 | Indie Project and Exercise 7 | 6 | issues with authentication failure. Worked on JSP pages and logout for indie project. |
+| 11/3 | Worked on restful services excercises | 4 |  |
+|  |  |  |  |
+| 11/5 | Researched on bootstrap and prepared for presentation | 3 |  |
+| 11/8 | Incorporate boostrap into the indie project | 2 |  |
+| 11/19 | Team Project - worked on jsp pages/ testing out the web service | 8 |  |
+| 11/21 | Team Project - worked on getting project deployed to AWS | 13 | issue with with ssh login |
+| 11/15 | Work on multithreading excercise | 3 |  |
+| 12/4 | Worked on asynchronous messaging exercise | 4 |  |
+| 12/10 | Worked on indie project and getting front end and crud to work for the event table | 4 |  |
+| 12/13 | Worked on adding the user event table to database, mapping out in hibernate | 5 |  |
+| 12/17 | Worked on crud and unit testing for user event table | 6 |  |
+| 12/18 | worked on getting the functionality for admin/member pages | 8 |  |
+| 12/18 | Worked on getting the changes out to AWS | 6 | issue with tomcat |
+| 12/19 | Create video, finish up checklist and added final touches to project | 6 |  |
 
 
 

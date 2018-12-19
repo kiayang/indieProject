@@ -1,10 +1,10 @@
 
-`squid:UselessImportCheck"7Remove this unused import 'javax.jws.soap.SOAPBinding'.(î¶âÑûÿÿÿÿ
-Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8©³Ü«û,
-Esquid:S1481.")Remove this unused "city" local variable.(¢„Ñÿÿÿÿÿ
-Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
 Tsquid:S1854."8Remove this useless assignment to local variable "city".(¢„Ñÿÿÿÿÿ
+Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Bsquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
 fsquid:UselessImportCheck";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8ÿ¡º¬û,
+Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Esquid:S1481.")Remove this unused "city" local variable.(¢„Ñÿÿÿÿÿ
+`squid:UselessImportCheck"7Remove this unused import 'javax.jws.soap.SOAPBinding'.(î¶âÑûÿÿÿÿ
+[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8©³Ü«û,

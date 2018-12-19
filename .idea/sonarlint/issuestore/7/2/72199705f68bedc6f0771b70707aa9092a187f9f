@@ -1,11 +1,11 @@
 
 Isquid:S1989G"&Add a "try/catch" block for "forward".(ЬХ€кшяяяя8Д¦µЄы,
+Isquid:S1989G"&Add a "try/catch" block for "forward".(ЬХ€кшяяяя8Д¦µЄы,
+_squid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(ё„ЗЉщяяяя
 ksquid:S2441D"MMake "List" and its parameters serializable or don't store it in the session.(њЇЛЖ8Уч©¬ы,
 Bsquid:S1989N"&Add a "try/catch" block for "forward".(ЬХ€кшяяяя
-Isquid:S1989G"&Add a "try/catch" block for "forward".(ЬХ€кшяяяя8Д¦µЄы,
 Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬иэяяяя
-Zsquid:S11555">Use isEmpty() to check whether the collection is empty or not.(щЏм«ъяяяя
-_squid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(ё„ЗЉщяяяя
-Jsquid:S1989)"'Add a "try/catch" block for "parseInt".(Чх«±яяяяя8–ШУЈь,
 Bsquid:S1989N"&Add a "try/catch" block for "forward".(ЬХ€кшяяяя
 Tsquid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(УЮПЫ
+Jsquid:S1989)"'Add a "try/catch" block for "parseInt".(Чх«±яяяяя8–ШУЈь,
+Zsquid:S11555">Use isEmpty() to check whether the collection is empty or not.(щЏм«ъяяяя
