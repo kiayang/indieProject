@@ -2,17 +2,6 @@
 <c:set var="title" value="Search Results" />
 <%@include file="head1.jsp"%>
 
-<script type="text/javascript" class="init">
-
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-    });
-</script>
-
 <html>
 
 <body>
@@ -24,9 +13,17 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                     <h2>Administrator <b>Manage Member Roles</b></h2>
                 </div>
+
+                    <div class="col-sm-4">
+                        <a href="addMember.jsp" class="btn btn-success">
+                            <span>Add New Member</span></a>
+
+                        <a href="#editRoleModal" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                    </div>
             </div>
         </div>
 
@@ -36,7 +33,6 @@
             <th>Role Id</th>
             <th>User Name</th>
             <th>User Role</th>
-            <th>Actions</th>
         </thead>
         <tbody>
 
@@ -45,9 +41,7 @@
                     <td>${user.getId()}</td>
                     <td>${user.getUsername()}</td>
                     <td>${user.getUserRole()}</td>
-                    <td>
-                        <a href="#editRoleModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    </td>
+
                 </tr>
 
             </c:forEach>
@@ -68,12 +62,12 @@
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label>User name *</label>
-                                <input type="email" class="form-control" id="username" name="username" placeholder="Enter required email address" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address" required>
+                                <label>Enter Role Id *</label>
+                                <input type="number" class="form-control" id="number" name="roleid" placeholder="Enter Rold Id" maxlength="11" required>
                             </div>
 
                             <div class="form-group">
-
+                                <label>Select User Role *</label>
                                 <select class="custom-select custom-select-lg mb-3" name="role">
                                     <option selected>member</option>
                                     <option value="admin">admin</option>

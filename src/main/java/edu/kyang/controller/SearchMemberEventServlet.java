@@ -44,21 +44,26 @@ public class SearchMemberEventServlet extends HttpServlet {
             logger.info("*** Display username entry: " + username);
 
             List<UserBean> users = userDao.getByPropertyEqual("username", username);
+            logger.info("*** Display user list: " + users);
 
             int userSize = users.size();
             logger.info("*** Display userSize: " + userSize);
 
             if (userSize > 0) {
                 int userid = users.get(0).getId();
+
+                String userRole = "admin";
+
                 logger.info("*** Display userid: " + userid);
-                List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("ueId", userid);
+                logger.info("*** Display user name: " + username);
 
+                List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("userBean", userid);
                 int ueSize = userEvents.size();
-
-                logger.info("*** user events size: " + ueSize);
-
+                logger.info("*** Search via userid - user events size: " + ueSize);
+                ogger.info("Display User Event Bean : " + userEvents);
                 if (ueSize > 0) {
                     logger.info("Display User Event Bean : " + userEvents);
+                    request.setAttribute("userRole", userRole);
 
                     httpSession.setAttribute("userEvents", userEvents);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberEventsResults.jsp");

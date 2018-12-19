@@ -35,27 +35,25 @@ public class DeleteMemberServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String email = request.getParameter("username");
+        int userid = Integer.parseInt(request.getParameter("userid"));
         String message;
 
         logger.info("starting the delete member servlet");
 
         GenericDAO userDao = new GenericDAO(UserBean.class);
 
-        List<UserBean> users = userDao.getByPropertyEqual("username", email);
+        List<UserBean> users = userDao.getByPropertyEqualInt("id", userid);
         int userSize = users.size();
 
         logger.info("user size = " + userSize);
 
         if (userSize > 0) {
-            int userid = users.get(0).getId();
             logger.info("Before Member Deleted Successfully!!");
-            logger.info("user.getId() = " + userid);
 
             userDao.delete(userDao.getById(userid));
 
             logger.info("After Member Deleted Successfully!!");
-            message = "User " + email + " has been deleted from system!";
+            message = "User Id " + userid + " has been deleted from system!";
             request.setAttribute("returnMessage", message);
             request.setAttribute("errorMessage", " ");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
@@ -64,7 +62,7 @@ public class DeleteMemberServlet extends HttpServlet {
         }else {
 
             logger.info("Member NOT Deleted Successfully!!");
-            message = "User name " + email + " is does NOT exists and not need to be deleted!";
+            message = "User Id " + userid + " does NOT exists and does not need to be deleted!";
             request.setAttribute("returnMessage", " ");
             request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");

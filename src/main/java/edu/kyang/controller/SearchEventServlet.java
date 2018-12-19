@@ -57,7 +57,7 @@ public class SearchEventServlet extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher(displayEventJsp);
                 dispatcher.forward(request, response);
             } else {
-                message = "No events found for username " + searchTerm + " try another search!";
+                message = "No events found in system";
                 request.setAttribute("returnMessage", message);
                 request.setAttribute("errorMessage", " ");
                 RequestDispatcher dispatcher = request.getRequestDispatcher(displayMessageJsp);

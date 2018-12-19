@@ -2,16 +2,6 @@
 <c:set var="title" value="Search Results" />
 <%@include file="head1.jsp"%>
 
-<script type="text/javascript" class="init">
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-    });
-</script>
-
 <html>
 
 <body>
@@ -23,54 +13,55 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-10">
-                    <h2>Manage <b>Members</b></h2>
+                <div class="col-sm-6">
+                    <h2>Member Profile Page</h2>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-6">
                     <a href="addMember.jsp" class="btn btn-success">
                         <span>Add New Member</span></a>
+
+                    <a href="#editMemberModal" class="btn btn-success" data-toggle="modal">
+                        <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                 </div>
+
             </div>
         </div>
 
 
     <table id="userTable" class="display " cellspacing="0" width="100%">
         <thead>
+            <th>User Id</th>
             <th>User Name</th>
             <th>Status</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>MI</th>
+            <th>Full Name</th>
+            <th>Middle Name</th>
             <th>Birthdate</th>
             <th>Address</th>
             <th>State</th>
             <th>Zip code</th>
             <th>Phone</th>
-            <th>Actions</th>
         </thead>
         <tbody>
 
         <tr>
+            <td>${user.getId()}</td>
             <td>${user.getUsername()}</td>
             <td>${user.getStatus()}</td>
-            <td>${user.getFirstname()}</td>
-            <td>${user.getLastname()}</td>
+            <td>${user.getFirstname()} ${user.getLastname()}</td>
             <td>${user.getMiddlename()}</td>
             <td>${user.getDateofbirth()}</td>
             <td>${user.getAddress()}</td>
             <td>${user.getState()}</td>
             <td>${user.getZipcode()}</td>
             <td>${user.getPhone()}</td>
-            <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-            </td>
+
         </tr>
         </tbody>
     </table>
 
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editMemberModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form name="updateMemberForm"action="updateMemberServlet"method="post">
@@ -82,12 +73,12 @@
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <input type="hidden" class="form-control" id="userid" name="userid" value="${user.getId()}">
+                                <label>User Id</label>
+                                <input type="text" class="form-control" id="userid" name="userid" value="${user.getId()}" readonly>
                             </div>
 
                             <div class="form-group">
-                                <label>User name</label>
-                                <input type="email" class="form-control" id="username" name="username" value="${user.getUsername()}" readonly>
+                                <input type="hidden" class="form-control" id="username" name="username" value="${user.getUsername()}" readonly>
                             </div>
 
                             <div class="form-group">

@@ -1,14 +1,13 @@
 
-csquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ
-nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(Ë¦ð‹ýÿÿÿÿ8Ô‡­ýû,
-psquid:S2441E"MMake "List" and its parameters serializable or don't store it in the session.(±û½£üÿÿÿÿ8œî¬ýû,
-Isquid:S19894"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
+psquid:S2441F"MMake "List" and its parameters serializable or don't store it in the session.(±û½£üÿÿÿÿ8œî¬ýû,
 Isquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
+\squid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8Œ¶Éüû,
+`squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ8Œ¶Éüû,
 Isquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ýû,
-Isquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ýû,
-Isquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,
 [squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓÞÏÛ8 ô¹Øú,
+csquid:UselessImportCheck":Remove this unused import 'edu.kyang.entity.UserRoleBean'.(Û×ßÜøÿÿÿÿ
+Isquid:S19894"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
 bsquid:UselessImportCheck"7Remove this unused import 'edu.kyang.entity.EventBean'.(­×æ¸8ø»ûû,
 Isquid:S19894"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8üôÓûû,
-`squid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èýÿÿÿÿ8Œ¶Éüû,
-\squid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8Œ¶Éüû,
+Isquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ô‡­ýû,
+Isquid:S1989I"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8€ÃÕûû,

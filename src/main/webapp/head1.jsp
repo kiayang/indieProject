@@ -40,5 +40,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
+    <script type="text/javascript" class="init">
+        $(document).ready( function () {
+            $('#userTable').DataTable();
+
+            // Activate tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+        });
+    </script>
+
 
 </head>

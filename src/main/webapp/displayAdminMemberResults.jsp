@@ -2,16 +2,6 @@
 <c:set var="title" value="Search Results" />
 <%@include file="head1.jsp"%>
 
-<script type="text/javascript" class="init">
-
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
-
 <html>
 
 <body>
@@ -19,58 +9,57 @@
 <%@include file="nav2.jsp"%>
 
 <div class="container-fluid">
-
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-10">
-                    <h2>Administrator <b>Manage Members</b></h2>
+                <div class="col-sm-4">
+                    <h2>Manage <b>Members</b></h2>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-8">
                     <a href="addMember.jsp" class="btn btn-success">
-                        <span>Add New Member</span></a>
+                                <span>Add New Member</span></a>
+                    <a href="#deleteMemberModal" class="btn btn-success" data-toggle="modal">
+                                <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    <a href="#editMemberModal" class="btn btn-success" data-toggle="modal">
+                                <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                 </div>
+
             </div>
         </div>
 
-    <table id="userTable" class="display " cellspacing="0" width="100%">
+        <table id="userTable" class="display " cellspacing="0" width="100%">
         <thead>
-            <th>User Name</th>
-            <th>status</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>MI</th>
-            <th>Birthdate</th>
-            <th>Address</th>
-            <th>State</th>
-            <th>Zip code</th>
-            <th>Phone</th>
-            <th>Actions</th>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>Status</th>
+        <th>Full Name</th>
+        <th>Middle Name</th>
+        <th>Birthdate</th>
+        <th>Address</th>
+        <th>State</th>
+        <th>Zip code</th>
+        <th>Phone</th>
         </thead>
         <tbody>
 
             <c:forEach var="user" items="${users}" varStatus="loop">
                 <tr>
+                    <td>${user.getId()}</td>
                     <td>${user.getUsername()}</td>
                     <td>${user.getStatus()}</td>
-                    <td>${user.getFirstname()}</td>
-                    <td>${user.getLastname()}</td>
+                    <td>${user.getFirstname()} ${user.getLastname()}</td>
                     <td>${user.getMiddlename()}</td>
                     <td>${user.getDateofbirth()}</td>
                     <td>${user.getAddress()}</td>
                     <td>${user.getState()}</td>
                     <td>${user.getZipcode()}</td>
                     <td>${user.getPhone()}</td>
-                    <td>
-                        <a href="#editMemberModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="#deleteMemberModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                    </td>
                 </tr>
 
             </c:forEach>
         </tbody>
-    </table>
+        </table>
 
         <!-- Edit Modal HTML -->
         <div id="editMemberModal" class="modal fade">
@@ -85,8 +74,12 @@
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label>User name *</label>
-                                <input type="email" class="form-control" id="username" name="username" placeholder="Enter required email address" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address" required>
+                                <label>User ID *</label>
+                                <input type="number" class="form-control" id="userid" name="userid">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="username" name="username" placeholder="Enter required email address" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address" required>
                             </div>
 
                             <div class="form-group">
@@ -170,8 +163,8 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
 
                             <div class="form-group">
-                                <label>Enter User name:</label>
-                                <input type="email" class="form-control" id="username" name="username" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address" required>
+                                <label>Enter User Id *</label>
+                                <input type="number" class="form-control" id="number" name="userid" maxlength="11" required>
                             </div>
 
                         </div>

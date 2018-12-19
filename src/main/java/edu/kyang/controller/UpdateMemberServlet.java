@@ -38,7 +38,7 @@ public class UpdateMemberServlet extends HttpServlet {
 
         HttpSession httpSession = request.getSession();
 
-        String userid = request.getParameter("userid");
+        int userid = Integer.parseInt(request.getParameter("userid"));
         String email = request.getParameter("username");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
@@ -59,15 +59,11 @@ public class UpdateMemberServlet extends HttpServlet {
 
         GenericDAO userDAO = new GenericDAO(UserBean.class);
 
-        List<UserBean> users = userDAO.getByPropertyEqual("username", email);
+        List<UserBean> users = userDAO.getByPropertyEqualInt("id", userid);
 
         if (users.size() > 0){
 
-            int uID = users.get(0).getId();
-
-            logger.info("user id = " + uID);
-
-            UserBean userToUpdate = (UserBean)userDAO.getById(uID);
+            UserBean userToUpdate = (UserBean)userDAO.getById(userid);
 
             if ( firstname!=null && !firstname.isEmpty()  )	{
                 userToUpdate.setFirstname(firstname);
@@ -114,7 +110,7 @@ public class UpdateMemberServlet extends HttpServlet {
 
             userDAO.saveOrUpdate(userToUpdate);
 
-            UserBean updatedUser = (UserBean) userDAO.getById(uID);
+            UserBean updatedUser = (UserBean) userDAO.getById(userid);
 
             request.setAttribute("user", updatedUser);
 

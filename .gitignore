@@ -39,6 +39,10 @@
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
+#sonarlint
+.idea/sonarlint
+.idea/sonarIssues.xml
+
 # JIRA plugin
 atlassian-ide-plugin.xml
 

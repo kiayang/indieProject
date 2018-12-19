@@ -1,4 +1,4 @@
 
-Tsquid:UselessImportCheck"+Remove this unused import 'java.util.Date'.(¸…¼ü8Õ‰›Ùú,
-dsquid:S00107"BConstructor has 11 parameters, which is greater than 7 authorized.(âªİëùÿÿÿÿ8Õ‰›Ùú,
-esquid:UselessImportCheck"7Remove this unused import 'javax.jws.soap.SOAPBinding'.(î¶âÑûÿÿÿÿ8Õ‰›Ùú,
+gsquid:UselessImportCheck"7Remove this unused import 'javax.jws.soap.SOAPBinding'.(î¶âÑûÿÿÿÿ8Õ‰›Ùú,
+fsquid:S001078"BConstructor has 11 parameters, which is greater than 7 authorized.(âªİëùÿÿÿÿ8Õ‰›Ùú,
+Vsquid:UselessImportCheck"+Remove this unused import 'java.util.Date'.(¸…¼ü8Õ‰›Ùú,

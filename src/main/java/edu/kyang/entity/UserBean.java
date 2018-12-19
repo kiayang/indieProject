@@ -44,10 +44,10 @@ public class UserBean {
      * entity is not responsible for this relationship and It should look for a field named user in the
      * UserProfile entity to find the configuration for the JoinColumn/ForeignKey column.
      */
-    @OneToOne(mappedBy="userBean", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToOne(mappedBy="userBean", orphanRemoval = true, fetch = FetchType.EAGER)
     private UserRoleBean userRole;
 
-    @OneToMany(mappedBy = "userBean", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userBean", orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserEventBean> userEventList = new HashSet<>();
 
     public UserBean() {

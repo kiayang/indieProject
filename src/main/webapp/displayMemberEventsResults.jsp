@@ -2,16 +2,6 @@
 <c:set var="title" value="Search Results" />
 <%@include file="head1.jsp"%>
 
-<script type="text/javascript" class="init">
-
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
-
 <html>
 
 <body>
@@ -23,13 +13,20 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                     <h2>Administrator <b>Manage Member Events Page</b></h2>
                 </div>
 
-                <div class="col-sm-2">
-                    <a href="adminAddEvent.jsp" class="btn btn-success">
-                        <span>Add New Event</span></a>
+                <div class="col-sm-4">
+
+                    <c:if test="${userRole == 'admin'}">
+                        <a href="adminAddEvent.jsp" class="btn btn-success">
+                            <span>Add New Event</span></a>
+
+                        <a href="#editEventModal" class="btn btn-success" data-toggle="modal">
+                            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                    </c:if>
+
                 </div>
             </div>
         </div>
@@ -45,7 +42,6 @@
             <th>Paid Status</th>
             <th>Paid Date</th>
             <th>Event Description</th>
-            <th>Actions</th>
             </thead>
             <tbody>
 
@@ -60,9 +56,7 @@
                     <td>${userevent.getUePaidStatus()}</td>
                     <td>${userevent.getUePaidDate()}</td>
                     <td>${userevent.getEventBean().getDescription()}</td>
-                    <td>
-                        <a href="#editEventModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    </td>
+
                 </tr>
 
             </c:forEach>

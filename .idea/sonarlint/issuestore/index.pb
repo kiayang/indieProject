@@ -104,3 +104,8 @@ n
 >src/main/java/edu/kyang/controller/UpdateUserEventServlet.java,8\8\888b25ff1db5d8b723299fef6d1460a239ab283b
 p
 @src/main/java/edu/kyang/controller/SearchMemberEventServlet.java,c\7\c7fc04c2566f23c4afddc68e7ff62bba60b913d8
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+A
+logging/indie.log,9\a\9a87c6b5e333be82823b30df2778ca54179a11e5

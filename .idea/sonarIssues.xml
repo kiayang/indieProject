@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/dump.sql">
           <value>
             <set />
@@ -119,6 +124,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/controller/UpdateUserEventServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/kyang/controller/adminSearchUserEventServlet.java">
           <value>
             <set />
           </value>
@@ -234,6 +244,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/forbidden.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/head1.jsp">
           <value>
             <set />
           </value>

@@ -2,16 +2,6 @@
 <c:set var="title" value="Search Results" />
 <%@include file="head1.jsp"%>
 
-<script type="text/javascript" class="init">
-
-    $(document).ready( function () {
-        $('#userTable').DataTable();
-
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-    });
-</script>
 
 <html>
 
@@ -24,14 +14,18 @@
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                     <h2>Administrator <b>Manage Events</b></h2>
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-4">
                     <a href="adminAddEvent.jsp" class="btn btn-success">
                         <span>Add New Event</span></a>
+
+                    <a href="#deleteEventModal" class="btn btn-success" data-toggle="modal">
+                        <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                 </div>
+
             </div>
         </div>
 
@@ -55,10 +49,6 @@
                     <td>${event.getEvent_date()}</td>
                     <td>${event.getEvent_fee()}</td>
 
-                    <td>
-                        <a href="#deleteEventModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                    </td>
-
                 </tr>
 
             </c:forEach>
@@ -80,8 +70,8 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
 
                             <div class="form-group">
-                                <label>Enter User name:</label>
-                                <input type="email" class="form-control" id="username" name="username" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Invalid email address" required>
+                                <label>Enter User Event Id *</label>
+                                <input type="number" class="form-control" id="eventid" name="eventid" maxlength="11" required>
                             </div>
 
                         </div>

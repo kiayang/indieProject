@@ -170,7 +170,7 @@ public class UserEventDaoTest {
 
         List<UserEventBean> userEvents2 = userEventDao.getByPropertyEqualInt("ueId",userid);
 
-        logger.info("User Event Bean : " + userEvents2);
+        logger.info("User Event Bean List 2: " + userEvents2);
 
         int userEventId = userEvents2.get(0).getUeId();
         String firstname = userEvents2.get(0).getUserBean().getFirstname();
@@ -181,6 +181,9 @@ public class UserEventDaoTest {
         LocalDate eventDate = userEvents2.get(0).getEventBean().getEvent_date();
         String status = userEvents2.get(0).getUePaidStatus();
         LocalDate paidDate = userEvents2.get(0).getUePaidDate();
+
+        List<UserEventBean> userEvents3 = userEventDao.getByPropertyEqualInt("userBean",userid);
+        System.out.println("User Events List 3: " + userEvents3);
 
         BigDecimal fee1 = BigDecimal.valueOf(15);
 

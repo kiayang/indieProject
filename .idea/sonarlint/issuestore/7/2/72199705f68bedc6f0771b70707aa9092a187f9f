@@ -1,11 +1,11 @@
 
-gsquid:S1192)"IDefine a constant instead of duplicating this literal "username" 3 times.(çœ®å8üµÄªû,
-Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-Isquid:S1989H"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
-Zsquid:S11555">Use isEmpty() to check whether the collection is empty or not.(ùì«úÿÿÿÿ
-Isquid:S1989H"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
-Tsquid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ
-Bsquid:S1989O"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
-ksquid:S2441E"MMake "List" and its parameters serializable or don't store it in the session.(œ¯ËÆ8Ó÷©¬û,
-_squid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(¸„ÇŠùÿÿÿÿ
+Isquid:S1989G"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
+ksquid:S2441D"MMake "List" and its parameters serializable or don't store it in the session.(œ¯ËÆ8Ó÷©¬û,
+Bsquid:S1989N"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Isquid:S1989G"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8Ä¦µªû,
 Ysquid:UselessImportCheck"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
+Zsquid:S11555">Use isEmpty() to check whether the collection is empty or not.(ùì«úÿÿÿÿ
+_squid:UselessImportCheck"6Remove this unused import 'edu.kyang.entity.UserBean'.(¸„ÇŠùÿÿÿÿ
+Jsquid:S1989)"'Add a "try/catch" block for "parseInt".(×õ«±ÿÿÿÿÿ8–ØÓ£ü,
+Bsquid:S1989N"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ
+Tsquid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ

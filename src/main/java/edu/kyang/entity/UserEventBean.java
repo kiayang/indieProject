@@ -25,11 +25,11 @@ public class UserEventBean {
     Source: http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
     *** Foreign key is on the child table
     */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="ue_userid")
     private UserBean userBean;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="ue_eventid")
     private EventBean eventBean;
 

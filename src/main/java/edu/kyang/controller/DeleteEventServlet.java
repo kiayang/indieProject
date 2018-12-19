@@ -32,30 +32,32 @@ public class DeleteEventServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String email = request.getParameter("username");
+        int eventid = Integer.parseInt(request.getParameter("eventid"));
         String message;
 
-        logger.info("starting the Delete event servlet");
+        logger.info("****** starting the Delete event servlet ********");
 
         GenericDAO eventDao = new GenericDAO(EventBean.class);
 
-        logger.info("email = " + email);
+        logger.info(" ** Print Event Id entered = " + eventid);
 
-        List<EventBean> events = eventDao.getByPropertyEqual("event_userid", email);
+        List<EventBean> events = eventDao.getByPropertyEqualInt("eventId", eventid);
         int eventSize = events.size();
 
-
         logger.info("Event Size = " + eventSize);
-
+        logger.info("Event Bean List Before = " + events);
         if (eventSize > 0) {
-            int eventId = events.get(0).getEventId();
+            //int eventId = events.get(0).getEventId();
             logger.info("Before Event Deleted Successfully!!");
-            logger.info("user.getId() = " + eventId);
+            logger.info("events.getId() = " + eventid);
 
-            eventDao.delete(eventDao.getById(eventId));
+            eventDao.delete(eventDao.getById(eventid));
+
+            List<EventBean> eventList = eventDao.getAll();
+            logger.info("Event List After = " + eventList);
 
             logger.info("After Event Deleted Successfully!!");
-            message = "User " + email + " has been deleted from system!";
+            message = "Event " + eventid + " has been deleted from system!";
             request.setAttribute("returnMessage", message);
             request.setAttribute("errorMessage", " ");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
@@ -64,7 +66,7 @@ public class DeleteEventServlet extends HttpServlet {
         }else {
 
             logger.info("Event NOT Deleted Successfully!!");
-            message = "Event for User name " + email + " does not exists and does NOT need to be deleted!";
+            message = "Event " + eventid + " does not exists and does NOT need to be deleted!";
             request.setAttribute("returnMessage", " ");
             request.setAttribute("errorMessage", message);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");

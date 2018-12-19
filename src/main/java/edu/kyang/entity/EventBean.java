@@ -35,7 +35,7 @@ public class EventBean {
      the other one being referred to as the inverse (or the mappedBy) side.
      */
 
-    @OneToMany(mappedBy = "eventBean", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "eventBean", orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserEventBean> userEventList = new HashSet<>();
 
     /**

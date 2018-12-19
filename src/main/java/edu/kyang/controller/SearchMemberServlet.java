@@ -54,10 +54,11 @@ public class SearchMemberServlet extends HttpServlet {
 
             logger.info("*** Display all events related to the username");
 
+            String userRole = "member";
             List<UserBean> users = userDao.getByPropertyEqual("username", username);
             int userid = users.get(0).getId();
             logger.info("*** Display userid: " + userid);
-            List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("ueId",userid);
+            List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("userBean",userid);
 
             int ueSize = userEvents.size();
 
@@ -67,9 +68,8 @@ public class SearchMemberServlet extends HttpServlet {
                 logger.info("Display User Event Bean : " + userEvents);
 
                 httpSession.setAttribute("userEvents", userEvents);
+                request.setAttribute("userRole", userRole);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberEventsResults.jsp");
-                //httpSession.setAttribute("users", users);
-                //RequestDispatcher dispatcher = request.getRequestDispatcher("/displayAdminMemberResults.jsp");
                 dispatcher.forward(request, response);
             }else {
                 message = "There are no Events for " + username + "!";
