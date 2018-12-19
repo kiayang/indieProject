@@ -13,12 +13,12 @@
 
         <div class="col-sm-6 text-left">
             <h1>Welcome</h1>
-            <p> The goal of this application is to help keep track of family hardship contributions that members contribute
+            <h4> The goal of this application is to help keep track of family hardship contributions that members contribute
                 to help out with costly funeral expenses.  This application allows members to login and update their own profile
                 and most importantly helps the administrator to easily add and maintain the events and keep track of the status
                 of each of the 400 plus members.
 
-            </p>
+            </h4>
             <hr>
 
         </div>

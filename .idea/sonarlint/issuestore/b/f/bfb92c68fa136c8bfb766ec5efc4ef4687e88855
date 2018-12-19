@@ -1,14 +1,14 @@
 
-[
-squid:S106a"9Replace this use of System.out or System.err by a logger.(·Äîıÿÿÿÿ8÷şÒšü,
-Jsquid:S1989…"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
-V
-squid:S106b"9Replace this use of System.out or System.err by a logger.(şÊ§½8Û¦Ï›ü,
-Isquid:S1989w"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
-Jsquid:S1989…"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
-ksquid:S2441u"MMake "List" and its parameters serializable or don't store it in the session.(¤ƒ÷¹8æ«ú›ü,
-V
-squid:S106_"9Replace this use of System.out or System.err by a logger.(ì¡öµ8÷şÒšü,
 Isquid:S1989w"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
 Isquid:S1989}"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
+[
+squid:S106a"9Replace this use of System.out or System.err by a logger.(·Äîıÿÿÿÿ8÷şÒšü,
+ksquid:S2441u"MMake "List" and its parameters serializable or don't store it in the session.(¤ƒ÷¹8æ«ú›ü,
+Isquid:S1989w"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
+V
+squid:S106b"9Replace this use of System.out or System.err by a logger.(şÊ§½8Û¦Ï›ü,
+V
+squid:S106_"9Replace this use of System.out or System.err by a logger.(ì¡öµ8÷şÒšü,
+Jsquid:S1989…"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
+Jsquid:S1989…"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
 Isquid:S1989}"&Add a "try/catch" block for "forward".(ÜÕˆêøÿÿÿÿ8æ«ú›ü,
