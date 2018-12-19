@@ -69,15 +69,15 @@ public class SearchMemberEventServlet extends HttpServlet {
                     dispatcher.forward(request, response);
                 } else {
                     message = "There are no Events for " + username + "!";
-                    request.setAttribute("returnMessage", message);
-                    request.setAttribute("errorMessage", " ");
+                    request.setAttribute("returnMessage", " ");
+                    request.setAttribute("errorMessage", message);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                     dispatcher.forward(request, response);
                 }
             }else {
                 message = "There are no Events for " + username + "!";
-                request.setAttribute("returnMessage", message);
-                request.setAttribute("errorMessage", " ");
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }
@@ -95,9 +95,9 @@ public class SearchMemberEventServlet extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberEventsResults.jsp");
                 dispatcher.forward(request, response);
             }else {
-                message = "There are user events!";
-                request.setAttribute("returnMessage", message);
-                request.setAttribute("errorMessage", " ");
+                message = "There are NO user events!";
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }

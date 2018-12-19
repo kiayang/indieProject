@@ -73,8 +73,8 @@ public class SearchMemberServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             }else {
                 message = "There are no Events for " + username + "!";
-                request.setAttribute("returnMessage", message);
-                request.setAttribute("errorMessage", " ");
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }

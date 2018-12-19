@@ -55,8 +55,8 @@ public class AdminSearchRoleServlet extends HttpServlet {
                 dispatcher.forward(request, response);
             }else {
                 message = "User name " + email + " does not exist, try another search";
-                request.setAttribute("returnMessage", message);
-                request.setAttribute("errorMessage", " ");
+                request.setAttribute("returnMessage", " ");
+                request.setAttribute("errorMessage", message);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayReturnMessage.jsp");
                 dispatcher.forward(request, response);
             }

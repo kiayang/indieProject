@@ -40,6 +40,7 @@
         <th>State</th>
         <th>Zip code</th>
         <th>Phone</th>
+        <th>Password</th>
         </thead>
         <tbody>
 
@@ -55,6 +56,7 @@
                     <td>${user.getState()}</td>
                     <td>${user.getZipcode()}</td>
                     <td>${user.getPhone()}</td>
+                    <td>${user.getPassword()}</td>
                 </tr>
 
             </c:forEach>
