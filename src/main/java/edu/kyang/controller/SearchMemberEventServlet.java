@@ -38,6 +38,7 @@ public class SearchMemberEventServlet extends HttpServlet {
         GenericDAO userDao = new GenericDAO(UserBean.class);
         GenericDAO userEventDao = new GenericDAO(UserEventBean.class);
         String message;
+        String userRole = "admin";
 
         if (username!=null && !username.isEmpty()) {
             logger.info("*** Display username not null and username not empty");
@@ -52,15 +53,13 @@ public class SearchMemberEventServlet extends HttpServlet {
             if (userSize > 0) {
                 int userid = users.get(0).getId();
 
-                String userRole = "admin";
-
                 logger.info("*** Display userid: " + userid);
                 logger.info("*** Display user name: " + username);
 
                 List<UserEventBean> userEvents = userEventDao.getByPropertyEqualInt("userBean", userid);
                 int ueSize = userEvents.size();
                 logger.info("*** Search via userid - user events size: " + ueSize);
-                ogger.info("Display User Event Bean : " + userEvents);
+                logger.info("Display user role : " + userRole);
                 if (ueSize > 0) {
                     logger.info("Display User Event Bean : " + userEvents);
                     request.setAttribute("userRole", userRole);
@@ -91,6 +90,7 @@ public class SearchMemberEventServlet extends HttpServlet {
             int ueSize = userEvents.size();
 
             if (ueSize > 0){
+                request.setAttribute("userRole", userRole);
                 httpSession.setAttribute("userEvents", userEvents);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberEventsResults.jsp");
                 dispatcher.forward(request, response);

@@ -66,7 +66,7 @@ public class SearchMemberServlet extends HttpServlet {
 
             if (ueSize > 0) {
                 logger.info("Display User Event Bean : " + userEvents);
-
+                logger.info("Display user role : " + userRole);
                 httpSession.setAttribute("userEvents", userEvents);
                 request.setAttribute("userRole", userRole);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/displayMemberEventsResults.jsp");
